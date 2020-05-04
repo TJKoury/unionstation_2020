@@ -1,0 +1,24 @@
+{
+  "name": "unionstation_2020",
+  "version": "1.0.0",
+  "description": "Scratch pad for US",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "refresh:nodeAPI": "curl https://nodejs.org/docs/latest/api/all.json -o ./lib/node.api.json",
+    "dev:nodeAPI": "nodemon ./dev/nodeAPI.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TJKoury/unionstation_2020.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TJKoury/unionstation_2020/issues"
+  },
+  "homepage": "https://github.com/TJKoury/unionstation_2020#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
