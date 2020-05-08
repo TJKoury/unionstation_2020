@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "refresh:nodeAPI": "curl https://nodejs.org/docs/latest/api/all.json -o ./lib/node.api.json",
-    "dev:nodeAPI": "nodemon ./dev/nodeAPI.mjs"
+    "dev:nodeAPI": "nodemon ./dev/nodeAPI.mjs",
+    "dev:workerThreads": "nodemon ./dev/workerThreads.mjs"
   },
   "repository": {
     "type": "git",
