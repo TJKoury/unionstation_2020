@@ -1,10 +1,7 @@
-import App from './App.svelte';
+import Composer from './Composer.svelte';
 
-const app = new App({
-	target: document.body,
-	props: {
-		name: 'world'
-	}
+const app = new Composer({
+	target: document.body
 });
 
 export default app;
