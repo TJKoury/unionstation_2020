@@ -1,5 +1,6 @@
 <script>
   export let node;
+  const cradius = 10;
 </script>
 
 <style>
@@ -38,9 +39,9 @@
         rx="3"
         ry="3"
         fill="black"
-        y={i * node.cradius}
-        width={node.cradius}
-        height={node.cradius} />
+        y={i * cradius}
+        width={cradius}
+        height={cradius} />
     {/each}
   </svg>
 {/if}

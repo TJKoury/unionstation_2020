@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { nodeList } from "./data/flow.mjs";
+  import { flow } from "./data/flow.mjs";
   import { makeDraggable } from "./interactions/dragInteractions.mjs";
   import { getAttributeMap, getStyleMap } from "./utilities/nodeUtilities.mjs";
 
@@ -35,8 +35,7 @@
 <div id="node-explorer" tabindex="0">
   <svg xmlns="http://www.w3.org/2000/svg" id="stage">
 
-    {#each nodeList as node, i}
-      {@html node.style}
+    {#each flow.nodes as node, i}
       <svg
         overflow="visible"
         shape-rendering="optimizeQuality"
@@ -46,7 +45,7 @@
         width={node.attributes.width}
         height={node.attributes.height}>
 
-        <svelte:component this={node.component} bind:node />
+        <svelte:component this={node.element} bind:node />
       </svg>
     {/each}
   </svg>

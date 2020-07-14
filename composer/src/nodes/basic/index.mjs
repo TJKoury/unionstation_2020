@@ -1,10 +1,10 @@
-import UI from './ui.mjs';
-import Element from './element.mjs';
+import UI from "./ui.mjs";
+import Element from "./element.mjs";
 
-class BasicNode {
-
-    constructor() {
-
-    }
-
+export class BasicNode {
+  constructor(options) {
+    Object.assign(this, options);
+    this.ui = UI;
+    this.element = Element;
+  }
 }

@@ -315,7 +315,7 @@ const file = "src/Element.svelte";
 function add_css() {
 	var style = element("style");
 	style.id = "svelte-1avw4w8-style";
-	style.textContent = ".node.svelte-1avw4w8{fill:rgb(231, 231, 174);width:140px;height:30px;stroke:#999;stroke-width:1px;cursor:move}text.svelte-1avw4w8{fill:black;cursor:move}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRWxlbWVudC5zdmVsdGUiLCJzb3VyY2VzIjpbIkVsZW1lbnQuc3ZlbHRlIl0sInNvdXJjZXNDb250ZW50IjpbIjxzY3JpcHQ+XG4gIGV4cG9ydCBsZXQgbm9kZTtcbjwvc2NyaXB0PlxuXG48c3R5bGU+XG4gIC5ub2RlIHtcbiAgICBmaWxsOiByZ2IoMjMxLCAyMzEsIDE3NCk7XG4gICAgd2lkdGg6IDE0MHB4O1xuICAgIGhlaWdodDogMzBweDtcbiAgICBzdHJva2U6ICM5OTk7XG4gICAgc3Ryb2tlLXdpZHRoOiAxcHg7XG4gICAgY3Vyc29yOiBtb3ZlO1xuICB9XG4gIHRleHQge1xuICAgIGZpbGw6IGJsYWNrO1xuICAgIGN1cnNvcjogbW92ZTtcbiAgfVxuPC9zdHlsZT5cblxuPHJlY3QgY2xhc3M9XCJub2RlXCIgcnk9e25vZGUuYXR0cmlidXRlcy5yeX0gLz5cbnsjaWYgbm9kZS5pb19wb3J0c31cbiAgPHN2ZyBzaGFwZS1yZW5kZXJpbmc9XCJhdXRvXCI+XG4gICAgeyNlYWNoIG5vZGUuaW9fcG9ydHMuZmlsdGVyKGYgPT4gZi50eXBlID09PSAnaW5wdXQnKSBhcyBpb19wb3J0LCBpfVxuICAgICAgPGcgdHJhbnNmb3JtPVwidHJhbnNsYXRlKDAsMTApXCI+XG4gICAgICAgIDxyZWN0XG4gICAgICAgICAgcng9XCIzXCJcbiAgICAgICAgICByeT1cIjNcIlxuICAgICAgICAgIHdpZHRoPVwiMTBcIlxuICAgICAgICAgIGhlaWdodD1cIjEwXCJcbiAgICAgICAgICBzdHlsZT1cInN0cm9rZTogIzk5OTsgc3Ryb2tlLXdpZHRoOiAxOyBmaWxsOiAjZDlkOWQ5OyBjdXJzb3I6Y3Jvc3NoYWlyO1wiIC8+XG4gICAgICA8L2c+XG4gICAgey9lYWNofVxuICA8L3N2Zz5cbiAgPHN2ZyB4PXtub2RlLndpZHRofSB5PVwiMFwiPlxuICAgIHsjZWFjaCBub2RlLmlvX3BvcnRzLmZpbHRlcihmID0+IGYudHlwZSAhPT0gJ2lucHV0JykgYXMgaW9fcG9ydCwgaX1cbiAgICAgIDxyZWN0XG4gICAgICAgIGNsYXNzPVwibm9kZS1jb25uZWN0aW9uXCJcbiAgICAgICAgcng9XCIzXCJcbiAgICAgICAgcnk9XCIzXCJcbiAgICAgICAgZmlsbD1cImJsYWNrXCJcbiAgICAgICAgeT17aSAqIG5vZGUuY3JhZGl1c31cbiAgICAgICAgd2lkdGg9e25vZGUuY3JhZGl1c31cbiAgICAgICAgaGVpZ2h0PXtub2RlLmNyYWRpdXN9IC8+XG4gICAgey9lYWNofVxuICA8L3N2Zz5cbnsvaWZ9XG48dGV4dCB4PVwiNTAlXCIgeT1cIjUwJVwiIHRleHQtYW5jaG9yPVwibWlkZGxlXCIgZG9taW5hbnQtYmFzZWxpbmU9XCJtaWRkbGVcIiBzdHlsZT1cIlwiPlxuICB0ZW1wbGF0ZVxuPC90ZXh0PlxuIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUtFLEtBQUssZUFBQyxDQUFDLEFBQ0wsSUFBSSxDQUFFLElBQUksR0FBRyxDQUFDLENBQUMsR0FBRyxDQUFDLENBQUMsR0FBRyxDQUFDLENBQ3hCLEtBQUssQ0FBRSxLQUFLLENBQ1osTUFBTSxDQUFFLElBQUksQ0FDWixNQUFNLENBQUUsSUFBSSxDQUNaLFlBQVksQ0FBRSxHQUFHLENBQ2pCLE1BQU0sQ0FBRSxJQUFJLEFBQ2QsQ0FBQyxBQUNELElBQUksZUFBQyxDQUFDLEFBQ0osSUFBSSxDQUFFLEtBQUssQ0FDWCxNQUFNLENBQUUsSUFBSSxBQUNkLENBQUMifQ== */";
+	style.textContent = ".node.svelte-1avw4w8{fill:rgb(231, 231, 174);width:140px;height:30px;stroke:#999;stroke-width:1px;cursor:move}text.svelte-1avw4w8{fill:black;cursor:move}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRWxlbWVudC5zdmVsdGUiLCJzb3VyY2VzIjpbIkVsZW1lbnQuc3ZlbHRlIl0sInNvdXJjZXNDb250ZW50IjpbIjxzY3JpcHQ+XG4gIGV4cG9ydCBsZXQgbm9kZTtcbiAgY29uc3QgY3JhZGl1cyA9IDEwO1xuPC9zY3JpcHQ+XG5cbjxzdHlsZT5cbiAgLm5vZGUge1xuICAgIGZpbGw6IHJnYigyMzEsIDIzMSwgMTc0KTtcbiAgICB3aWR0aDogMTQwcHg7XG4gICAgaGVpZ2h0OiAzMHB4O1xuICAgIHN0cm9rZTogIzk5OTtcbiAgICBzdHJva2Utd2lkdGg6IDFweDtcbiAgICBjdXJzb3I6IG1vdmU7XG4gIH1cbiAgdGV4dCB7XG4gICAgZmlsbDogYmxhY2s7XG4gICAgY3Vyc29yOiBtb3ZlO1xuICB9XG48L3N0eWxlPlxuXG48cmVjdCBjbGFzcz1cIm5vZGVcIiByeT17bm9kZS5hdHRyaWJ1dGVzLnJ5fSAvPlxueyNpZiBub2RlLmlvX3BvcnRzfVxuICA8c3ZnIHNoYXBlLXJlbmRlcmluZz1cImF1dG9cIj5cbiAgICB7I2VhY2ggbm9kZS5pb19wb3J0cy5maWx0ZXIoZiA9PiBmLnR5cGUgPT09ICdpbnB1dCcpIGFzIGlvX3BvcnQsIGl9XG4gICAgICA8ZyB0cmFuc2Zvcm09XCJ0cmFuc2xhdGUoMCwxMClcIj5cbiAgICAgICAgPHJlY3RcbiAgICAgICAgICByeD1cIjNcIlxuICAgICAgICAgIHJ5PVwiM1wiXG4gICAgICAgICAgd2lkdGg9XCIxMFwiXG4gICAgICAgICAgaGVpZ2h0PVwiMTBcIlxuICAgICAgICAgIHN0eWxlPVwic3Ryb2tlOiAjOTk5OyBzdHJva2Utd2lkdGg6IDE7IGZpbGw6ICNkOWQ5ZDk7IGN1cnNvcjpjcm9zc2hhaXI7XCIgLz5cbiAgICAgIDwvZz5cbiAgICB7L2VhY2h9XG4gIDwvc3ZnPlxuICA8c3ZnIHg9e25vZGUud2lkdGh9IHk9XCIwXCI+XG4gICAgeyNlYWNoIG5vZGUuaW9fcG9ydHMuZmlsdGVyKGYgPT4gZi50eXBlICE9PSAnaW5wdXQnKSBhcyBpb19wb3J0LCBpfVxuICAgICAgPHJlY3RcbiAgICAgICAgY2xhc3M9XCJub2RlLWNvbm5lY3Rpb25cIlxuICAgICAgICByeD1cIjNcIlxuICAgICAgICByeT1cIjNcIlxuICAgICAgICBmaWxsPVwiYmxhY2tcIlxuICAgICAgICB5PXtpICogY3JhZGl1c31cbiAgICAgICAgd2lkdGg9e2NyYWRpdXN9XG4gICAgICAgIGhlaWdodD17Y3JhZGl1c30gLz5cbiAgICB7L2VhY2h9XG4gIDwvc3ZnPlxuey9pZn1cbjx0ZXh0IHg9XCI1MCVcIiB5PVwiNTAlXCIgdGV4dC1hbmNob3I9XCJtaWRkbGVcIiBkb21pbmFudC1iYXNlbGluZT1cIm1pZGRsZVwiIHN0eWxlPVwiXCI+XG4gIHRlbXBsYXRlXG48L3RleHQ+XG4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBTUUsS0FBSyxlQUFDLENBQUMsQUFDTCxJQUFJLENBQUUsSUFBSSxHQUFHLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FDeEIsS0FBSyxDQUFFLEtBQUssQ0FDWixNQUFNLENBQUUsSUFBSSxDQUNaLE1BQU0sQ0FBRSxJQUFJLENBQ1osWUFBWSxDQUFFLEdBQUcsQ0FDakIsTUFBTSxDQUFFLElBQUksQUFDZCxDQUFDLEFBQ0QsSUFBSSxlQUFDLENBQUMsQUFDSixJQUFJLENBQUUsS0FBSyxDQUNYLE1BQU0sQ0FBRSxJQUFJLEFBQ2QsQ0FBQyJ9 */";
 	append_dev(document.head, style);
 }
 
@@ -333,7 +333,7 @@ function get_each_context_1(ctx, list, i) {
 	return child_ctx;
 }
 
-// (21:0) {#if node.io_ports}
+// (22:0) {#if node.io_ports}
 function create_if_block(ctx) {
 	let svg0;
 	let t;
@@ -371,10 +371,10 @@ function create_if_block(ctx) {
 			}
 
 			attr_dev(svg0, "shape-rendering", "auto");
-			add_location(svg0, file, 21, 2, 312);
+			add_location(svg0, file, 22, 2, 334);
 			attr_dev(svg1, "x", svg1_x_value = /*node*/ ctx[0].width);
 			attr_dev(svg1, "y", "0");
-			add_location(svg1, file, 33, 2, 661);
+			add_location(svg1, file, 34, 2, 683);
 		},
 		m: function mount(target, anchor) {
 			insert_dev(target, svg0, anchor);
@@ -414,7 +414,7 @@ function create_if_block(ctx) {
 				each_blocks_1.length = each_value_1.length;
 			}
 
-			if (dirty & /*node*/ 1) {
+			if (dirty & /*cradius, node*/ 1) {
 				each_value = /*node*/ ctx[0].io_ports.filter(func_1);
 				validate_each_argument(each_value);
 				let i;
@@ -455,14 +455,14 @@ function create_if_block(ctx) {
 		block,
 		id: create_if_block.name,
 		type: "if",
-		source: "(21:0) {#if node.io_ports}",
+		source: "(22:0) {#if node.io_ports}",
 		ctx
 	});
 
 	return block;
 }
 
-// (23:4) {#each node.io_ports.filter(f => f.type === 'input') as io_port, i}
+// (24:4) {#each node.io_ports.filter(f => f.type === 'input') as io_port, i}
 function create_each_block_1(ctx) {
 	let g;
 	let rect;
@@ -479,9 +479,9 @@ function create_each_block_1(ctx) {
 			set_style(rect, "stroke-width", "1");
 			set_style(rect, "fill", "#d9d9d9");
 			set_style(rect, "cursor", "crosshair");
-			add_location(rect, file, 24, 8, 459);
+			add_location(rect, file, 25, 8, 481);
 			attr_dev(g, "transform", "translate(0,10)");
-			add_location(g, file, 23, 6, 419);
+			add_location(g, file, 24, 6, 441);
 		},
 		m: function mount(target, anchor) {
 			insert_dev(target, g, anchor);
@@ -496,19 +496,17 @@ function create_each_block_1(ctx) {
 		block,
 		id: create_each_block_1.name,
 		type: "each",
-		source: "(23:4) {#each node.io_ports.filter(f => f.type === 'input') as io_port, i}",
+		source: "(24:4) {#each node.io_ports.filter(f => f.type === 'input') as io_port, i}",
 		ctx
 	});
 
 	return block;
 }
 
-// (35:4) {#each node.io_ports.filter(f => f.type !== 'input') as io_port, i}
+// (36:4) {#each node.io_ports.filter(f => f.type !== 'input') as io_port, i}
 function create_each_block(ctx) {
 	let rect;
 	let rect_y_value;
-	let rect_width_value;
-	let rect_height_value;
 
 	const block = {
 		c: function create() {
@@ -517,27 +515,15 @@ function create_each_block(ctx) {
 			attr_dev(rect, "rx", "3");
 			attr_dev(rect, "ry", "3");
 			attr_dev(rect, "fill", "black");
-			attr_dev(rect, "y", rect_y_value = /*i*/ ctx[3] * /*node*/ ctx[0].cradius);
-			attr_dev(rect, "width", rect_width_value = /*node*/ ctx[0].cradius);
-			attr_dev(rect, "height", rect_height_value = /*node*/ ctx[0].cradius);
-			add_location(rect, file, 35, 6, 766);
+			attr_dev(rect, "y", rect_y_value = /*i*/ ctx[3] * cradius);
+			attr_dev(rect, "width", cradius);
+			attr_dev(rect, "height", cradius);
+			add_location(rect, file, 36, 6, 788);
 		},
 		m: function mount(target, anchor) {
 			insert_dev(target, rect, anchor);
 		},
-		p: function update(ctx, dirty) {
-			if (dirty & /*node*/ 1 && rect_y_value !== (rect_y_value = /*i*/ ctx[3] * /*node*/ ctx[0].cradius)) {
-				attr_dev(rect, "y", rect_y_value);
-			}
-
-			if (dirty & /*node*/ 1 && rect_width_value !== (rect_width_value = /*node*/ ctx[0].cradius)) {
-				attr_dev(rect, "width", rect_width_value);
-			}
-
-			if (dirty & /*node*/ 1 && rect_height_value !== (rect_height_value = /*node*/ ctx[0].cradius)) {
-				attr_dev(rect, "height", rect_height_value);
-			}
-		},
+		p: noop,
 		d: function destroy(detaching) {
 			if (detaching) detach_dev(rect);
 		}
@@ -547,7 +533,7 @@ function create_each_block(ctx) {
 		block,
 		id: create_each_block.name,
 		type: "each",
-		source: "(35:4) {#each node.io_ports.filter(f => f.type !== 'input') as io_port, i}",
+		source: "(36:4) {#each node.io_ports.filter(f => f.type !== 'input') as io_port, i}",
 		ctx
 	});
 
@@ -573,13 +559,13 @@ function create_fragment(ctx) {
 			t2 = text("template");
 			attr_dev(rect, "class", "node svelte-1avw4w8");
 			attr_dev(rect, "ry", rect_ry_value = /*node*/ ctx[0].attributes.ry);
-			add_location(rect, file, 19, 0, 244);
+			add_location(rect, file, 20, 0, 266);
 			attr_dev(text_1, "x", "50%");
 			attr_dev(text_1, "y", "50%");
 			attr_dev(text_1, "text-anchor", "middle");
 			attr_dev(text_1, "dominant-baseline", "middle");
 			attr_dev(text_1, "class", "svelte-1avw4w8");
-			add_location(text_1, file, 46, 0, 973);
+			add_location(text_1, file, 47, 0, 980);
 		},
 		l: function claim(nodes) {
 			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -632,6 +618,7 @@ function create_fragment(ctx) {
 	return block;
 }
 
+const cradius = 10;
 const func = f => f.type === "input";
 const func_1 = f => f.type !== "input";
 
@@ -650,7 +637,7 @@ function instance($$self, $$props, $$invalidate) {
 		if ("node" in $$props) $$invalidate(0, node = $$props.node);
 	};
 
-	$$self.$capture_state = () => ({ node });
+	$$self.$capture_state = () => ({ node, cradius });
 
 	$$self.$inject_state = $$props => {
 		if ("node" in $$props) $$invalidate(0, node = $$props.node);

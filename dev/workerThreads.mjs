@@ -1,7 +1,22 @@
 import { Worker, isMainThread, parentPort, workerData, threadId } from "worker_threads";
 import { cpus } from "os";
 import http from "http";
-import { TextDecoder, TextEncoder} from "util";
+import { TextDecoder, TextEncoder } from "util";
+
+function fibonacci(num) {
+  var a = 1,
+    b = 0,
+    temp;
+
+  while (num >= 0) {
+    temp = a;
+    a = a + b;
+    b = temp;
+    num--;
+  }
+
+  return b;
+}
 
 let workers = {};
 function sharedArrayBufferToUtf16String(buf) {
@@ -21,7 +36,7 @@ function utf16StringToSharedArrayBuffer(str) {
 }
 
 const exampleString = "Hello world, this is an example string!";
-let TE  = new TextEncoder();
+let TE = new TextEncoder();
 const sharedArrayBuffer = TE.encode(exampleString);
 const makeWorkers = (limit) => {
   if (limit < 1) return;
@@ -42,23 +57,23 @@ const makeWorkers = (limit) => {
 };
 if (isMainThread) {
   makeWorkers(cpus().length);
+  process.on("exit", () => {
+    for (let x in workers) {
+      workers[x].kill();
+    }
+  });
 } else {
-    let TD = new TextDecoder;
+  let TD = new TextDecoder();
   http
     .createServer((req, res) => {
-      if (req.url === "/favicon.ico") {
-        res.end();
-      } else {
-        res.writeHead(200);
-        res.end(`
+      res.writeHead(200);
+      res.end(`
         <html>
-        ${process.pid + ": " + threadId} ${TD.decode(workerData)}
-        <script>setTimeout(()=>window.location = window.location, 10);</script>
+        ${process.pid + ": " + threadId + ": " + fibonacci(40000)} ${TD.decode(workerData)}
+        <script>setTimeout(()=>window.location = window.location, 1);</script>
         </html>`);
-        process.exit();
-      }
+      //process.exit();
     })
     .listen(8000);
-  console.log(threadId);
   //parentPort.postMessage(parse(script));
 }

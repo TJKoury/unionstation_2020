@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "refresh:nodeAPI": "curl https://nodejs.org/docs/latest/api/all.json -o ./lib/node.api.json",
     "dev:nodeAPI": "nodemon ./dev/nodeAPI.mjs",
-    "dev:workerThreads": "nodemon ./dev/workerThreads.mjs"
+    "dev:workerThreads": "nodemon ./dev/workerThreads.mjs",
+    "test:workerThreads": "node ./dev/workerThreads.mjs & ./node_modules/.bin/autocannon -c 1000 -d 5 -p 10 http://localhost:8000",
+    "test:clusterWorkers": "node ./dev/clusterTest.mjs & ./node_modules/.bin/autocannon -c 1000 -d 5 -p 10 http://localhost:8000"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
   },
   "homepage": "https://github.com/TJKoury/unionstation_2020#readme",
   "devDependencies": {
+    "autocannon": "^4.6.0",
     "nodemon": "^2.0.3"
   }
 }
