@@ -32,10 +32,10 @@
     });
 
     let conn_count = Object.values(ctypes).sort((a, b) => (a > b ? -1 : 1))[0];
-    console.log(conn_count * style_connector.height);
+    console.log(conn_count * (style_connector.height * 1.5));
     style_node.height = Math.max(
       style_default.node.height,
-      conn_count * style_connector.height
+      conn_count * (style_connector.height * 1.5)
     );
   }
 </script>
@@ -80,6 +80,7 @@
           class="connector"
           rx="3"
           ry="3"
+          y={ctypes[0] * style_connector.height}
           style={styleString(style_connector)} />
       </g>
     {/each}
