@@ -32,6 +32,12 @@ export const flow = {
         rx: 5,
         ry: 5,
       },
+      io_ports: [
+        { id: 1, type: 0 },
+        { id: 2, type: 1 },
+        { id: 3, type: 1 },
+        { id: 4, type: 1 },
+      ],
       wires: [],
     }),
   ],

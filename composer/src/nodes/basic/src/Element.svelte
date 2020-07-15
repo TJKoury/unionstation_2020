@@ -5,14 +5,40 @@
       .map(a => `${a[0]}:${a[1]}`)
       .join(";");
 
+  let style_default = {
+    node: {
+      width: 140,
+      height: 30
+    },
+    connector: {
+      width: 10,
+      height: 10
+    }
+  };
   export const style_node = {
     width: 140,
     height: 30
   };
+
   export const style_connector = {
     height: 10,
     width: 10
   };
+
+  $: {
+    let types = {};
+    node.io_ports.map(function(cV) {
+      types[cV.type] = types[cV.type] || 0;
+      types[cV.type] += 1;
+    });
+
+    let conn_count = Object.values(types).sort((a, b) => (a > b ? -1 : 1))[0];
+    console.log(conn_count * style_connector.height);
+    style_node.height = Math.max(
+      style_default.node.height,
+      conn_count * style_connector.height
+    );
+  }
 </script>
 
 <style>
@@ -39,7 +65,8 @@
   <svg overflow="visible" shape-rendering="auto">
     {#each node.io_ports as io_port, i}
       <g
-        transform="translate({io_port.type === 0 ? 0 - style_connector.width / 2 : style_node.width - style_connector.width / 2},{style_node.height / 2 - style_connector.height / 2})">
+        transform="translate( {io_port.type === 0 ? 0 - style_connector.width / 2 : style_node.width - style_connector.width / 2},
+        {style_node.height / i - style_connector.height / 2})">
         <rect
           class="connector"
           rx="3"
