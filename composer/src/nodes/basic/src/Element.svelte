@@ -24,15 +24,14 @@
     height: 10,
     width: 10
   };
-
+  let ctypes = {};
   $: {
-    let types = {};
     node.io_ports.map(function(cV) {
-      types[cV.type] = types[cV.type] || 0;
-      types[cV.type] += 1;
+      ctypes[cV.type] = ctypes[cV.type] || 0;
+      ctypes[cV.type] += 1;
     });
 
-    let conn_count = Object.values(types).sort((a, b) => (a > b ? -1 : 1))[0];
+    let conn_count = Object.values(ctypes).sort((a, b) => (a > b ? -1 : 1))[0];
     console.log(conn_count * style_connector.height);
     style_node.height = Math.max(
       style_default.node.height,
@@ -63,10 +62,20 @@
 <rect class="node" style={styleString(style_node)} ry={node.attributes.ry} />
 {#if node.io_ports}
   <svg overflow="visible" shape-rendering="auto">
-    {#each node.io_ports as io_port, i}
+    {#each node.io_ports.filter(p => !p.type) as io_port, i}
       <g
-        transform="translate( {io_port.type === 0 ? 0 - style_connector.width / 2 : style_node.width - style_connector.width / 2},
-        {style_node.height / i - style_connector.height / 2})">
+        transform="translate( {0 - style_connector.width / 2}, {i * style_connector.height})">
+        <rect
+          class="connector"
+          rx="3"
+          ry="3"
+          y={ctypes[0] * style_connector.height}
+          style={styleString(style_connector)} />
+      </g>
+    {/each}
+    {#each node.io_ports.filter(p => p.type) as io_port, i}
+      <g
+        transform="translate( {style_node.width - style_connector.width / 2}, {i * style_connector.height})">
         <rect
           class="connector"
           rx="3"
