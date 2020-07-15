@@ -1,16 +1,32 @@
 <script>
   export let node;
-  const cradius = 10;
+  let styleString = a =>
+    Object.entries(a)
+      .map(a => `${a[0]}:${a[1]}`)
+      .join(";");
+
+  export const style_node = {
+    width: 140,
+    height: 30
+  };
+  export const style_connector = {
+    height: 10,
+    width: 10
+  };
 </script>
 
 <style>
   .node {
     fill: rgb(231, 231, 174);
-    width: 140px;
-    height: 30px;
     stroke: #999;
     stroke-width: 1px;
     cursor: move;
+  }
+  .connector {
+    stroke: #999;
+    stroke-width: 1;
+    fill: #d9d9d9;
+    cursor: crosshair;
   }
   text {
     fill: black;
@@ -18,30 +34,18 @@
   }
 </style>
 
-<rect class="node" ry={node.attributes.ry} />
+<rect class="node" style={styleString(style_node)} ry={node.attributes.ry} />
 {#if node.io_ports}
-  <svg shape-rendering="auto">
-    {#each node.io_ports.filter(f => f.type === 'input') as io_port, i}
-      <g transform="translate(0,10)">
+  <svg overflow="visible" shape-rendering="auto">
+    {#each node.io_ports as io_port, i}
+      <g
+        transform="translate({io_port.type === 0 ? 0 - style_connector.width / 2 : style_node.width - style_connector.width / 2},{style_node.height / 2 - style_connector.height / 2})">
         <rect
+          class="connector"
           rx="3"
           ry="3"
-          width="10"
-          height="10"
-          style="stroke: #999; stroke-width: 1; fill: #d9d9d9; cursor:crosshair;" />
+          style={styleString(style_connector)} />
       </g>
-    {/each}
-  </svg>
-  <svg x={node.width} y="0">
-    {#each node.io_ports.filter(f => f.type !== 'input') as io_port, i}
-      <rect
-        class="node-connection"
-        rx="3"
-        ry="3"
-        fill="black"
-        y={i * cradius}
-        width={cradius}
-        height={cradius} />
     {/each}
   </svg>
 {/if}

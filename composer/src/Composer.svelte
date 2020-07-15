@@ -11,7 +11,7 @@
       nodeList[0].width = 1000;
     };
   });
-</script> 
+</script>
 
 <style>
   #node-explorer {
@@ -33,7 +33,7 @@
 
 <!-- prettier-ignore -->
 <div id="node-explorer" tabindex="0">
-  <svg xmlns="http://www.w3.org/2000/svg" id="stage">
+  <svg xmlns="http://www.w3.org/2000/svg" overflow="visible" id="stage">
 
     {#each flow.nodes as node, i}
       <svg
