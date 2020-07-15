@@ -15,10 +15,6 @@
       height: 10
     }
   };
-  export const style_node = {
-    width: 140,
-    height: 30
-  };
 
   export const style_connector = {
     height: 10,
@@ -32,8 +28,8 @@
     });
 
     let conn_count = Object.values(ctypes).sort((a, b) => (a > b ? -1 : 1))[0];
-    console.log(conn_count * (style_connector.height * 1.5));
-    style_node.height = Math.max(
+    
+    node.attributes.height = Math.max(
       style_default.node.height,
       conn_count * (style_connector.height * 1.5)
     );
@@ -59,7 +55,7 @@
   }
 </style>
 
-<rect class="node" style={styleString(style_node)} ry={node.attributes.ry} />
+<rect class="node" style={styleString(node.attributes)} ry={node.attributes.ry} />
 {#if node.io_ports}
   <svg overflow="visible" shape-rendering="auto">
     {#each node.io_ports.filter(p => !p.type) as io_port, i}
@@ -75,7 +71,7 @@
     {/each}
     {#each node.io_ports.filter(p => p.type) as io_port, i}
       <g
-        transform="translate( {style_node.width - style_connector.width / 2}, {i * style_connector.height})">
+        transform="translate( {node.attributes.width - style_connector.width / 2}, {i * style_connector.height})">
         <rect
           class="connector"
           rx="3"
@@ -87,5 +83,5 @@
   </svg>
 {/if}
 <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" style="">
-  template
+  {node.id.split("-")[0]}
 </text>

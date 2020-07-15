@@ -5,14 +5,16 @@ let tt = new BasicNode();
 export const flow = {
   nodes: [
     new BasicNode({
-      id: 1,
+      id: "18c4b816-ed38-43fa-990d-f22652d77db2",
       attributes: {
         width: 140,
         height: 30,
-        x: 100,
-        y: 100,
         rx: 5,
         ry: 5,
+      },
+      position: {
+        x: 100,
+        y: 100,
       },
       io_ports: [
         { id: 1, type: 0 },
@@ -23,14 +25,16 @@ export const flow = {
       wires: [],
     }),
     new BasicNode({
-      id: 2,
+      id: "ed4a026b-0e29-48e9-aa1d-c03f3aa84876",
       attributes: {
         width: 140,
         height: 30,
-        x: 200,
-        y: 200,
         rx: 5,
         ry: 5,
+      },
+      position: {
+        x: 200,
+        y: 200,
       },
       io_ports: [
         { id: 1, type: 0 },

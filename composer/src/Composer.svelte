@@ -6,10 +6,8 @@
 
   onMount(() => {
     let _svg = document.getElementById("stage");
-    makeDraggable({ target: _svg });
-    globalThis.resizeNN = () => {
-      nodeList[0].width = 1000;
-    };
+    makeDraggable({ target: _svg, flow});
+    globalThis.flow = flow;
   });
 </script>
 
@@ -37,11 +35,12 @@
 
     {#each flow.nodes as node, i}
       <svg
+        id={node.id}
         overflow="visible"
         shape-rendering="optimizeQuality"
         class="nodegroup draggable"
-        x={node.attributes.x}
-        y={node.attributes.y}
+        x={node.position.x}
+        y={node.position.y}
         width={node.attributes.width}
         height={node.attributes.height}>
 
