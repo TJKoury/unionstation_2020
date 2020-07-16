@@ -4,7 +4,7 @@ export function makeDraggable(evt) {
   svg.addEventListener("mousedown", startDrag);
   svg.addEventListener("mousemove", drag);
   svg.addEventListener("mouseup", endDrag);
-  svg.addEventListener("mouseleave", endDrag);
+ // svg.addEventListener("mouseleave", endDrag);
   svg.addEventListener("touchstart", startDrag);
   svg.addEventListener("touchmove", drag);
   svg.addEventListener("touchend", endDrag);
