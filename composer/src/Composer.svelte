@@ -3,6 +3,7 @@
   import { flow } from "./data/flow.mjs";
   import { registerInteractions } from "./interactions/manager.mjs";
   import { getAttributeMap, getStyleMap } from "./utilities/nodeUtilities.mjs";
+  import xxhash from "xxhashjs";
 
   onMount(() => {
     registerInteractions(document.getElementById("stage"));
@@ -46,8 +47,18 @@
         y={node.position.y}
         width={node.width}
         height={node.height}>
-        <svelte:component this={node.element} bind:node />
+        <svelte:component this={node.element} bind:node flow={flow}/>
       </svg>
+      {#each node.ports as port, p}
+        {#if port.wires}
+          {#each port.wires as wire, w}
+            <path
+              d="M81,328 C177,326 89,374 191,371"
+              style=" stroke-width: 3; stroke: #1E1935; stroke-linecap: round;
+              fill: none;" />
+          {/each}
+        {/if}
+      {/each}
     {/each}
   </svg>
 </div>

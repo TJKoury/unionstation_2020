@@ -1,55 +1,68 @@
 <script>
   import { onMount } from "svelte";
+  export let flow;
   export let node;
+
+  let totals = [];
 
   let styleString = a =>
     Object.entries(a)
-      .map(a => `${a[0]}:${a[1]}`)
+      .map(a => {
+        return `${a[0]}:${a[1]}`;
+      })
       .join(";");
 
-  let style_default = {
-    node: {
+  let styles = {
+    rect: {
       width: 140,
       height: 30
     },
     wireHandle: {
       width: 10,
-      height: 10
+      height: 10,
+      spacing: 0.25
     }
   };
 
-  export const style_wireHandle = {
-    height: 10,
-    width: 10
-  };
-
-  let ctypes = {};
-
-  export let recalc = () => {
-    ctypes = {};
-    node.io_ports.map(function(cV) {
-      ctypes[cV.type] = ctypes[cV.type] || 0;
-      ctypes[cV.type] += 1;
+  let resize = () => {
+    let _totals = [];
+    node.ports.map(p => {
+      _totals[p.type] = _totals[p.type] || 0;
+      _totals[p.type] += 1;
     });
-    let conn_count = Object.values(ctypes).sort((a, b) => (a > b ? -1 : 1))[0];
-    node.height = Math.max(
-      style_default.node.height,
-      conn_count * (style_wireHandle.height * 1.5)
-    );
-  };
+    let match = true;
+    _totals.forEach(n => {
+      if (totals.indexOf(n) === -1) {
+        match = false;
+      }
+    });
+    if (match) return;
+    totals = _totals.sort((a, b) => (a > b ? -1 : 1));
 
+    let { rect, wireHandle } = styles;
+
+    let sh = wireHandle.height;
+    let sp = sh * (1 + wireHandle.spacing);
+    styles.rect.height = Math.max(styles.rect.height, (totals[0] + 1) * sp);
+    let { width, height } = styles.rect;
+    node.width = node.width || width;
+    node.height = node.height || height;
+  };
   let getCYPos = (i, n) => {
-    if (!ctypes[n]) {
-      recalc();
-    }
-    let sh = style_wireHandle.height;
-    let sp = sh * 0.25;
-    let theight = ctypes[n] * sh + (ctypes[n] - 1) * sp;
-    return (node.height - theight) / 2 + i * (sh + sp) || 0;
+    let { rect, wireHandle } = styles;
+    let cports = n.ports.filter(np => np.type === n.ports[i].type);
+    i = cports.indexOf(n.ports[i]);
+    let sh = wireHandle.height;
+    let sp = sh * wireHandle.spacing;
+    let theight = cports.length * sh + (cports.length - 1) * sp;
+    return (rect.height - theight) / 2 + i * (sh + sp) || 0;
   };
 
   onMount(() => {
-    recalc();
+    resize();
+    flow.subscribe(f => {
+      resize();
+    });
   });
 </script>
 
@@ -72,29 +85,18 @@
   }
 </style>
 
-<rect
-  class="node dragHandle"
-  style={styleString({ width: node.width, height: node.height })}
-  ry={node.ry} />
-{#if node.io_ports}
-  {#each node.io_ports.filter(p => !p.type) as io_port, i}
+<rect class="node dragHandle" rx="10" ry="10" style={styleString(styles.rect)} />
+{#if node.ports}
+  {#each node.ports as port, i}
     <g
-      transform="translate( {0 - style_wireHandle.width / 2}, {getCYPos(i, 0)})">
+      id={node.id}
+      transform="translate( {(port.type && node.width ? node.width : 0) - styles.wireHandle.width / 2},
+      {getCYPos(i, node)})">
       <rect
         class="wireHandle"
         rx="3"
         ry="3"
-        style={styleString(style_wireHandle)} />
-    </g>
-  {/each}
-  {#each node.io_ports.filter(p => p.type) as io_port, i}
-    <g
-      transform="translate( {node.width - style_wireHandle.width / 2},{getCYPos(i, 1)})">
-      <rect
-        class="wireHandle"
-        rx="3"
-        ry="3"
-        style={styleString(style_wireHandle)} />
+        style={styleString(styles.wireHandle)} />
     </g>
   {/each}
 {/if}

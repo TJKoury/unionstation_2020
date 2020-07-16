@@ -7,34 +7,25 @@ let tt = new BasicNode();
 export const flow = writable({
   nodes: [
     new BasicNode({
-      id: "18c4b816-ed38-43fa-990d-f22652d77db2",
-      width: 140,
-      height: 30,
-      rx: 5,
-      ry: 5,
+      id: "d46ca6a8",
       position: {
         x: 100,
         y: 100,
       },
-      io_ports: [
-        { id: 1, type: 0 },
-        { id: 2, type: 1 },
-        { id: 3, type: 1 },
-        { id: 4, type: 1 },
+      ports: [
+        { type: 0 },
+        { type: 1, wires: ["525fa64c"] },
+        { type: 1 },
+        { type: 1 },
       ],
-      wires: [],
     }),
     new BasicNode({
-      id: "ed4a026b-0e29-48e9-aa1d-c03f3aa84876",
-      width: 140,
-      height: 30,
-      rx: 5,
-      ry: 5,
+      id: "525fa64c",
       position: {
         x: 200,
         y: 200,
       },
-      io_ports: [
+      ports: [
         { id: 1, type: 0 },
         { id: 2, type: 1 },
         { id: 3, type: 1 },
