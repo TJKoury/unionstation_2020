@@ -4,6 +4,28 @@
   import { registerInteractions } from "./interactions/manager.mjs";
   import { getAttributeMap, getStyleMap } from "./utilities/nodeUtilities.mjs";
   import xxhash from "xxhashjs";
+  let styles = {
+    path: {
+      strokeWidth: 3
+    }
+  };
+
+  function in_port(node, p, n) {
+    let port = document.getElementById(node.id + ":" + p);
+    if (!!port) {
+      console.log();
+      let { e, f } = port.getScreenCTM();
+      f = f + styles.path.strokeWidth / 2 - port.getBBox().height / 2;
+      return n ? [e, f] : `${e}, ${f}`;
+    } else {
+      return false;
+    }
+  }
+
+  function c1(node, p) {
+    let c1p = in_port(node, p, true);
+    return `C${c1p[0] + 100}, ${c1p[1]}`;
+  }
 
   onMount(() => {
     registerInteractions(document.getElementById("stage"));
@@ -12,6 +34,9 @@
         return flow;
       }
     });
+    setTimeout(() => {
+      flow.update(f => f);
+    }, 1);
   });
 </script>
 
@@ -38,6 +63,19 @@
   <svg xmlns="http://www.w3.org/2000/svg" overflow="visible" id="stage">
 
     {#each $flow.nodes as node, i}
+      {#each node.ports as port, p}
+        {#if port.wires}
+          {#each port.wires as wire, w}
+            {#if in_port(node, p)}
+              <path
+                d="M{in_port(node, p)}
+                {c1(node, p)} 89,374 191,371"
+                style=" stroke-width: {styles.path.strokeWidth}; stroke:
+                #1E1935; stroke-linecap: round; fill: none;" />
+            {/if}
+          {/each}
+        {/if}
+      {/each}
       <svg
         id={node.id}
         overflow="visible"
@@ -47,18 +85,8 @@
         y={node.position.y}
         width={node.width}
         height={node.height}>
-        <svelte:component this={node.element} bind:node flow={flow}/>
+        <svelte:component this={node.element} bind:node {flow} />
       </svg>
-      {#each node.ports as port, p}
-        {#if port.wires}
-          {#each port.wires as wire, w}
-            <path
-              d="M81,328 C177,326 89,374 191,371"
-              style=" stroke-width: 3; stroke: #1E1935; stroke-linecap: round;
-              fill: none;" />
-          {/each}
-        {/if}
-      {/each}
     {/each}
   </svg>
 </div>

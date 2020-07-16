@@ -87,7 +87,7 @@
 {#if node.ports}
   {#each node.ports as port, i}
     <g
-      id={node.id}
+      id="{node.id}:{i}"
       transform="translate( {(port.type && node.width ? node.width : 0) - styles.wireHandle.width / 2},
       {getCYPos(i, node)})">
       <rect
@@ -103,7 +103,6 @@
   x="50%"
   y="50%"
   text-anchor="middle"
-  dominant-baseline="middle"
-  style="">
+  dominant-baseline="middle">
   {node.position.x}
 </text>
