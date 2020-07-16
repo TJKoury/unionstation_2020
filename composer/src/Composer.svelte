@@ -1,12 +1,11 @@
 <script>
   import { onMount } from "svelte";
   import { flow } from "./data/flow.mjs";
-  import { makeDraggable } from "./interactions/dragInteractions.mjs";
+  import { registerInteractions } from "./interactions/manager.mjs";
   import { getAttributeMap, getStyleMap } from "./utilities/nodeUtilities.mjs";
 
   onMount(() => {
-    let _svg = document.getElementById("stage");
-    makeDraggable({ target: _svg, flow });
+    registerInteractions(document.getElementById("stage"));
     Object.defineProperty(globalThis, "flow", {
       get() {
         return $flow;

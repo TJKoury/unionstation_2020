@@ -73,7 +73,7 @@
 </style>
 
 <rect
-  class="node"
+  class="node dragHandle"
   style={styleString({ width: node.width, height: node.height })}
   ry={node.ry} />
 {#if node.io_ports}
@@ -98,6 +98,6 @@
     </g>
   {/each}
 {/if}
-<text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" style="">
+<text class="dragHandle" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" style="">
   {node.id.split('-')[0]}
 </text>

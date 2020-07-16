@@ -337,7 +337,7 @@ const file = "src/Element.svelte";
 function add_css() {
 	var style = element("style");
 	style.id = "svelte-1elxhxn-style";
-	style.textContent = ".node.svelte-1elxhxn{fill:rgb(231, 231, 174);stroke:#999;stroke-width:1px;cursor:move}.connector.svelte-1elxhxn{stroke:#999;stroke-width:1;fill:#d9d9d9;cursor:crosshair}text.svelte-1elxhxn{fill:black;cursor:move}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRWxlbWVudC5zdmVsdGUiLCJzb3VyY2VzIjpbIkVsZW1lbnQuc3ZlbHRlIl0sInNvdXJjZXNDb250ZW50IjpbIjxzY3JpcHQ+XG4gIGltcG9ydCB7IG9uTW91bnQgfSBmcm9tIFwic3ZlbHRlXCI7XG4gIGV4cG9ydCBsZXQgbm9kZTtcblxuICBsZXQgc3R5bGVTdHJpbmcgPSBhID0+XG4gICAgT2JqZWN0LmVudHJpZXMoYSlcbiAgICAgIC5tYXAoYSA9PiBgJHthWzBdfToke2FbMV19YClcbiAgICAgIC5qb2luKFwiO1wiKTtcblxuICBsZXQgc3R5bGVfZGVmYXVsdCA9IHtcbiAgICBub2RlOiB7XG4gICAgICB3aWR0aDogMTQwLFxuICAgICAgaGVpZ2h0OiAzMFxuICAgIH0sXG4gICAgY29ubmVjdG9yOiB7XG4gICAgICB3aWR0aDogMTAsXG4gICAgICBoZWlnaHQ6IDEwXG4gICAgfVxuICB9O1xuXG4gIGV4cG9ydCBjb25zdCBzdHlsZV9jb25uZWN0b3IgPSB7XG4gICAgaGVpZ2h0OiAxMCxcbiAgICB3aWR0aDogMTBcbiAgfTtcblxuICBsZXQgY3R5cGVzID0ge307XG5cbiAgZXhwb3J0IGxldCByZWNhbGMgPSAoKSA9PiB7XG4gICAgY3R5cGVzID0ge307XG4gICAgbm9kZS5pb19wb3J0cy5tYXAoZnVuY3Rpb24oY1YpIHtcbiAgICAgIGN0eXBlc1tjVi50eXBlXSA9IGN0eXBlc1tjVi50eXBlXSB8fCAwO1xuICAgICAgY3R5cGVzW2NWLnR5cGVdICs9IDE7XG4gICAgfSk7XG4gICAgbGV0IGNvbm5fY291bnQgPSBPYmplY3QudmFsdWVzKGN0eXBlcykuc29ydCgoYSwgYikgPT4gKGEgPiBiID8gLTEgOiAxKSlbMF07XG4gICAgbm9kZS5oZWlnaHQgPSBNYXRoLm1heChcbiAgICAgIHN0eWxlX2RlZmF1bHQubm9kZS5oZWlnaHQsXG4gICAgICBjb25uX2NvdW50ICogKHN0eWxlX2Nvbm5lY3Rvci5oZWlnaHQgKiAxLjUpXG4gICAgKTtcbiAgfTtcblxuICBsZXQgZ2V0Q1lQb3MgPSAoaSwgbikgPT4ge1xuICAgIGlmICghY3R5cGVzW25dKSB7XG4gICAgICByZWNhbGMoKTtcbiAgICB9XG4gICAgbGV0IHNoID0gc3R5bGVfY29ubmVjdG9yLmhlaWdodDtcbiAgICBsZXQgc3AgPSBzaCAqIDAuMjU7XG4gICAgbGV0IHRoZWlnaHQgPSBjdHlwZXNbbl0gKiBzaCArIChjdHlwZXNbbl0gLSAxKSAqIHNwO1xuICAgIHJldHVybiAobm9kZS5oZWlnaHQgLSB0aGVpZ2h0KSAvIDIgKyBpICogKHNoICsgc3ApIHx8IDA7XG4gIH07XG5cbiAgb25Nb3VudCgoKSA9PiB7XG4gICAgcmVjYWxjKCk7XG4gIH0pO1xuPC9zY3JpcHQ+XG5cbjxzdHlsZT5cbiAgLm5vZGUge1xuICAgIGZpbGw6IHJnYigyMzEsIDIzMSwgMTc0KTtcbiAgICBzdHJva2U6ICM5OTk7XG4gICAgc3Ryb2tlLXdpZHRoOiAxcHg7XG4gICAgY3Vyc29yOiBtb3ZlO1xuICB9XG4gIC5jb25uZWN0b3Ige1xuICAgIHN0cm9rZTogIzk5OTtcbiAgICBzdHJva2Utd2lkdGg6IDE7XG4gICAgZmlsbDogI2Q5ZDlkOTtcbiAgICBjdXJzb3I6IGNyb3NzaGFpcjtcbiAgfVxuICB0ZXh0IHtcbiAgICBmaWxsOiBibGFjaztcbiAgICBjdXJzb3I6IG1vdmU7XG4gIH1cbjwvc3R5bGU+XG5cbjxyZWN0XG4gIGNsYXNzPVwibm9kZVwiXG4gIHN0eWxlPXtzdHlsZVN0cmluZyh7IHdpZHRoOiBub2RlLndpZHRoLCBoZWlnaHQ6IG5vZGUuaGVpZ2h0IH0pfVxuICByeT17bm9kZS5yeX0gLz5cbnsjaWYgbm9kZS5pb19wb3J0c31cbiAgeyNlYWNoIG5vZGUuaW9fcG9ydHMuZmlsdGVyKHAgPT4gIXAudHlwZSkgYXMgaW9fcG9ydCwgaX1cbiAgICA8Z1xuICAgICAgdHJhbnNmb3JtPVwidHJhbnNsYXRlKCB7MCAtIHN0eWxlX2Nvbm5lY3Rvci53aWR0aCAvIDJ9LCB7Z2V0Q1lQb3MoaSwgMCl9KVwiPlxuICAgICAgPHJlY3RcbiAgICAgICAgY2xhc3M9XCJjb25uZWN0b3JcIlxuICAgICAgICByeD1cIjNcIlxuICAgICAgICByeT1cIjNcIlxuICAgICAgICBzdHlsZT17c3R5bGVTdHJpbmcoc3R5bGVfY29ubmVjdG9yKX0gLz5cbiAgICA8L2c+XG4gIHsvZWFjaH1cbiAgeyNlYWNoIG5vZGUuaW9fcG9ydHMuZmlsdGVyKHAgPT4gcC50eXBlKSBhcyBpb19wb3J0LCBpfVxuICAgIDxnXG4gICAgICB0cmFuc2Zvcm09XCJ0cmFuc2xhdGUoIHtub2RlLndpZHRoIC0gc3R5bGVfY29ubmVjdG9yLndpZHRoIC8gMn0se2dldENZUG9zKGksIDEpfSlcIj5cbiAgICAgIDxyZWN0XG4gICAgICAgIGNsYXNzPVwiY29ubmVjdG9yXCJcbiAgICAgICAgcng9XCIzXCJcbiAgICAgICAgcnk9XCIzXCJcbiAgICAgICAgc3R5bGU9e3N0eWxlU3RyaW5nKHN0eWxlX2Nvbm5lY3Rvcil9IC8+XG4gICAgPC9nPlxuICB7L2VhY2h9XG57L2lmfVxuPHRleHQgeD1cIjUwJVwiIHk9XCI1MCVcIiB0ZXh0LWFuY2hvcj1cIm1pZGRsZVwiIGRvbWluYW50LWJhc2VsaW5lPVwibWlkZGxlXCIgc3R5bGU9XCJcIj5cbiAge25vZGUuaWQuc3BsaXQoJy0nKVswXX1cbjwvdGV4dD5cbiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUF3REUsS0FBSyxlQUFDLENBQUMsQUFDTCxJQUFJLENBQUUsSUFBSSxHQUFHLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FDeEIsTUFBTSxDQUFFLElBQUksQ0FDWixZQUFZLENBQUUsR0FBRyxDQUNqQixNQUFNLENBQUUsSUFBSSxBQUNkLENBQUMsQUFDRCxVQUFVLGVBQUMsQ0FBQyxBQUNWLE1BQU0sQ0FBRSxJQUFJLENBQ1osWUFBWSxDQUFFLENBQUMsQ0FDZixJQUFJLENBQUUsT0FBTyxDQUNiLE1BQU0sQ0FBRSxTQUFTLEFBQ25CLENBQUMsQUFDRCxJQUFJLGVBQUMsQ0FBQyxBQUNKLElBQUksQ0FBRSxLQUFLLENBQ1gsTUFBTSxDQUFFLElBQUksQUFDZCxDQUFDIn0= */";
+	style.textContent = ".node.svelte-1elxhxn{fill:rgb(231, 231, 174);stroke:#999;stroke-width:1px;cursor:move}.connector.svelte-1elxhxn{stroke:#999;stroke-width:1;fill:#d9d9d9;cursor:crosshair}text.svelte-1elxhxn{fill:black;cursor:move}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRWxlbWVudC5zdmVsdGUiLCJzb3VyY2VzIjpbIkVsZW1lbnQuc3ZlbHRlIl0sInNvdXJjZXNDb250ZW50IjpbIjxzY3JpcHQ+XG4gIGltcG9ydCB7IG9uTW91bnQgfSBmcm9tIFwic3ZlbHRlXCI7XG4gIGV4cG9ydCBsZXQgbm9kZTtcblxuICBsZXQgc3R5bGVTdHJpbmcgPSBhID0+XG4gICAgT2JqZWN0LmVudHJpZXMoYSlcbiAgICAgIC5tYXAoYSA9PiBgJHthWzBdfToke2FbMV19YClcbiAgICAgIC5qb2luKFwiO1wiKTtcblxuICBsZXQgc3R5bGVfZGVmYXVsdCA9IHtcbiAgICBub2RlOiB7XG4gICAgICB3aWR0aDogMTQwLFxuICAgICAgaGVpZ2h0OiAzMFxuICAgIH0sXG4gICAgY29ubmVjdG9yOiB7XG4gICAgICB3aWR0aDogMTAsXG4gICAgICBoZWlnaHQ6IDEwXG4gICAgfVxuICB9O1xuXG4gIGV4cG9ydCBjb25zdCBzdHlsZV9jb25uZWN0b3IgPSB7XG4gICAgaGVpZ2h0OiAxMCxcbiAgICB3aWR0aDogMTBcbiAgfTtcblxuICBsZXQgY3R5cGVzID0ge307XG5cbiAgZXhwb3J0IGxldCByZWNhbGMgPSAoKSA9PiB7XG4gICAgY3R5cGVzID0ge307XG4gICAgbm9kZS5pb19wb3J0cy5tYXAoZnVuY3Rpb24oY1YpIHtcbiAgICAgIGN0eXBlc1tjVi50eXBlXSA9IGN0eXBlc1tjVi50eXBlXSB8fCAwO1xuICAgICAgY3R5cGVzW2NWLnR5cGVdICs9IDE7XG4gICAgfSk7XG4gICAgbGV0IGNvbm5fY291bnQgPSBPYmplY3QudmFsdWVzKGN0eXBlcykuc29ydCgoYSwgYikgPT4gKGEgPiBiID8gLTEgOiAxKSlbMF07XG4gICAgbm9kZS5oZWlnaHQgPSBNYXRoLm1heChcbiAgICAgIHN0eWxlX2RlZmF1bHQubm9kZS5oZWlnaHQsXG4gICAgICBjb25uX2NvdW50ICogKHN0eWxlX2Nvbm5lY3Rvci5oZWlnaHQgKiAxLjUpXG4gICAgKTtcbiAgfTtcblxuICBsZXQgZ2V0Q1lQb3MgPSAoaSwgbikgPT4ge1xuICAgIGlmICghY3R5cGVzW25dKSB7XG4gICAgICByZWNhbGMoKTtcbiAgICB9XG4gICAgbGV0IHNoID0gc3R5bGVfY29ubmVjdG9yLmhlaWdodDtcbiAgICBsZXQgc3AgPSBzaCAqIDAuMjU7XG4gICAgbGV0IHRoZWlnaHQgPSBjdHlwZXNbbl0gKiBzaCArIChjdHlwZXNbbl0gLSAxKSAqIHNwO1xuICAgIHJldHVybiAobm9kZS5oZWlnaHQgLSB0aGVpZ2h0KSAvIDIgKyBpICogKHNoICsgc3ApIHx8IDA7XG4gIH07XG5cbiAgb25Nb3VudCgoKSA9PiB7XG4gICAgcmVjYWxjKCk7XG4gIH0pO1xuPC9zY3JpcHQ+XG5cbjxzdHlsZT5cbiAgLm5vZGUge1xuICAgIGZpbGw6IHJnYigyMzEsIDIzMSwgMTc0KTtcbiAgICBzdHJva2U6ICM5OTk7XG4gICAgc3Ryb2tlLXdpZHRoOiAxcHg7XG4gICAgY3Vyc29yOiBtb3ZlO1xuICB9XG4gIC5jb25uZWN0b3Ige1xuICAgIHN0cm9rZTogIzk5OTtcbiAgICBzdHJva2Utd2lkdGg6IDE7XG4gICAgZmlsbDogI2Q5ZDlkOTtcbiAgICBjdXJzb3I6IGNyb3NzaGFpcjtcbiAgfVxuICB0ZXh0IHtcbiAgICBmaWxsOiBibGFjaztcbiAgICBjdXJzb3I6IG1vdmU7XG4gIH1cbjwvc3R5bGU+XG5cbjxyZWN0XG4gIGNsYXNzPVwibm9kZSBkcmFnSGFuZGxlXCJcbiAgc3R5bGU9e3N0eWxlU3RyaW5nKHsgd2lkdGg6IG5vZGUud2lkdGgsIGhlaWdodDogbm9kZS5oZWlnaHQgfSl9XG4gIHJ5PXtub2RlLnJ5fSAvPlxueyNpZiBub2RlLmlvX3BvcnRzfVxuICB7I2VhY2ggbm9kZS5pb19wb3J0cy5maWx0ZXIocCA9PiAhcC50eXBlKSBhcyBpb19wb3J0LCBpfVxuICAgIDxnXG4gICAgICB0cmFuc2Zvcm09XCJ0cmFuc2xhdGUoIHswIC0gc3R5bGVfY29ubmVjdG9yLndpZHRoIC8gMn0sIHtnZXRDWVBvcyhpLCAwKX0pXCI+XG4gICAgICA8cmVjdFxuICAgICAgICBjbGFzcz1cImNvbm5lY3RvclwiXG4gICAgICAgIHJ4PVwiM1wiXG4gICAgICAgIHJ5PVwiM1wiXG4gICAgICAgIHN0eWxlPXtzdHlsZVN0cmluZyhzdHlsZV9jb25uZWN0b3IpfSAvPlxuICAgIDwvZz5cbiAgey9lYWNofVxuICB7I2VhY2ggbm9kZS5pb19wb3J0cy5maWx0ZXIocCA9PiBwLnR5cGUpIGFzIGlvX3BvcnQsIGl9XG4gICAgPGdcbiAgICAgIHRyYW5zZm9ybT1cInRyYW5zbGF0ZSgge25vZGUud2lkdGggLSBzdHlsZV9jb25uZWN0b3Iud2lkdGggLyAyfSx7Z2V0Q1lQb3MoaSwgMSl9KVwiPlxuICAgICAgPHJlY3RcbiAgICAgICAgY2xhc3M9XCJjb25uZWN0b3JcIlxuICAgICAgICByeD1cIjNcIlxuICAgICAgICByeT1cIjNcIlxuICAgICAgICBzdHlsZT17c3R5bGVTdHJpbmcoc3R5bGVfY29ubmVjdG9yKX0gLz5cbiAgICA8L2c+XG4gIHsvZWFjaH1cbnsvaWZ9XG48dGV4dCBjbGFzcz1cImRyYWdIYW5kbGVcIiB4PVwiNTAlXCIgeT1cIjUwJVwiIHRleHQtYW5jaG9yPVwibWlkZGxlXCIgZG9taW5hbnQtYmFzZWxpbmU9XCJtaWRkbGVcIiBzdHlsZT1cIlwiPlxuICB7bm9kZS5pZC5zcGxpdCgnLScpWzBdfVxuPC90ZXh0PlxuIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXdERSxLQUFLLGVBQUMsQ0FBQyxBQUNMLElBQUksQ0FBRSxJQUFJLEdBQUcsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUN4QixNQUFNLENBQUUsSUFBSSxDQUNaLFlBQVksQ0FBRSxHQUFHLENBQ2pCLE1BQU0sQ0FBRSxJQUFJLEFBQ2QsQ0FBQyxBQUNELFVBQVUsZUFBQyxDQUFDLEFBQ1YsTUFBTSxDQUFFLElBQUksQ0FDWixZQUFZLENBQUUsQ0FBQyxDQUNmLElBQUksQ0FBRSxPQUFPLENBQ2IsTUFBTSxDQUFFLFNBQVMsQUFDbkIsQ0FBQyxBQUNELElBQUksZUFBQyxDQUFDLEFBQ0osSUFBSSxDQUFFLEtBQUssQ0FDWCxNQUFNLENBQUUsSUFBSSxBQUNkLENBQUMifQ== */";
 	append_dev(document.head, style);
 }
 
@@ -485,9 +485,9 @@ function create_each_block_1(ctx) {
 			attr_dev(rect, "rx", "3");
 			attr_dev(rect, "ry", "3");
 			attr_dev(rect, "style", rect_style_value = /*styleString*/ ctx[2](/*style_connector*/ ctx[1]));
-			add_location(rect, file, 82, 6, 1622);
+			add_location(rect, file, 82, 6, 1633);
 			attr_dev(g, "transform", g_transform_value = "translate( " + (0 - /*style_connector*/ ctx[1].width / 2) + ", " + /*getCYPos*/ ctx[3](/*i*/ ctx[9], 0) + ")");
-			add_location(g, file, 80, 4, 1532);
+			add_location(g, file, 80, 4, 1543);
 		},
 		m: function mount(target, anchor) {
 			insert_dev(target, g, anchor);
@@ -525,9 +525,9 @@ function create_each_block(ctx) {
 			attr_dev(rect, "rx", "3");
 			attr_dev(rect, "ry", "3");
 			attr_dev(rect, "style", rect_style_value = /*styleString*/ ctx[2](/*style_connector*/ ctx[1]));
-			add_location(rect, file, 92, 6, 1911);
+			add_location(rect, file, 92, 6, 1922);
 			attr_dev(g, "transform", g_transform_value = "translate( " + (/*node*/ ctx[0].width - /*style_connector*/ ctx[1].width / 2) + "," + /*getCYPos*/ ctx[3](/*i*/ ctx[9], 1) + ")");
-			add_location(g, file, 90, 4, 1813);
+			add_location(g, file, 90, 4, 1824);
 		},
 		m: function mount(target, anchor) {
 			insert_dev(target, g, anchor);
@@ -573,7 +573,7 @@ function create_fragment(ctx) {
 			t1 = space();
 			text_1 = svg_element("text");
 			t2 = text(t2_value);
-			attr_dev(rect, "class", "node svelte-1elxhxn");
+			attr_dev(rect, "class", "node dragHandle svelte-1elxhxn");
 
 			attr_dev(rect, "style", rect_style_value = /*styleString*/ ctx[2]({
 				width: /*node*/ ctx[0].width,
@@ -582,12 +582,12 @@ function create_fragment(ctx) {
 
 			attr_dev(rect, "ry", rect_ry_value = /*node*/ ctx[0].ry);
 			add_location(rect, file, 74, 0, 1344);
+			attr_dev(text_1, "class", "dragHandle svelte-1elxhxn");
 			attr_dev(text_1, "x", "50%");
 			attr_dev(text_1, "y", "50%");
 			attr_dev(text_1, "text-anchor", "middle");
 			attr_dev(text_1, "dominant-baseline", "middle");
-			attr_dev(text_1, "class", "svelte-1elxhxn");
-			add_location(text_1, file, 100, 0, 2046);
+			add_location(text_1, file, 100, 0, 2057);
 		},
 		l: function claim(nodes) {
 			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
