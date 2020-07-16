@@ -5,13 +5,6 @@
 
   let totals = [];
 
-  let styleString = a =>
-    Object.entries(a)
-      .map(a => {
-        return `${a[0]}:${a[1]}`;
-      })
-      .join(";");
-
   let styles = {
     rect: {
       width: 140,
@@ -37,17 +30,18 @@
       }
     });
     if (match) return;
+
     totals = _totals.sort((a, b) => (a > b ? -1 : 1));
 
     let { rect, wireHandle } = styles;
-
+    let { width, height } = styles.rect;
     let sh = wireHandle.height;
     let sp = sh * (1 + wireHandle.spacing);
     styles.rect.height = Math.max(styles.rect.height, (totals[0] + 1) * sp);
-    let { width, height } = styles.rect;
-    node.width = node.width || width;
-    node.height = node.height || height;
+
+    Object.assign(node, styles.rect);
   };
+
   let getCYPos = (i, n) => {
     let { rect, wireHandle } = styles;
     let cports = n.ports.filter(np => np.type === n.ports[i].type);
@@ -85,7 +79,11 @@
   }
 </style>
 
-<rect class="node dragHandle" rx="10" ry="10" style={styleString(styles.rect)} />
+<rect
+  class="node dragHandle"
+  rx="10"
+  ry="10"
+  style="width:{styles.rect.width}px; height:{styles.rect.height}px" />
 {#if node.ports}
   {#each node.ports as port, i}
     <g
@@ -96,7 +94,7 @@
         class="wireHandle"
         rx="3"
         ry="3"
-        style={styleString(styles.wireHandle)} />
+        style="width:{styles.wireHandle.width}px; height:{styles.wireHandle.height}px" />
     </g>
   {/each}
 {/if}
