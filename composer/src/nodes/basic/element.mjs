@@ -336,8 +336,8 @@ const file = "src/Element.svelte";
 
 function add_css() {
 	var style = element("style");
-	style.id = "svelte-1elxhxn-style";
-	style.textContent = ".node.svelte-1elxhxn{fill:rgb(231, 231, 174);stroke:#999;stroke-width:1px;cursor:move}.connector.svelte-1elxhxn{stroke:#999;stroke-width:1;fill:#d9d9d9;cursor:crosshair}text.svelte-1elxhxn{fill:black;cursor:move}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRWxlbWVudC5zdmVsdGUiLCJzb3VyY2VzIjpbIkVsZW1lbnQuc3ZlbHRlIl0sInNvdXJjZXNDb250ZW50IjpbIjxzY3JpcHQ+XG4gIGltcG9ydCB7IG9uTW91bnQgfSBmcm9tIFwic3ZlbHRlXCI7XG4gIGV4cG9ydCBsZXQgbm9kZTtcblxuICBsZXQgc3R5bGVTdHJpbmcgPSBhID0+XG4gICAgT2JqZWN0LmVudHJpZXMoYSlcbiAgICAgIC5tYXAoYSA9PiBgJHthWzBdfToke2FbMV19YClcbiAgICAgIC5qb2luKFwiO1wiKTtcblxuICBsZXQgc3R5bGVfZGVmYXVsdCA9IHtcbiAgICBub2RlOiB7XG4gICAgICB3aWR0aDogMTQwLFxuICAgICAgaGVpZ2h0OiAzMFxuICAgIH0sXG4gICAgY29ubmVjdG9yOiB7XG4gICAgICB3aWR0aDogMTAsXG4gICAgICBoZWlnaHQ6IDEwXG4gICAgfVxuICB9O1xuXG4gIGV4cG9ydCBjb25zdCBzdHlsZV9jb25uZWN0b3IgPSB7XG4gICAgaGVpZ2h0OiAxMCxcbiAgICB3aWR0aDogMTBcbiAgfTtcblxuICBsZXQgY3R5cGVzID0ge307XG5cbiAgZXhwb3J0IGxldCByZWNhbGMgPSAoKSA9PiB7XG4gICAgY3R5cGVzID0ge307XG4gICAgbm9kZS5pb19wb3J0cy5tYXAoZnVuY3Rpb24oY1YpIHtcbiAgICAgIGN0eXBlc1tjVi50eXBlXSA9IGN0eXBlc1tjVi50eXBlXSB8fCAwO1xuICAgICAgY3R5cGVzW2NWLnR5cGVdICs9IDE7XG4gICAgfSk7XG4gICAgbGV0IGNvbm5fY291bnQgPSBPYmplY3QudmFsdWVzKGN0eXBlcykuc29ydCgoYSwgYikgPT4gKGEgPiBiID8gLTEgOiAxKSlbMF07XG4gICAgbm9kZS5oZWlnaHQgPSBNYXRoLm1heChcbiAgICAgIHN0eWxlX2RlZmF1bHQubm9kZS5oZWlnaHQsXG4gICAgICBjb25uX2NvdW50ICogKHN0eWxlX2Nvbm5lY3Rvci5oZWlnaHQgKiAxLjUpXG4gICAgKTtcbiAgfTtcblxuICBsZXQgZ2V0Q1lQb3MgPSAoaSwgbikgPT4ge1xuICAgIGlmICghY3R5cGVzW25dKSB7XG4gICAgICByZWNhbGMoKTtcbiAgICB9XG4gICAgbGV0IHNoID0gc3R5bGVfY29ubmVjdG9yLmhlaWdodDtcbiAgICBsZXQgc3AgPSBzaCAqIDAuMjU7XG4gICAgbGV0IHRoZWlnaHQgPSBjdHlwZXNbbl0gKiBzaCArIChjdHlwZXNbbl0gLSAxKSAqIHNwO1xuICAgIHJldHVybiAobm9kZS5oZWlnaHQgLSB0aGVpZ2h0KSAvIDIgKyBpICogKHNoICsgc3ApIHx8IDA7XG4gIH07XG5cbiAgb25Nb3VudCgoKSA9PiB7XG4gICAgcmVjYWxjKCk7XG4gIH0pO1xuPC9zY3JpcHQ+XG5cbjxzdHlsZT5cbiAgLm5vZGUge1xuICAgIGZpbGw6IHJnYigyMzEsIDIzMSwgMTc0KTtcbiAgICBzdHJva2U6ICM5OTk7XG4gICAgc3Ryb2tlLXdpZHRoOiAxcHg7XG4gICAgY3Vyc29yOiBtb3ZlO1xuICB9XG4gIC5jb25uZWN0b3Ige1xuICAgIHN0cm9rZTogIzk5OTtcbiAgICBzdHJva2Utd2lkdGg6IDE7XG4gICAgZmlsbDogI2Q5ZDlkOTtcbiAgICBjdXJzb3I6IGNyb3NzaGFpcjtcbiAgfVxuICB0ZXh0IHtcbiAgICBmaWxsOiBibGFjaztcbiAgICBjdXJzb3I6IG1vdmU7XG4gIH1cbjwvc3R5bGU+XG5cbjxyZWN0XG4gIGNsYXNzPVwibm9kZSBkcmFnSGFuZGxlXCJcbiAgc3R5bGU9e3N0eWxlU3RyaW5nKHsgd2lkdGg6IG5vZGUud2lkdGgsIGhlaWdodDogbm9kZS5oZWlnaHQgfSl9XG4gIHJ5PXtub2RlLnJ5fSAvPlxueyNpZiBub2RlLmlvX3BvcnRzfVxuICB7I2VhY2ggbm9kZS5pb19wb3J0cy5maWx0ZXIocCA9PiAhcC50eXBlKSBhcyBpb19wb3J0LCBpfVxuICAgIDxnXG4gICAgICB0cmFuc2Zvcm09XCJ0cmFuc2xhdGUoIHswIC0gc3R5bGVfY29ubmVjdG9yLndpZHRoIC8gMn0sIHtnZXRDWVBvcyhpLCAwKX0pXCI+XG4gICAgICA8cmVjdFxuICAgICAgICBjbGFzcz1cImNvbm5lY3RvclwiXG4gICAgICAgIHJ4PVwiM1wiXG4gICAgICAgIHJ5PVwiM1wiXG4gICAgICAgIHN0eWxlPXtzdHlsZVN0cmluZyhzdHlsZV9jb25uZWN0b3IpfSAvPlxuICAgIDwvZz5cbiAgey9lYWNofVxuICB7I2VhY2ggbm9kZS5pb19wb3J0cy5maWx0ZXIocCA9PiBwLnR5cGUpIGFzIGlvX3BvcnQsIGl9XG4gICAgPGdcbiAgICAgIHRyYW5zZm9ybT1cInRyYW5zbGF0ZSgge25vZGUud2lkdGggLSBzdHlsZV9jb25uZWN0b3Iud2lkdGggLyAyfSx7Z2V0Q1lQb3MoaSwgMSl9KVwiPlxuICAgICAgPHJlY3RcbiAgICAgICAgY2xhc3M9XCJjb25uZWN0b3JcIlxuICAgICAgICByeD1cIjNcIlxuICAgICAgICByeT1cIjNcIlxuICAgICAgICBzdHlsZT17c3R5bGVTdHJpbmcoc3R5bGVfY29ubmVjdG9yKX0gLz5cbiAgICA8L2c+XG4gIHsvZWFjaH1cbnsvaWZ9XG48dGV4dFxuICBjbGFzcz1cImRyYWdIYW5kbGVcIlxuICB4PVwiNTAlXCJcbiAgeT1cIjUwJVwiXG4gIHRleHQtYW5jaG9yPVwibWlkZGxlXCJcbiAgZG9taW5hbnQtYmFzZWxpbmU9XCJtaWRkbGVcIlxuICBzdHlsZT1cIlwiPlxuICB7bm9kZS5wb3NpdGlvbi54fVxuPC90ZXh0PlxuIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXdERSxLQUFLLGVBQUMsQ0FBQyxBQUNMLElBQUksQ0FBRSxJQUFJLEdBQUcsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUN4QixNQUFNLENBQUUsSUFBSSxDQUNaLFlBQVksQ0FBRSxHQUFHLENBQ2pCLE1BQU0sQ0FBRSxJQUFJLEFBQ2QsQ0FBQyxBQUNELFVBQVUsZUFBQyxDQUFDLEFBQ1YsTUFBTSxDQUFFLElBQUksQ0FDWixZQUFZLENBQUUsQ0FBQyxDQUNmLElBQUksQ0FBRSxPQUFPLENBQ2IsTUFBTSxDQUFFLFNBQVMsQUFDbkIsQ0FBQyxBQUNELElBQUksZUFBQyxDQUFDLEFBQ0osSUFBSSxDQUFFLEtBQUssQ0FDWCxNQUFNLENBQUUsSUFBSSxBQUNkLENBQUMifQ== */";
+	style.id = "svelte-ystnb1-style";
+	style.textContent = ".node.svelte-ystnb1{fill:rgb(231, 231, 174);stroke:#999;stroke-width:1px;cursor:move}.wireHandle.svelte-ystnb1{stroke:#999;stroke-width:1;fill:#d9d9d9;cursor:crosshair}text.svelte-ystnb1{fill:black;cursor:move}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRWxlbWVudC5zdmVsdGUiLCJzb3VyY2VzIjpbIkVsZW1lbnQuc3ZlbHRlIl0sInNvdXJjZXNDb250ZW50IjpbIjxzY3JpcHQ+XG4gIGltcG9ydCB7IG9uTW91bnQgfSBmcm9tIFwic3ZlbHRlXCI7XG4gIGV4cG9ydCBsZXQgbm9kZTtcblxuICBsZXQgc3R5bGVTdHJpbmcgPSBhID0+XG4gICAgT2JqZWN0LmVudHJpZXMoYSlcbiAgICAgIC5tYXAoYSA9PiBgJHthWzBdfToke2FbMV19YClcbiAgICAgIC5qb2luKFwiO1wiKTtcblxuICBsZXQgc3R5bGVfZGVmYXVsdCA9IHtcbiAgICBub2RlOiB7XG4gICAgICB3aWR0aDogMTQwLFxuICAgICAgaGVpZ2h0OiAzMFxuICAgIH0sXG4gICAgd2lyZUhhbmRsZToge1xuICAgICAgd2lkdGg6IDEwLFxuICAgICAgaGVpZ2h0OiAxMFxuICAgIH1cbiAgfTtcblxuICBleHBvcnQgY29uc3Qgc3R5bGVfd2lyZUhhbmRsZSA9IHtcbiAgICBoZWlnaHQ6IDEwLFxuICAgIHdpZHRoOiAxMFxuICB9O1xuXG4gIGxldCBjdHlwZXMgPSB7fTtcblxuICBleHBvcnQgbGV0IHJlY2FsYyA9ICgpID0+IHtcbiAgICBjdHlwZXMgPSB7fTtcbiAgICBub2RlLmlvX3BvcnRzLm1hcChmdW5jdGlvbihjVikge1xuICAgICAgY3R5cGVzW2NWLnR5cGVdID0gY3R5cGVzW2NWLnR5cGVdIHx8IDA7XG4gICAgICBjdHlwZXNbY1YudHlwZV0gKz0gMTtcbiAgICB9KTtcbiAgICBsZXQgY29ubl9jb3VudCA9IE9iamVjdC52YWx1ZXMoY3R5cGVzKS5zb3J0KChhLCBiKSA9PiAoYSA+IGIgPyAtMSA6IDEpKVswXTtcbiAgICBub2RlLmhlaWdodCA9IE1hdGgubWF4KFxuICAgICAgc3R5bGVfZGVmYXVsdC5ub2RlLmhlaWdodCxcbiAgICAgIGNvbm5fY291bnQgKiAoc3R5bGVfd2lyZUhhbmRsZS5oZWlnaHQgKiAxLjUpXG4gICAgKTtcbiAgfTtcblxuICBsZXQgZ2V0Q1lQb3MgPSAoaSwgbikgPT4ge1xuICAgIGlmICghY3R5cGVzW25dKSB7XG4gICAgICByZWNhbGMoKTtcbiAgICB9XG4gICAgbGV0IHNoID0gc3R5bGVfd2lyZUhhbmRsZS5oZWlnaHQ7XG4gICAgbGV0IHNwID0gc2ggKiAwLjI1O1xuICAgIGxldCB0aGVpZ2h0ID0gY3R5cGVzW25dICogc2ggKyAoY3R5cGVzW25dIC0gMSkgKiBzcDtcbiAgICByZXR1cm4gKG5vZGUuaGVpZ2h0IC0gdGhlaWdodCkgLyAyICsgaSAqIChzaCArIHNwKSB8fCAwO1xuICB9O1xuXG4gIG9uTW91bnQoKCkgPT4ge1xuICAgIHJlY2FsYygpO1xuICB9KTtcbjwvc2NyaXB0PlxuXG48c3R5bGU+XG4gIC5ub2RlIHtcbiAgICBmaWxsOiByZ2IoMjMxLCAyMzEsIDE3NCk7XG4gICAgc3Ryb2tlOiAjOTk5O1xuICAgIHN0cm9rZS13aWR0aDogMXB4O1xuICAgIGN1cnNvcjogbW92ZTtcbiAgfVxuICAud2lyZUhhbmRsZSB7XG4gICAgc3Ryb2tlOiAjOTk5O1xuICAgIHN0cm9rZS13aWR0aDogMTtcbiAgICBmaWxsOiAjZDlkOWQ5O1xuICAgIGN1cnNvcjogY3Jvc3NoYWlyO1xuICB9XG4gIHRleHQge1xuICAgIGZpbGw6IGJsYWNrO1xuICAgIGN1cnNvcjogbW92ZTtcbiAgfVxuPC9zdHlsZT5cblxuPHJlY3RcbiAgY2xhc3M9XCJub2RlIGRyYWdIYW5kbGVcIlxuICBzdHlsZT17c3R5bGVTdHJpbmcoeyB3aWR0aDogbm9kZS53aWR0aCwgaGVpZ2h0OiBub2RlLmhlaWdodCB9KX1cbiAgcnk9e25vZGUucnl9IC8+XG57I2lmIG5vZGUuaW9fcG9ydHN9XG4gIHsjZWFjaCBub2RlLmlvX3BvcnRzLmZpbHRlcihwID0+ICFwLnR5cGUpIGFzIGlvX3BvcnQsIGl9XG4gICAgPGdcbiAgICAgIHRyYW5zZm9ybT1cInRyYW5zbGF0ZSggezAgLSBzdHlsZV93aXJlSGFuZGxlLndpZHRoIC8gMn0sIHtnZXRDWVBvcyhpLCAwKX0pXCI+XG4gICAgICA8cmVjdFxuICAgICAgICBjbGFzcz1cIndpcmVIYW5kbGVcIlxuICAgICAgICByeD1cIjNcIlxuICAgICAgICByeT1cIjNcIlxuICAgICAgICBzdHlsZT17c3R5bGVTdHJpbmcoc3R5bGVfd2lyZUhhbmRsZSl9IC8+XG4gICAgPC9nPlxuICB7L2VhY2h9XG4gIHsjZWFjaCBub2RlLmlvX3BvcnRzLmZpbHRlcihwID0+IHAudHlwZSkgYXMgaW9fcG9ydCwgaX1cbiAgICA8Z1xuICAgICAgdHJhbnNmb3JtPVwidHJhbnNsYXRlKCB7bm9kZS53aWR0aCAtIHN0eWxlX3dpcmVIYW5kbGUud2lkdGggLyAyfSx7Z2V0Q1lQb3MoaSwgMSl9KVwiPlxuICAgICAgPHJlY3RcbiAgICAgICAgY2xhc3M9XCJ3aXJlSGFuZGxlXCJcbiAgICAgICAgcng9XCIzXCJcbiAgICAgICAgcnk9XCIzXCJcbiAgICAgICAgc3R5bGU9e3N0eWxlU3RyaW5nKHN0eWxlX3dpcmVIYW5kbGUpfSAvPlxuICAgIDwvZz5cbiAgey9lYWNofVxuey9pZn1cbjx0ZXh0XG4gIGNsYXNzPVwiZHJhZ0hhbmRsZVwiXG4gIHg9XCI1MCVcIlxuICB5PVwiNTAlXCJcbiAgdGV4dC1hbmNob3I9XCJtaWRkbGVcIlxuICBkb21pbmFudC1iYXNlbGluZT1cIm1pZGRsZVwiXG4gIHN0eWxlPVwiXCI+XG4gIHtub2RlLnBvc2l0aW9uLnh9XG48L3RleHQ+XG4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBd0RFLEtBQUssY0FBQyxDQUFDLEFBQ0wsSUFBSSxDQUFFLElBQUksR0FBRyxDQUFDLENBQUMsR0FBRyxDQUFDLENBQUMsR0FBRyxDQUFDLENBQ3hCLE1BQU0sQ0FBRSxJQUFJLENBQ1osWUFBWSxDQUFFLEdBQUcsQ0FDakIsTUFBTSxDQUFFLElBQUksQUFDZCxDQUFDLEFBQ0QsV0FBVyxjQUFDLENBQUMsQUFDWCxNQUFNLENBQUUsSUFBSSxDQUNaLFlBQVksQ0FBRSxDQUFDLENBQ2YsSUFBSSxDQUFFLE9BQU8sQ0FDYixNQUFNLENBQUUsU0FBUyxBQUNuQixDQUFDLEFBQ0QsSUFBSSxjQUFDLENBQUMsQUFDSixJQUFJLENBQUUsS0FBSyxDQUNYLE1BQU0sQ0FBRSxJQUFJLEFBQ2QsQ0FBQyJ9 */";
 	append_dev(document.head, style);
 }
 
@@ -403,7 +403,7 @@ function create_if_block(ctx) {
 			insert_dev(target, each1_anchor, anchor);
 		},
 		p: function update(ctx, dirty) {
-			if (dirty & /*style_connector, getCYPos, styleString, node*/ 15) {
+			if (dirty & /*style_wireHandle, getCYPos, styleString, node*/ 15) {
 				each_value_1 = /*node*/ ctx[0].io_ports.filter(func);
 				validate_each_argument(each_value_1);
 				let i;
@@ -427,7 +427,7 @@ function create_if_block(ctx) {
 				each_blocks_1.length = each_value_1.length;
 			}
 
-			if (dirty & /*node, style_connector, getCYPos, styleString*/ 15) {
+			if (dirty & /*node, style_wireHandle, getCYPos, styleString*/ 15) {
 				each_value = /*node*/ ctx[0].io_ports.filter(func_1);
 				validate_each_argument(each_value);
 				let i;
@@ -481,13 +481,13 @@ function create_each_block_1(ctx) {
 		c: function create() {
 			g = svg_element("g");
 			rect = svg_element("rect");
-			attr_dev(rect, "class", "connector svelte-1elxhxn");
+			attr_dev(rect, "class", "wireHandle svelte-ystnb1");
 			attr_dev(rect, "rx", "3");
 			attr_dev(rect, "ry", "3");
-			attr_dev(rect, "style", rect_style_value = /*styleString*/ ctx[2](/*style_connector*/ ctx[1]));
-			add_location(rect, file, 82, 6, 1633);
-			attr_dev(g, "transform", g_transform_value = "translate( " + (0 - /*style_connector*/ ctx[1].width / 2) + ", " + /*getCYPos*/ ctx[3](/*i*/ ctx[9], 0) + ")");
-			add_location(g, file, 80, 4, 1543);
+			attr_dev(rect, "style", rect_style_value = /*styleString*/ ctx[2](/*style_wireHandle*/ ctx[1]));
+			add_location(rect, file, 82, 6, 1639);
+			attr_dev(g, "transform", g_transform_value = "translate( " + (0 - /*style_wireHandle*/ ctx[1].width / 2) + ", " + /*getCYPos*/ ctx[3](/*i*/ ctx[9], 0) + ")");
+			add_location(g, file, 80, 4, 1548);
 		},
 		m: function mount(target, anchor) {
 			insert_dev(target, g, anchor);
@@ -521,20 +521,20 @@ function create_each_block(ctx) {
 		c: function create() {
 			g = svg_element("g");
 			rect = svg_element("rect");
-			attr_dev(rect, "class", "connector svelte-1elxhxn");
+			attr_dev(rect, "class", "wireHandle svelte-ystnb1");
 			attr_dev(rect, "rx", "3");
 			attr_dev(rect, "ry", "3");
-			attr_dev(rect, "style", rect_style_value = /*styleString*/ ctx[2](/*style_connector*/ ctx[1]));
-			add_location(rect, file, 92, 6, 1922);
-			attr_dev(g, "transform", g_transform_value = "translate( " + (/*node*/ ctx[0].width - /*style_connector*/ ctx[1].width / 2) + "," + /*getCYPos*/ ctx[3](/*i*/ ctx[9], 1) + ")");
-			add_location(g, file, 90, 4, 1824);
+			attr_dev(rect, "style", rect_style_value = /*styleString*/ ctx[2](/*style_wireHandle*/ ctx[1]));
+			add_location(rect, file, 92, 6, 1931);
+			attr_dev(g, "transform", g_transform_value = "translate( " + (/*node*/ ctx[0].width - /*style_wireHandle*/ ctx[1].width / 2) + "," + /*getCYPos*/ ctx[3](/*i*/ ctx[9], 1) + ")");
+			add_location(g, file, 90, 4, 1832);
 		},
 		m: function mount(target, anchor) {
 			insert_dev(target, g, anchor);
 			append_dev(g, rect);
 		},
 		p: function update(ctx, dirty) {
-			if (dirty & /*node*/ 1 && g_transform_value !== (g_transform_value = "translate( " + (/*node*/ ctx[0].width - /*style_connector*/ ctx[1].width / 2) + "," + /*getCYPos*/ ctx[3](/*i*/ ctx[9], 1) + ")")) {
+			if (dirty & /*node*/ 1 && g_transform_value !== (g_transform_value = "translate( " + (/*node*/ ctx[0].width - /*style_wireHandle*/ ctx[1].width / 2) + "," + /*getCYPos*/ ctx[3](/*i*/ ctx[9], 1) + ")")) {
 				attr_dev(g, "transform", g_transform_value);
 			}
 		},
@@ -573,7 +573,7 @@ function create_fragment(ctx) {
 			t1 = space();
 			text_1 = svg_element("text");
 			t2 = text(t2_value);
-			attr_dev(rect, "class", "node dragHandle svelte-1elxhxn");
+			attr_dev(rect, "class", "node dragHandle svelte-ystnb1");
 
 			attr_dev(rect, "style", rect_style_value = /*styleString*/ ctx[2]({
 				width: /*node*/ ctx[0].width,
@@ -581,13 +581,13 @@ function create_fragment(ctx) {
 			}));
 
 			attr_dev(rect, "ry", rect_ry_value = /*node*/ ctx[0].ry);
-			add_location(rect, file, 74, 0, 1344);
-			attr_dev(text_1, "class", "dragHandle svelte-1elxhxn");
+			add_location(rect, file, 74, 0, 1349);
+			attr_dev(text_1, "class", "dragHandle svelte-ystnb1");
 			attr_dev(text_1, "x", "50%");
 			attr_dev(text_1, "y", "50%");
 			attr_dev(text_1, "text-anchor", "middle");
 			attr_dev(text_1, "dominant-baseline", "middle");
-			add_location(text_1, file, 100, 0, 2057);
+			add_location(text_1, file, 100, 0, 2068);
 		},
 		l: function claim(nodes) {
 			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -658,10 +658,10 @@ function instance($$self, $$props, $$invalidate) {
 
 	let style_default = {
 		node: { width: 140, height: 30 },
-		connector: { width: 10, height: 10 }
+		wireHandle: { width: 10, height: 10 }
 	};
 
-	const style_connector = { height: 10, width: 10 };
+	const style_wireHandle = { height: 10, width: 10 };
 	let ctypes = {};
 
 	let { recalc = () => {
@@ -673,7 +673,7 @@ function instance($$self, $$props, $$invalidate) {
 		});
 
 		let conn_count = Object.values(ctypes).sort((a, b) => a > b ? -1 : 1)[0];
-		$$invalidate(0, node.height = Math.max(style_default.node.height, conn_count * (style_connector.height * 1.5)), node);
+		$$invalidate(0, node.height = Math.max(style_default.node.height, conn_count * (style_wireHandle.height * 1.5)), node);
 	} } = $$props;
 
 	let getCYPos = (i, n) => {
@@ -681,7 +681,7 @@ function instance($$self, $$props, $$invalidate) {
 			recalc();
 		}
 
-		let sh = style_connector.height;
+		let sh = style_wireHandle.height;
 		let sp = sh * 0.25;
 		let theight = ctypes[n] * sh + (ctypes[n] - 1) * sp;
 		return (node.height - theight) / 2 + i * (sh + sp) || 0;
@@ -710,7 +710,7 @@ function instance($$self, $$props, $$invalidate) {
 		node,
 		styleString,
 		style_default,
-		style_connector,
+		style_wireHandle,
 		ctypes,
 		recalc,
 		getCYPos
@@ -729,14 +729,14 @@ function instance($$self, $$props, $$invalidate) {
 		$$self.$inject_state($$props.$$inject);
 	}
 
-	return [node, style_connector, styleString, getCYPos, recalc];
+	return [node, style_wireHandle, styleString, getCYPos, recalc];
 }
 
 class Element extends SvelteComponentDev {
 	constructor(options) {
 		super(options);
-		if (!document.getElementById("svelte-1elxhxn-style")) add_css();
-		init(this, options, instance, create_fragment, safe_not_equal, { node: 0, style_connector: 1, recalc: 4 });
+		if (!document.getElementById("svelte-ystnb1-style")) add_css();
+		init(this, options, instance, create_fragment, safe_not_equal, { node: 0, style_wireHandle: 1, recalc: 4 });
 
 		dispatch_dev("SvelteRegisterComponent", {
 			component: this,
@@ -761,11 +761,11 @@ class Element extends SvelteComponentDev {
 		throw new Error("<Element>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
 	}
 
-	get style_connector() {
+	get style_wireHandle() {
 		return this.$$.ctx[1];
 	}
 
-	set style_connector(value) {
+	set style_wireHandle(value) {
 		throw new Error("<Element>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
 	}
 
