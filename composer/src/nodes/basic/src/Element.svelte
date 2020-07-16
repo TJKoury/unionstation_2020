@@ -98,6 +98,12 @@
     </g>
   {/each}
 {/if}
-<text class="dragHandle" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" style="">
-  {node.id.split('-')[0]}
+<text
+  class="dragHandle"
+  x="50%"
+  y="50%"
+  text-anchor="middle"
+  dominant-baseline="middle"
+  style="">
+  {node.position.x}
 </text>

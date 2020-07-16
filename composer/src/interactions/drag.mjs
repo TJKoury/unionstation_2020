@@ -57,6 +57,13 @@ export function drag(evt) {
     }
     selectedElement.attributes.x.value = dx;
     selectedElement.attributes.y.value = dy;
+    flow.update((f) => {
+      f.nodes[f.nodes.indexOf(node)].position = {
+        x: dx,
+        y: dy,
+      };
+      return f;
+    });
     node.position.x = dx;
     node.position.y = dy;
   }
