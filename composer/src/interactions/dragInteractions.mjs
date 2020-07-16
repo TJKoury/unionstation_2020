@@ -1,15 +1,18 @@
 export function makeDraggable(evt) {
   let svg = evt.target;
-
-  svg.addEventListener("mousedown", startDrag);
-  svg.addEventListener("mousemove", drag);
-  svg.addEventListener("mouseup", endDrag);
- // svg.addEventListener("mouseleave", endDrag);
-  svg.addEventListener("touchstart", startDrag);
-  svg.addEventListener("touchmove", drag);
-  svg.addEventListener("touchend", endDrag);
-  svg.addEventListener("touchleave", endDrag);
-  svg.addEventListener("touchcancel", endDrag);
+  [
+    ["mousedown", startDrag],
+    ["mousemove", drag],
+    ["mouseup", endDrag],
+    //["mouseleave", endDrag],
+    ["touchstart", startDrag],
+    ["touchmove", drag],
+    ["touchend", endDrag],
+    ["touchleave", endDrag],
+    ["touchcancel", endDrag],
+  ].map((a) => {
+    svg.addEventListener(a[0], a[1]);
+  });
 
   let selectedElement, node, offset, transform, bbox, minX, maxX, minY, maxY, confined;
 
