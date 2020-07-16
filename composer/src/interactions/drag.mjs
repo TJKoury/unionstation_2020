@@ -1,4 +1,9 @@
-let target, selectedElement, node, offset, minX, maxX, minY, maxY, confined;
+import { flow } from "../data/flow.mjs";
+let target, selectedElement, node, nodes, offset, minX, maxX, minY, maxY, confined;
+
+flow.subscribe((f) => {
+  nodes = f.nodes;
+});
 
 function getMousePosition(evt) {
   if (!target.getScreenCTM) return;
@@ -11,15 +16,17 @@ function getMousePosition(evt) {
     y: (evt.clientY - CTM.f) / CTM.d,
   };
 }
+
 export function match(el) {
   return Array.from(el.classList).indexOf("dragHandle") > -1;
 }
+
 export function startDrag(evt) {
   if (!match(evt.target)) return false;
   selectedElement = evt.target.closest(".draggable");
   if (!selectedElement) return false;
   evt.stopPropagation();
-  node = flow.nodes.filter((n) => {
+  node = nodes.filter((n) => {
     return n.id === selectedElement.attributes.getNamedItem("id").value;
   })[0];
   offset = getMousePosition(evt);

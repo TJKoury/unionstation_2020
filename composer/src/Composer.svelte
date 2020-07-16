@@ -8,7 +8,7 @@
     registerInteractions(document.getElementById("stage"));
     Object.defineProperty(globalThis, "flow", {
       get() {
-        return $flow;
+        return flow;
       }
     });
   });
