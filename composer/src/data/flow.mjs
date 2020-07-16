@@ -14,8 +14,8 @@ export const flow = writable({
       },
       ports: [
         { type: 0 },
-        { type: 1, wires: ["525fa64c"] },
-        { type: 1 },
+        { type: 1, wires: ["525fa64c:0"] },
+        { type: 1, wires: ["025fa64c:0"]},
         { type: 1 },
       ],
     }),
@@ -24,6 +24,20 @@ export const flow = writable({
       position: {
         x: 200,
         y: 200,
+      },
+      ports: [
+        { id: 1, type: 0 },
+        { id: 2, type: 1 },
+        { id: 3, type: 1 },
+        { id: 4, type: 1 },
+      ],
+      wires: [],
+    }),
+    new BasicNode({
+      id: "025fa64c",
+      position: {
+        x: 400,
+        y: 340,
       },
       ports: [
         { id: 1, type: 0 },

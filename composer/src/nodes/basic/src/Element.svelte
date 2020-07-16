@@ -62,7 +62,7 @@
 
 <style>
   .node {
-    fill: rgb(231, 231, 174);
+    fill: rgb(231, 231, 174 , .75);
     stroke: #999;
     stroke-width: 1px;
     cursor: move;
@@ -104,5 +104,5 @@
   y="50%"
   text-anchor="middle"
   dominant-baseline="middle">
-  {node.position.x}
+  {Math.floor(node.position.x)}
 </text>
