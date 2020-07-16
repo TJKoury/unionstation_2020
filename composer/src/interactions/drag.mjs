@@ -1,4 +1,4 @@
-import { flow } from "../stores/composer.store.mjs";
+import { flow, selected, selectable } from "../stores/composer.store.mjs";
 let target, selectedElement, node, nodes, offset, minX, maxX, minY, maxY, confined;
 
 flow.subscribe((f) => {
@@ -93,5 +93,11 @@ export function init(el) {
   target = el;
   Object.entries(mapping).map((a) => {
     target.addEventListener(a[0], a[1], { passive: false });
+  });
+  selectable.update((s) => {
+    if (s.indexOf("dragHandle") === -1) {
+      s.push("dragHandle");
+    }
+    return s;
   });
 }
