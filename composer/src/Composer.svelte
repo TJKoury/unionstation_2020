@@ -13,8 +13,9 @@
   });
 
   onMount(() => {
+    let stage = document.getElementById("stage");
     winit(styles);
-    registerInteractions(document.getElementById("stage"));
+    registerInteractions(stage);
     setTimeout(() => flow.update(f => f), 1);
   });
 </script>
@@ -39,11 +40,7 @@
 
 <!-- prettier-ignore -->
 <div id="node-explorer" tabindex="0">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    overflow="visible"
-    id="stage">
-
+  <svg xmlns="http://www.w3.org/2000/svg" overflow="visible" id="stage">
     {#each $flow.nodes as node, i}
       {#each node.ports as port, p}
         {#if port.wires}

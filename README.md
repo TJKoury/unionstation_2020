@@ -1,4 +1,5 @@
 # unionstation_2020
+
 Scratch pad for US
 
 ## Two runtimes:
@@ -18,8 +19,16 @@ Scratch pad for US
 
 - All nodes inherit from main node classes
 - Two properties inheriting from external classes for user interface
-    - ui: User Interface for interfacing with the node
-    - element: User Interface for the composer node canvas
+  - ui: User Interface for interfacing with the node
+  - element: User Interface for the composer node canvas
 
+## TODO
 
+- [ ] Wire creation
+- [ ] Element selection
+- [ ] CRUD elements
+- [ ] Node elements
 
+## New Features
+
+- [ ] Hold down ctrl to grab multiple endpoints and connect
