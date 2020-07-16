@@ -25,12 +25,14 @@ export function startDrag(evt) {
   if (!match(evt.target)) return false;
   selectedElement = evt.target.closest(".draggable");
   if (!selectedElement) return false;
+  let sE = selectedElement.attributes;
+
   evt.stopPropagation();
   node = nodes.filter((n) => {
-    return n.id === selectedElement.attributes.getNamedItem("id").value;
+    return n.id === sE.getNamedItem("id").value;
   })[0];
   offset = getMousePosition(evt);
-  let { x, y } = selectedElement.attributes;
+  let { x, y } = sE;
   offset.x -= x.value;
   offset.y -= y.value;
 }
@@ -40,6 +42,7 @@ export function drag(evt) {
     evt.preventDefault();
 
     let coord = getMousePosition(evt);
+    let sE = selectedElement.attributes;
     let dx = coord.x - offset.x;
     let dy = coord.y - offset.y;
 
@@ -55,8 +58,8 @@ export function drag(evt) {
         dy = maxY;
       }
     }
-    selectedElement.attributes.x.value = dx;
-    selectedElement.attributes.y.value = dy;
+    sE.x.value = dx;
+    sE.y.value = dy;
     flow.update((f) => {
       f.nodes[f.nodes.indexOf(node)].position = {
         x: dx,
