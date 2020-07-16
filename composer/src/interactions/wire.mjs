@@ -1,4 +1,4 @@
-import { flow } from "../data/flow.mjs";
+import { flow } from "../stores/composer.store.mjs";
 let target, selectedElement, node, nodes, offset, minX, maxX, minY, maxY, confined;
 
 flow.subscribe((f) => {
@@ -21,9 +21,7 @@ export function match(el) {
   return Array.from(el.classList).indexOf("wireHandle") > -1;
 }
 
-export function startDrag(evt) {
-
-}
+export function startDrag(evt) {}
 
 export function drag(evt) {
   if (selectedElement) {

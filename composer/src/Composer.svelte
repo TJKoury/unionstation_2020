@@ -1,18 +1,14 @@
 <script>
   import { onMount } from "svelte";
-  import { writable } from "svelte/store";
-  import { flow } from "./data/flow.mjs";
+  import { styles, flow } from "./stores/composer.store.mjs";
+  import { loadFlow } from "./flow.mjs";
   import { registerInteractions } from "./interactions/manager.mjs";
   import { m1, c1, m2, c2, init as winit } from "./utilities/wirePath.mjs";
+
   import xxhash from "xxhashjs";
 
-  const styles = new writable({
-    path: {
-      strokeWidth: 3
-    }
-  });
-
   onMount(() => {
+    loadFlow();
     let stage = document.getElementById("stage");
     winit(styles);
     registerInteractions(stage);

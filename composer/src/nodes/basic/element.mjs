@@ -339,8 +339,8 @@ const file = "src/Element.svelte";
 
 function add_css() {
 	var style = element("style");
-	style.id = "svelte-go5gi7-style";
-	style.textContent = ".node.svelte-go5gi7{fill:rgb(231, 231, 174 , .75);stroke:#999;stroke-width:1px;cursor:move}.wireHandle.svelte-go5gi7{stroke:#999;stroke-width:1;fill:#d9d9d9;cursor:crosshair}text.svelte-go5gi7{fill:black;cursor:move}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRWxlbWVudC5zdmVsdGUiLCJzb3VyY2VzIjpbIkVsZW1lbnQuc3ZlbHRlIl0sInNvdXJjZXNDb250ZW50IjpbIjxzY3JpcHQ+XG4gIGltcG9ydCB7IG9uTW91bnQgfSBmcm9tIFwic3ZlbHRlXCI7XG4gIGV4cG9ydCBsZXQgZmxvdztcbiAgZXhwb3J0IGxldCBub2RlO1xuXG4gIGxldCB0b3RhbHMgPSBbXTtcblxuICBsZXQgc3R5bGVzID0ge1xuICAgIHJlY3Q6IHtcbiAgICAgIHdpZHRoOiAxNDAsXG4gICAgICBoZWlnaHQ6IDMwXG4gICAgfSxcbiAgICB3aXJlSGFuZGxlOiB7XG4gICAgICB3aWR0aDogMTAsXG4gICAgICBoZWlnaHQ6IDEwLFxuICAgICAgc3BhY2luZzogMC4yNVxuICAgIH1cbiAgfTtcblxuICBsZXQgcmVzaXplID0gKCkgPT4ge1xuICAgIGxldCBfdG90YWxzID0gW107XG4gICAgbm9kZS5wb3J0cy5tYXAocCA9PiB7XG4gICAgICBfdG90YWxzW3AudHlwZV0gPSBfdG90YWxzW3AudHlwZV0gfHwgMDtcbiAgICAgIF90b3RhbHNbcC50eXBlXSArPSAxO1xuICAgIH0pO1xuICAgIGxldCBtYXRjaCA9IHRydWU7XG4gICAgX3RvdGFscy5mb3JFYWNoKG4gPT4ge1xuICAgICAgaWYgKHRvdGFscy5pbmRleE9mKG4pID09PSAtMSkge1xuICAgICAgICBtYXRjaCA9IGZhbHNlO1xuICAgICAgfVxuICAgIH0pO1xuICAgIGlmIChtYXRjaCkgcmV0dXJuO1xuXG4gICAgdG90YWxzID0gX3RvdGFscy5zb3J0KChhLCBiKSA9PiAoYSA+IGIgPyAtMSA6IDEpKTtcblxuICAgIGxldCB7IHJlY3QsIHdpcmVIYW5kbGUgfSA9IHN0eWxlcztcbiAgICBsZXQgeyB3aWR0aCwgaGVpZ2h0IH0gPSBzdHlsZXMucmVjdDtcbiAgICBsZXQgc2ggPSB3aXJlSGFuZGxlLmhlaWdodDtcbiAgICBsZXQgc3AgPSBzaCAqICgxICsgd2lyZUhhbmRsZS5zcGFjaW5nKTtcbiAgICBzdHlsZXMucmVjdC5oZWlnaHQgPSBNYXRoLm1heChzdHlsZXMucmVjdC5oZWlnaHQsICh0b3RhbHNbMF0gKyAxKSAqIHNwKTtcblxuICAgIE9iamVjdC5hc3NpZ24obm9kZSwgc3R5bGVzLnJlY3QpO1xuICB9O1xuXG4gIGxldCBnZXRDWVBvcyA9IChpLCBuKSA9PiB7XG4gICAgbGV0IHsgcmVjdCwgd2lyZUhhbmRsZSB9ID0gc3R5bGVzO1xuICAgIGxldCBjcG9ydHMgPSBuLnBvcnRzLmZpbHRlcihucCA9PiBucC50eXBlID09PSBuLnBvcnRzW2ldLnR5cGUpO1xuICAgIGkgPSBjcG9ydHMuaW5kZXhPZihuLnBvcnRzW2ldKTtcbiAgICBsZXQgc2ggPSB3aXJlSGFuZGxlLmhlaWdodDtcbiAgICBsZXQgc3AgPSBzaCAqIHdpcmVIYW5kbGUuc3BhY2luZztcbiAgICBsZXQgdGhlaWdodCA9IGNwb3J0cy5sZW5ndGggKiBzaCArIChjcG9ydHMubGVuZ3RoIC0gMSkgKiBzcDtcbiAgICByZXR1cm4gKHJlY3QuaGVpZ2h0IC0gdGhlaWdodCkgLyAyICsgaSAqIChzaCArIHNwKSB8fCAwO1xuICB9O1xuXG4gIG9uTW91bnQoKCkgPT4ge1xuICAgIHJlc2l6ZSgpO1xuICAgIGZsb3cuc3Vic2NyaWJlKGYgPT4ge1xuICAgICAgcmVzaXplKCk7XG4gICAgfSk7XG4gIH0pO1xuPC9zY3JpcHQ+XG5cbjxzdHlsZT5cbiAgLm5vZGUge1xuICAgIGZpbGw6IHJnYigyMzEsIDIzMSwgMTc0ICwgLjc1KTtcbiAgICBzdHJva2U6ICM5OTk7XG4gICAgc3Ryb2tlLXdpZHRoOiAxcHg7XG4gICAgY3Vyc29yOiBtb3ZlO1xuICB9XG4gIC53aXJlSGFuZGxlIHtcbiAgICBzdHJva2U6ICM5OTk7XG4gICAgc3Ryb2tlLXdpZHRoOiAxO1xuICAgIGZpbGw6ICNkOWQ5ZDk7XG4gICAgY3Vyc29yOiBjcm9zc2hhaXI7XG4gIH1cbiAgdGV4dCB7XG4gICAgZmlsbDogYmxhY2s7XG4gICAgY3Vyc29yOiBtb3ZlO1xuICB9XG48L3N0eWxlPlxuXG48cmVjdFxuICBjbGFzcz1cIm5vZGUgZHJhZ0hhbmRsZVwiXG4gIHJ4PVwiMTBcIlxuICByeT1cIjEwXCJcbiAgc3R5bGU9XCJ3aWR0aDp7c3R5bGVzLnJlY3Qud2lkdGh9cHg7IGhlaWdodDp7c3R5bGVzLnJlY3QuaGVpZ2h0fXB4XCIgLz5cbnsjaWYgbm9kZS5wb3J0c31cbiAgeyNlYWNoIG5vZGUucG9ydHMgYXMgcG9ydCwgaX1cbiAgICA8Z1xuICAgICAgaWQ9XCJ7bm9kZS5pZH06e2l9XCJcbiAgICAgIHRyYW5zZm9ybT1cInRyYW5zbGF0ZSggeyhwb3J0LnR5cGUgJiYgbm9kZS53aWR0aCA/IG5vZGUud2lkdGggOiAwKSAtIHN0eWxlcy53aXJlSGFuZGxlLndpZHRoIC8gMn0sXG4gICAgICB7Z2V0Q1lQb3MoaSwgbm9kZSl9KVwiPlxuICAgICAgPHJlY3RcbiAgICAgICAgY2xhc3M9XCJ3aXJlSGFuZGxlXCJcbiAgICAgICAgcng9XCIzXCJcbiAgICAgICAgcnk9XCIzXCJcbiAgICAgICAgc3R5bGU9XCJ3aWR0aDp7c3R5bGVzLndpcmVIYW5kbGUud2lkdGh9cHg7IGhlaWdodDp7c3R5bGVzLndpcmVIYW5kbGUuaGVpZ2h0fXB4XCIgLz5cbiAgICA8L2c+XG4gIHsvZWFjaH1cbnsvaWZ9XG48dGV4dFxuICBjbGFzcz1cImRyYWdIYW5kbGVcIlxuICB4PVwiNTAlXCJcbiAgeT1cIjUwJVwiXG4gIHRleHQtYW5jaG9yPVwibWlkZGxlXCJcbiAgZG9taW5hbnQtYmFzZWxpbmU9XCJtaWRkbGVcIj5cbiAge01hdGguZmxvb3Iobm9kZS5wb3NpdGlvbi54KX1cbjwvdGV4dD5cbiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUErREUsS0FBSyxjQUFDLENBQUMsQUFDTCxJQUFJLENBQUUsSUFBSSxHQUFHLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUM5QixNQUFNLENBQUUsSUFBSSxDQUNaLFlBQVksQ0FBRSxHQUFHLENBQ2pCLE1BQU0sQ0FBRSxJQUFJLEFBQ2QsQ0FBQyxBQUNELFdBQVcsY0FBQyxDQUFDLEFBQ1gsTUFBTSxDQUFFLElBQUksQ0FDWixZQUFZLENBQUUsQ0FBQyxDQUNmLElBQUksQ0FBRSxPQUFPLENBQ2IsTUFBTSxDQUFFLFNBQVMsQUFDbkIsQ0FBQyxBQUNELElBQUksY0FBQyxDQUFDLEFBQ0osSUFBSSxDQUFFLEtBQUssQ0FDWCxNQUFNLENBQUUsSUFBSSxBQUNkLENBQUMifQ== */";
+	style.id = "svelte-1l0djun-style";
+	style.textContent = ".node.svelte-1l0djun{fill:rgb(231, 231, 174, 0.75);stroke:#999;stroke-width:1px;cursor:move}.wireHandle.svelte-1l0djun{stroke:#999;stroke-width:1;fill:#d9d9d9;cursor:crosshair}text.svelte-1l0djun{fill:black;cursor:move}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRWxlbWVudC5zdmVsdGUiLCJzb3VyY2VzIjpbIkVsZW1lbnQuc3ZlbHRlIl0sInNvdXJjZXNDb250ZW50IjpbIjxzY3JpcHQ+XG4gIGltcG9ydCB7IG9uTW91bnQgfSBmcm9tIFwic3ZlbHRlXCI7XG4gIGV4cG9ydCBsZXQgZmxvdztcbiAgZXhwb3J0IGxldCBub2RlO1xuXG4gIGxldCB0b3RhbHMgPSBbXTtcblxuICBsZXQgc3R5bGVzID0ge1xuICAgIHJlY3Q6IHtcbiAgICAgIHdpZHRoOiAxNDAsXG4gICAgICBoZWlnaHQ6IDMwXG4gICAgfSxcbiAgICB3aXJlSGFuZGxlOiB7XG4gICAgICB3aWR0aDogMTAsXG4gICAgICBoZWlnaHQ6IDEwLFxuICAgICAgc3BhY2luZzogMC4yNVxuICAgIH1cbiAgfTtcblxuICBsZXQgcmVzaXplID0gKCkgPT4ge1xuICAgIGxldCBfdG90YWxzID0gW107XG4gICAgbm9kZS5wb3J0cy5tYXAocCA9PiB7XG4gICAgICBfdG90YWxzW3AudHlwZV0gPSBfdG90YWxzW3AudHlwZV0gfHwgMDtcbiAgICAgIF90b3RhbHNbcC50eXBlXSArPSAxO1xuICAgIH0pO1xuICAgIGxldCBtYXRjaCA9IHRydWU7XG4gICAgX3RvdGFscy5mb3JFYWNoKG4gPT4ge1xuICAgICAgaWYgKHRvdGFscy5pbmRleE9mKG4pID09PSAtMSkge1xuICAgICAgICBtYXRjaCA9IGZhbHNlO1xuICAgICAgfVxuICAgIH0pO1xuICAgIGlmIChtYXRjaCkgcmV0dXJuO1xuXG4gICAgdG90YWxzID0gX3RvdGFscy5zb3J0KChhLCBiKSA9PiAoYSA+IGIgPyAtMSA6IDEpKTtcblxuICAgIGxldCB7IHJlY3QsIHdpcmVIYW5kbGUgfSA9IHN0eWxlcztcbiAgICBsZXQgeyB3aWR0aCwgaGVpZ2h0IH0gPSBzdHlsZXMucmVjdDtcbiAgICBsZXQgc2ggPSB3aXJlSGFuZGxlLmhlaWdodDtcbiAgICBsZXQgc3AgPSBzaCAqICgxICsgd2lyZUhhbmRsZS5zcGFjaW5nKTtcbiAgICBzdHlsZXMucmVjdC5oZWlnaHQgPSBNYXRoLm1heChzdHlsZXMucmVjdC5oZWlnaHQsICh0b3RhbHNbMF0gKyAxKSAqIHNwKTtcblxuICAgIE9iamVjdC5hc3NpZ24obm9kZSwgc3R5bGVzLnJlY3QpO1xuICB9O1xuXG4gIGxldCBnZXRDWVBvcyA9IChpLCBuKSA9PiB7XG4gICAgbGV0IHsgcmVjdCwgd2lyZUhhbmRsZSB9ID0gc3R5bGVzO1xuICAgIGxldCBjcG9ydHMgPSBuLnBvcnRzLmZpbHRlcihucCA9PiBucC50eXBlID09PSBuLnBvcnRzW2ldLnR5cGUpO1xuICAgIGkgPSBjcG9ydHMuaW5kZXhPZihuLnBvcnRzW2ldKTtcbiAgICBsZXQgc2ggPSB3aXJlSGFuZGxlLmhlaWdodDtcbiAgICBsZXQgc3AgPSBzaCAqIHdpcmVIYW5kbGUuc3BhY2luZztcbiAgICBsZXQgdGhlaWdodCA9IGNwb3J0cy5sZW5ndGggKiBzaCArIChjcG9ydHMubGVuZ3RoIC0gMSkgKiBzcDtcbiAgICByZXR1cm4gKHJlY3QuaGVpZ2h0IC0gdGhlaWdodCkgLyAyICsgaSAqIChzaCArIHNwKSB8fCAwO1xuICB9O1xuXG4gIG9uTW91bnQoKCkgPT4ge1xuICAgIHJlc2l6ZSgpO1xuICAgIGZsb3cuc3Vic2NyaWJlKGYgPT4ge1xuICAgICAgcmVzaXplKCk7XG4gICAgfSk7XG4gIH0pO1xuPC9zY3JpcHQ+XG5cbjxzdHlsZT5cbiAgLm5vZGUge1xuICAgIGZpbGw6IHJnYigyMzEsIDIzMSwgMTc0LCAwLjc1KTtcbiAgICBzdHJva2U6ICM5OTk7XG4gICAgc3Ryb2tlLXdpZHRoOiAxcHg7XG4gICAgY3Vyc29yOiBtb3ZlO1xuICB9XG4gIC53aXJlSGFuZGxlIHtcbiAgICBzdHJva2U6ICM5OTk7XG4gICAgc3Ryb2tlLXdpZHRoOiAxO1xuICAgIGZpbGw6ICNkOWQ5ZDk7XG4gICAgY3Vyc29yOiBjcm9zc2hhaXI7XG4gIH1cbiAgdGV4dCB7XG4gICAgZmlsbDogYmxhY2s7XG4gICAgY3Vyc29yOiBtb3ZlO1xuICB9XG48L3N0eWxlPlxuXG57I2lmIG5vZGUuaWQgIT09ICd3aXJlSGFuZGxlTm9kZSd9XG4gIDxyZWN0XG4gICAgY2xhc3M9XCJub2RlIGRyYWdIYW5kbGVcIlxuICAgIHJ4PVwiMTBcIlxuICAgIHJ5PVwiMTBcIlxuICAgIHN0eWxlPVwid2lkdGg6e3N0eWxlcy5yZWN0LndpZHRofXB4OyBoZWlnaHQ6e3N0eWxlcy5yZWN0LmhlaWdodH1weFwiIC8+XG4gIHsjaWYgbm9kZS5wb3J0c31cbiAgICB7I2VhY2ggbm9kZS5wb3J0cyBhcyBwb3J0LCBpfVxuICAgICAgPGdcbiAgICAgICAgaWQ9XCJ7bm9kZS5pZH06e2l9XCJcbiAgICAgICAgdHJhbnNmb3JtPVwidHJhbnNsYXRlKCB7KHBvcnQudHlwZSAmJiBub2RlLndpZHRoID8gbm9kZS53aWR0aCA6IDApIC0gc3R5bGVzLndpcmVIYW5kbGUud2lkdGggLyAyfSxcbiAgICAgICAge2dldENZUG9zKGksIG5vZGUpfSlcIj5cbiAgICAgICAgPHJlY3RcbiAgICAgICAgICBjbGFzcz1cIndpcmVIYW5kbGVcIlxuICAgICAgICAgIHJ4PVwiM1wiXG4gICAgICAgICAgcnk9XCIzXCJcbiAgICAgICAgICBzdHlsZT1cIndpZHRoOntzdHlsZXMud2lyZUhhbmRsZS53aWR0aH1weDsgaGVpZ2h0OntzdHlsZXMud2lyZUhhbmRsZS5oZWlnaHR9cHhcIiAvPlxuICAgICAgPC9nPlxuICAgIHsvZWFjaH1cbiAgey9pZn1cbiAgPHRleHRcbiAgICBjbGFzcz1cImRyYWdIYW5kbGVcIlxuICAgIHg9XCI1MCVcIlxuICAgIHk9XCI1MCVcIlxuICAgIHRleHQtYW5jaG9yPVwibWlkZGxlXCJcbiAgICBkb21pbmFudC1iYXNlbGluZT1cIm1pZGRsZVwiPlxuICAgIHtNYXRoLmZsb29yKG5vZGUucG9zaXRpb24ueCl9XG4gIDwvdGV4dD5cbnsvaWZ9XG4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBK0RFLEtBQUssZUFBQyxDQUFDLEFBQ0wsSUFBSSxDQUFFLElBQUksR0FBRyxDQUFDLENBQUMsR0FBRyxDQUFDLENBQUMsR0FBRyxDQUFDLENBQUMsSUFBSSxDQUFDLENBQzlCLE1BQU0sQ0FBRSxJQUFJLENBQ1osWUFBWSxDQUFFLEdBQUcsQ0FDakIsTUFBTSxDQUFFLElBQUksQUFDZCxDQUFDLEFBQ0QsV0FBVyxlQUFDLENBQUMsQUFDWCxNQUFNLENBQUUsSUFBSSxDQUNaLFlBQVksQ0FBRSxDQUFDLENBQ2YsSUFBSSxDQUFFLE9BQU8sQ0FDYixNQUFNLENBQUUsU0FBUyxBQUNuQixDQUFDLEFBQ0QsSUFBSSxlQUFDLENBQUMsQUFDSixJQUFJLENBQUUsS0FBSyxDQUNYLE1BQU0sQ0FBRSxJQUFJLEFBQ2QsQ0FBQyJ9 */";
 	append_dev(document.head, style);
 }
 
@@ -351,8 +351,91 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (87:0) {#if node.ports}
+// (82:0) {#if node.id !== 'wireHandleNode'}
 function create_if_block(ctx) {
+	let rect;
+	let t0;
+	let t1;
+	let text_1;
+	let t2_value = Math.floor(/*node*/ ctx[0].position.x) + "";
+	let t2;
+	let if_block = /*node*/ ctx[0].ports && create_if_block_1(ctx);
+
+	const block = {
+		c: function create() {
+			rect = svg_element("rect");
+			t0 = space();
+			if (if_block) if_block.c();
+			t1 = space();
+			text_1 = svg_element("text");
+			t2 = text(t2_value);
+			attr_dev(rect, "class", "node dragHandle svelte-1l0djun");
+			attr_dev(rect, "rx", "10");
+			attr_dev(rect, "ry", "10");
+			set_style(rect, "width", /*styles*/ ctx[1].rect.width + "px");
+			set_style(rect, "height", /*styles*/ ctx[1].rect.height + "px");
+			add_location(rect, file, 82, 2, 1683);
+			attr_dev(text_1, "class", "dragHandle svelte-1l0djun");
+			attr_dev(text_1, "x", "50%");
+			attr_dev(text_1, "y", "50%");
+			attr_dev(text_1, "text-anchor", "middle");
+			attr_dev(text_1, "dominant-baseline", "middle");
+			add_location(text_1, file, 101, 2, 2243);
+		},
+		m: function mount(target, anchor) {
+			insert_dev(target, rect, anchor);
+			insert_dev(target, t0, anchor);
+			if (if_block) if_block.m(target, anchor);
+			insert_dev(target, t1, anchor);
+			insert_dev(target, text_1, anchor);
+			append_dev(text_1, t2);
+		},
+		p: function update(ctx, dirty) {
+			if (dirty & /*styles*/ 2) {
+				set_style(rect, "width", /*styles*/ ctx[1].rect.width + "px");
+			}
+
+			if (dirty & /*styles*/ 2) {
+				set_style(rect, "height", /*styles*/ ctx[1].rect.height + "px");
+			}
+
+			if (/*node*/ ctx[0].ports) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block = create_if_block_1(ctx);
+					if_block.c();
+					if_block.m(t1.parentNode, t1);
+				}
+			} else if (if_block) {
+				if_block.d(1);
+				if_block = null;
+			}
+
+			if (dirty & /*node*/ 1 && t2_value !== (t2_value = Math.floor(/*node*/ ctx[0].position.x) + "")) set_data_dev(t2, t2_value);
+		},
+		d: function destroy(detaching) {
+			if (detaching) detach_dev(rect);
+			if (detaching) detach_dev(t0);
+			if (if_block) if_block.d(detaching);
+			if (detaching) detach_dev(t1);
+			if (detaching) detach_dev(text_1);
+		}
+	};
+
+	dispatch_dev("SvelteRegisterBlock", {
+		block,
+		id: create_if_block.name,
+		type: "if",
+		source: "(82:0) {#if node.id !== 'wireHandleNode'}",
+		ctx
+	});
+
+	return block;
+}
+
+// (88:2) {#if node.ports}
+function create_if_block_1(ctx) {
 	let each_1_anchor;
 	let each_value = /*node*/ ctx[0].ports;
 	validate_each_argument(each_value);
@@ -410,16 +493,16 @@ function create_if_block(ctx) {
 
 	dispatch_dev("SvelteRegisterBlock", {
 		block,
-		id: create_if_block.name,
+		id: create_if_block_1.name,
 		type: "if",
-		source: "(87:0) {#if node.ports}",
+		source: "(88:2) {#if node.ports}",
 		ctx
 	});
 
 	return block;
 }
 
-// (88:2) {#each node.ports as port, i}
+// (89:4) {#each node.ports as port, i}
 function create_each_block(ctx) {
 	let g;
 	let rect;
@@ -430,19 +513,19 @@ function create_each_block(ctx) {
 		c: function create() {
 			g = svg_element("g");
 			rect = svg_element("rect");
-			attr_dev(rect, "class", "wireHandle svelte-go5gi7");
+			attr_dev(rect, "class", "wireHandle svelte-1l0djun");
 			attr_dev(rect, "rx", "3");
 			attr_dev(rect, "ry", "3");
 			set_style(rect, "width", /*styles*/ ctx[1].wireHandle.width + "px");
 			set_style(rect, "height", /*styles*/ ctx[1].wireHandle.height + "px");
-			add_location(rect, file, 92, 6, 1990);
+			add_location(rect, file, 93, 8, 2049);
 			attr_dev(g, "id", g_id_value = "" + (/*node*/ ctx[0].id + ":" + /*i*/ ctx[8]));
 
 			attr_dev(g, "transform", g_transform_value = "translate( " + ((/*port*/ ctx[6].type && /*node*/ ctx[0].width
 			? /*node*/ ctx[0].width
-			: 0) - /*styles*/ ctx[1].wireHandle.width / 2) + ",\n      " + /*getCYPos*/ ctx[2](/*i*/ ctx[8], /*node*/ ctx[0]) + ")");
+			: 0) - /*styles*/ ctx[1].wireHandle.width / 2) + ",\n        " + /*getCYPos*/ ctx[2](/*i*/ ctx[8], /*node*/ ctx[0]) + ")");
 
-			add_location(g, file, 88, 4, 1823);
+			add_location(g, file, 89, 6, 1874);
 		},
 		m: function mount(target, anchor) {
 			insert_dev(target, g, anchor);
@@ -463,7 +546,7 @@ function create_each_block(ctx) {
 
 			if (dirty & /*node, styles*/ 3 && g_transform_value !== (g_transform_value = "translate( " + ((/*port*/ ctx[6].type && /*node*/ ctx[0].width
 			? /*node*/ ctx[0].width
-			: 0) - /*styles*/ ctx[1].wireHandle.width / 2) + ",\n      " + /*getCYPos*/ ctx[2](/*i*/ ctx[8], /*node*/ ctx[0]) + ")")) {
+			: 0) - /*styles*/ ctx[1].wireHandle.width / 2) + ",\n        " + /*getCYPos*/ ctx[2](/*i*/ ctx[8], /*node*/ ctx[0]) + ")")) {
 				attr_dev(g, "transform", g_transform_value);
 			}
 		},
@@ -476,7 +559,7 @@ function create_each_block(ctx) {
 		block,
 		id: create_each_block.name,
 		type: "each",
-		source: "(88:2) {#each node.ports as port, i}",
+		source: "(89:4) {#each node.ports as port, i}",
 		ctx
 	});
 
@@ -484,78 +567,40 @@ function create_each_block(ctx) {
 }
 
 function create_fragment(ctx) {
-	let rect;
-	let t0;
-	let t1;
-	let text_1;
-	let t2_value = Math.floor(/*node*/ ctx[0].position.x) + "";
-	let t2;
-	let if_block = /*node*/ ctx[0].ports && create_if_block(ctx);
+	let if_block_anchor;
+	let if_block = /*node*/ ctx[0].id !== "wireHandleNode" && create_if_block(ctx);
 
 	const block = {
 		c: function create() {
-			rect = svg_element("rect");
-			t0 = space();
 			if (if_block) if_block.c();
-			t1 = space();
-			text_1 = svg_element("text");
-			t2 = text(t2_value);
-			attr_dev(rect, "class", "node dragHandle svelte-go5gi7");
-			attr_dev(rect, "rx", "10");
-			attr_dev(rect, "ry", "10");
-			set_style(rect, "width", /*styles*/ ctx[1].rect.width + "px");
-			set_style(rect, "height", /*styles*/ ctx[1].rect.height + "px");
-			add_location(rect, file, 81, 0, 1646);
-			attr_dev(text_1, "class", "dragHandle svelte-go5gi7");
-			attr_dev(text_1, "x", "50%");
-			attr_dev(text_1, "y", "50%");
-			attr_dev(text_1, "text-anchor", "middle");
-			attr_dev(text_1, "dominant-baseline", "middle");
-			add_location(text_1, file, 100, 0, 2168);
+			if_block_anchor = empty();
 		},
 		l: function claim(nodes) {
 			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
 		},
 		m: function mount(target, anchor) {
-			insert_dev(target, rect, anchor);
-			insert_dev(target, t0, anchor);
 			if (if_block) if_block.m(target, anchor);
-			insert_dev(target, t1, anchor);
-			insert_dev(target, text_1, anchor);
-			append_dev(text_1, t2);
+			insert_dev(target, if_block_anchor, anchor);
 		},
 		p: function update(ctx, [dirty]) {
-			if (dirty & /*styles*/ 2) {
-				set_style(rect, "width", /*styles*/ ctx[1].rect.width + "px");
-			}
-
-			if (dirty & /*styles*/ 2) {
-				set_style(rect, "height", /*styles*/ ctx[1].rect.height + "px");
-			}
-
-			if (/*node*/ ctx[0].ports) {
+			if (/*node*/ ctx[0].id !== "wireHandleNode") {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 				} else {
 					if_block = create_if_block(ctx);
 					if_block.c();
-					if_block.m(t1.parentNode, t1);
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
 				}
 			} else if (if_block) {
 				if_block.d(1);
 				if_block = null;
 			}
-
-			if (dirty & /*node*/ 1 && t2_value !== (t2_value = Math.floor(/*node*/ ctx[0].position.x) + "")) set_data_dev(t2, t2_value);
 		},
 		i: noop,
 		o: noop,
 		d: function destroy(detaching) {
-			if (detaching) detach_dev(rect);
-			if (detaching) detach_dev(t0);
 			if (if_block) if_block.d(detaching);
-			if (detaching) detach_dev(t1);
-			if (detaching) detach_dev(text_1);
+			if (detaching) detach_dev(if_block_anchor);
 		}
 	};
 
@@ -667,7 +712,7 @@ function instance($$self, $$props, $$invalidate) {
 class Element extends SvelteComponentDev {
 	constructor(options) {
 		super(options);
-		if (!document.getElementById("svelte-go5gi7-style")) add_css();
+		if (!document.getElementById("svelte-1l0djun-style")) add_css();
 		init(this, options, instance, create_fragment, safe_not_equal, { flow: 3, node: 0 });
 
 		dispatch_dev("SvelteRegisterComponent", {

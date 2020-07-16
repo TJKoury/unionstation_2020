@@ -62,7 +62,7 @@
 
 <style>
   .node {
-    fill: rgb(231, 231, 174 , .75);
+    fill: rgb(231, 231, 174, 0.75);
     stroke: #999;
     stroke-width: 1px;
     cursor: move;
@@ -79,30 +79,32 @@
   }
 </style>
 
-<rect
-  class="node dragHandle"
-  rx="10"
-  ry="10"
-  style="width:{styles.rect.width}px; height:{styles.rect.height}px" />
-{#if node.ports}
-  {#each node.ports as port, i}
-    <g
-      id="{node.id}:{i}"
-      transform="translate( {(port.type && node.width ? node.width : 0) - styles.wireHandle.width / 2},
-      {getCYPos(i, node)})">
-      <rect
-        class="wireHandle"
-        rx="3"
-        ry="3"
-        style="width:{styles.wireHandle.width}px; height:{styles.wireHandle.height}px" />
-    </g>
-  {/each}
+{#if node.id !== 'wireHandleNode'}
+  <rect
+    class="node dragHandle"
+    rx="10"
+    ry="10"
+    style="width:{styles.rect.width}px; height:{styles.rect.height}px" />
+  {#if node.ports}
+    {#each node.ports as port, i}
+      <g
+        id="{node.id}:{i}"
+        transform="translate( {(port.type && node.width ? node.width : 0) - styles.wireHandle.width / 2},
+        {getCYPos(i, node)})">
+        <rect
+          class="wireHandle"
+          rx="3"
+          ry="3"
+          style="width:{styles.wireHandle.width}px; height:{styles.wireHandle.height}px" />
+      </g>
+    {/each}
+  {/if}
+  <text
+    class="dragHandle"
+    x="50%"
+    y="50%"
+    text-anchor="middle"
+    dominant-baseline="middle">
+    {Math.floor(node.position.x)}
+  </text>
 {/if}
-<text
-  class="dragHandle"
-  x="50%"
-  y="50%"
-  text-anchor="middle"
-  dominant-baseline="middle">
-  {Math.floor(node.position.x)}
-</text>

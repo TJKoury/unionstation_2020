@@ -1,4 +1,4 @@
-import { flow } from "../data/flow.mjs";
+import { flow } from "../stores/composer.store.mjs";
 let target, selectedElement, node, nodes, offset, minX, maxX, minY, maxY, confined;
 
 flow.subscribe((f) => {
