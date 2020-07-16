@@ -1,17 +1,17 @@
 //THIS GETS GENERATED in a package.json
 
+import { writable } from "svelte/store";
 import { BasicNode } from "../nodes/basic/index.mjs";
 let tt = new BasicNode();
-export const flow = {
+
+export const flow = writable({
   nodes: [
     new BasicNode({
       id: "18c4b816-ed38-43fa-990d-f22652d77db2",
-      attributes: {
-        width: 140,
-        height: 30,
-        rx: 5,
-        ry: 5,
-      },
+      width: 140,
+      height: 30,
+      rx: 5,
+      ry: 5,
       position: {
         x: 100,
         y: 100,
@@ -26,12 +26,10 @@ export const flow = {
     }),
     new BasicNode({
       id: "ed4a026b-0e29-48e9-aa1d-c03f3aa84876",
-      attributes: {
-        width: 140,
-        height: 30,
-        rx: 5,
-        ry: 5,
-      },
+      width: 140,
+      height: 30,
+      rx: 5,
+      ry: 5,
       position: {
         x: 200,
         y: 200,
@@ -45,4 +43,4 @@ export const flow = {
       wires: [],
     }),
   ],
-};
+});

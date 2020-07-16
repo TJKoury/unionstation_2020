@@ -6,8 +6,12 @@
 
   onMount(() => {
     let _svg = document.getElementById("stage");
-    makeDraggable({ target: _svg, flow});
-    globalThis.flow = flow;
+    makeDraggable({ target: _svg, flow });
+    Object.defineProperty(globalThis, "flow", {
+      get() {
+        return $flow;
+      }
+    });
   });
 </script>
 
@@ -33,7 +37,7 @@
 <div id="node-explorer" tabindex="0">
   <svg xmlns="http://www.w3.org/2000/svg" overflow="visible" id="stage">
 
-    {#each flow.nodes as node, i}
+    {#each $flow.nodes as node, i}
       <svg
         id={node.id}
         overflow="visible"
@@ -41,9 +45,8 @@
         class="nodegroup draggable"
         x={node.position.x}
         y={node.position.y}
-        width={node.attributes.width}
-        height={node.attributes.height}>
-
+        width={node.width}
+        height={node.height}>
         <svelte:component this={node.element} bind:node />
       </svg>
     {/each}

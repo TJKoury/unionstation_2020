@@ -26,11 +26,10 @@ export function makeDraggable(evt) {
 
   function startDrag(evt) {
     selectedElement = evt.target.closest(".draggable");
-    if (!selectedElement) return;
+    if (!selectedElement) return false;
     node = flow.nodes.filter((n) => {
       return n.id === selectedElement.attributes.getNamedItem("id").value;
     })[0];
-    if (!selectedElement) return false;
     offset = getMousePosition(evt);
     let { x, y } = selectedElement.attributes;
     offset.x -= x.value;
