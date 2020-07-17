@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { styles, flow } from "./stores/composer.store.mjs";
+  import { styles, flow, selected } from "./stores/composer.store.mjs";
   import { loadFlow } from "./flow.mjs";
   import { registerInteractions } from "./interactions/manager.mjs";
   import { m1, c1, m2, c2, init as winit } from "./utilities/wirePath.mjs";
@@ -62,7 +62,7 @@
         y={node.position.y}
         width={node.width}
         height={node.height}>
-        <svelte:component this={node.element} bind:node {flow} />
+        <svelte:component this={node.element} bind:node {flow} sStore={selected} />
       </svg>
     {/each}
   </svg>

@@ -2,6 +2,12 @@
   import { onMount } from "svelte";
   export let flow;
   export let node;
+  export let sStore;
+
+  let selected = false;
+  sStore.subscribe(s => {
+    selected = s[node.id];
+  });
 
   let totals = [];
 
@@ -67,6 +73,10 @@
     stroke-width: 1px;
     cursor: move;
   }
+  .node.selected {
+    stroke: orange;
+    stroke-width: 2px;
+  }
   .wireHandle {
     stroke: #999;
     stroke-width: 1;
@@ -82,6 +92,7 @@
 {#if node.id !== 'wireHandleNode'}
   <rect
     class="node dragHandle"
+    class:selected
     rx="10"
     ry="10"
     style="width:{styles.rect.width}px; height:{styles.rect.height}px" />
@@ -105,6 +116,6 @@
     y="50%"
     text-anchor="middle"
     dominant-baseline="middle">
-    {Math.floor(node.position.x)}
+    {selected}
   </text>
 {/if}

@@ -62,6 +62,9 @@ function children(element) {
 function set_style(node, key, value, important) {
     node.style.setProperty(key, value, important ? 'important' : '');
 }
+function toggle_class(element, name, toggle) {
+    element.classList[toggle ? 'add' : 'remove'](name);
+}
 function custom_event(type, detail) {
     const e = document.createEvent('CustomEvent');
     e.initCustomEvent(type, false, false, detail);
@@ -339,25 +342,24 @@ const file = "src/Element.svelte";
 
 function add_css() {
 	var style = element("style");
-	style.id = "svelte-1l0djun-style";
-	style.textContent = ".node.svelte-1l0djun{fill:rgb(231, 231, 174, 0.75);stroke:#999;stroke-width:1px;cursor:move}.wireHandle.svelte-1l0djun{stroke:#999;stroke-width:1;fill:#d9d9d9;cursor:crosshair}text.svelte-1l0djun{fill:black;cursor:move}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRWxlbWVudC5zdmVsdGUiLCJzb3VyY2VzIjpbIkVsZW1lbnQuc3ZlbHRlIl0sInNvdXJjZXNDb250ZW50IjpbIjxzY3JpcHQ+XG4gIGltcG9ydCB7IG9uTW91bnQgfSBmcm9tIFwic3ZlbHRlXCI7XG4gIGV4cG9ydCBsZXQgZmxvdztcbiAgZXhwb3J0IGxldCBub2RlO1xuXG4gIGxldCB0b3RhbHMgPSBbXTtcblxuICBsZXQgc3R5bGVzID0ge1xuICAgIHJlY3Q6IHtcbiAgICAgIHdpZHRoOiAxNDAsXG4gICAgICBoZWlnaHQ6IDMwXG4gICAgfSxcbiAgICB3aXJlSGFuZGxlOiB7XG4gICAgICB3aWR0aDogMTAsXG4gICAgICBoZWlnaHQ6IDEwLFxuICAgICAgc3BhY2luZzogMC4yNVxuICAgIH1cbiAgfTtcblxuICBsZXQgcmVzaXplID0gKCkgPT4ge1xuICAgIGxldCBfdG90YWxzID0gW107XG4gICAgbm9kZS5wb3J0cy5tYXAocCA9PiB7XG4gICAgICBfdG90YWxzW3AudHlwZV0gPSBfdG90YWxzW3AudHlwZV0gfHwgMDtcbiAgICAgIF90b3RhbHNbcC50eXBlXSArPSAxO1xuICAgIH0pO1xuICAgIGxldCBtYXRjaCA9IHRydWU7XG4gICAgX3RvdGFscy5mb3JFYWNoKG4gPT4ge1xuICAgICAgaWYgKHRvdGFscy5pbmRleE9mKG4pID09PSAtMSkge1xuICAgICAgICBtYXRjaCA9IGZhbHNlO1xuICAgICAgfVxuICAgIH0pO1xuICAgIGlmIChtYXRjaCkgcmV0dXJuO1xuXG4gICAgdG90YWxzID0gX3RvdGFscy5zb3J0KChhLCBiKSA9PiAoYSA+IGIgPyAtMSA6IDEpKTtcblxuICAgIGxldCB7IHJlY3QsIHdpcmVIYW5kbGUgfSA9IHN0eWxlcztcbiAgICBsZXQgeyB3aWR0aCwgaGVpZ2h0IH0gPSBzdHlsZXMucmVjdDtcbiAgICBsZXQgc2ggPSB3aXJlSGFuZGxlLmhlaWdodDtcbiAgICBsZXQgc3AgPSBzaCAqICgxICsgd2lyZUhhbmRsZS5zcGFjaW5nKTtcbiAgICBzdHlsZXMucmVjdC5oZWlnaHQgPSBNYXRoLm1heChzdHlsZXMucmVjdC5oZWlnaHQsICh0b3RhbHNbMF0gKyAxKSAqIHNwKTtcblxuICAgIE9iamVjdC5hc3NpZ24obm9kZSwgc3R5bGVzLnJlY3QpO1xuICB9O1xuXG4gIGxldCBnZXRDWVBvcyA9IChpLCBuKSA9PiB7XG4gICAgbGV0IHsgcmVjdCwgd2lyZUhhbmRsZSB9ID0gc3R5bGVzO1xuICAgIGxldCBjcG9ydHMgPSBuLnBvcnRzLmZpbHRlcihucCA9PiBucC50eXBlID09PSBuLnBvcnRzW2ldLnR5cGUpO1xuICAgIGkgPSBjcG9ydHMuaW5kZXhPZihuLnBvcnRzW2ldKTtcbiAgICBsZXQgc2ggPSB3aXJlSGFuZGxlLmhlaWdodDtcbiAgICBsZXQgc3AgPSBzaCAqIHdpcmVIYW5kbGUuc3BhY2luZztcbiAgICBsZXQgdGhlaWdodCA9IGNwb3J0cy5sZW5ndGggKiBzaCArIChjcG9ydHMubGVuZ3RoIC0gMSkgKiBzcDtcbiAgICByZXR1cm4gKHJlY3QuaGVpZ2h0IC0gdGhlaWdodCkgLyAyICsgaSAqIChzaCArIHNwKSB8fCAwO1xuICB9O1xuXG4gIG9uTW91bnQoKCkgPT4ge1xuICAgIHJlc2l6ZSgpO1xuICAgIGZsb3cuc3Vic2NyaWJlKGYgPT4ge1xuICAgICAgcmVzaXplKCk7XG4gICAgfSk7XG4gIH0pO1xuPC9zY3JpcHQ+XG5cbjxzdHlsZT5cbiAgLm5vZGUge1xuICAgIGZpbGw6IHJnYigyMzEsIDIzMSwgMTc0LCAwLjc1KTtcbiAgICBzdHJva2U6ICM5OTk7XG4gICAgc3Ryb2tlLXdpZHRoOiAxcHg7XG4gICAgY3Vyc29yOiBtb3ZlO1xuICB9XG4gIC53aXJlSGFuZGxlIHtcbiAgICBzdHJva2U6ICM5OTk7XG4gICAgc3Ryb2tlLXdpZHRoOiAxO1xuICAgIGZpbGw6ICNkOWQ5ZDk7XG4gICAgY3Vyc29yOiBjcm9zc2hhaXI7XG4gIH1cbiAgdGV4dCB7XG4gICAgZmlsbDogYmxhY2s7XG4gICAgY3Vyc29yOiBtb3ZlO1xuICB9XG48L3N0eWxlPlxuXG57I2lmIG5vZGUuaWQgIT09ICd3aXJlSGFuZGxlTm9kZSd9XG4gIDxyZWN0XG4gICAgY2xhc3M9XCJub2RlIGRyYWdIYW5kbGVcIlxuICAgIHJ4PVwiMTBcIlxuICAgIHJ5PVwiMTBcIlxuICAgIHN0eWxlPVwid2lkdGg6e3N0eWxlcy5yZWN0LndpZHRofXB4OyBoZWlnaHQ6e3N0eWxlcy5yZWN0LmhlaWdodH1weFwiIC8+XG4gIHsjaWYgbm9kZS5wb3J0c31cbiAgICB7I2VhY2ggbm9kZS5wb3J0cyBhcyBwb3J0LCBpfVxuICAgICAgPGdcbiAgICAgICAgaWQ9XCJ7bm9kZS5pZH06e2l9XCJcbiAgICAgICAgdHJhbnNmb3JtPVwidHJhbnNsYXRlKCB7KHBvcnQudHlwZSAmJiBub2RlLndpZHRoID8gbm9kZS53aWR0aCA6IDApIC0gc3R5bGVzLndpcmVIYW5kbGUud2lkdGggLyAyfSxcbiAgICAgICAge2dldENZUG9zKGksIG5vZGUpfSlcIj5cbiAgICAgICAgPHJlY3RcbiAgICAgICAgICBjbGFzcz1cIndpcmVIYW5kbGVcIlxuICAgICAgICAgIHJ4PVwiM1wiXG4gICAgICAgICAgcnk9XCIzXCJcbiAgICAgICAgICBzdHlsZT1cIndpZHRoOntzdHlsZXMud2lyZUhhbmRsZS53aWR0aH1weDsgaGVpZ2h0OntzdHlsZXMud2lyZUhhbmRsZS5oZWlnaHR9cHhcIiAvPlxuICAgICAgPC9nPlxuICAgIHsvZWFjaH1cbiAgey9pZn1cbiAgPHRleHRcbiAgICBjbGFzcz1cImRyYWdIYW5kbGVcIlxuICAgIHg9XCI1MCVcIlxuICAgIHk9XCI1MCVcIlxuICAgIHRleHQtYW5jaG9yPVwibWlkZGxlXCJcbiAgICBkb21pbmFudC1iYXNlbGluZT1cIm1pZGRsZVwiPlxuICAgIHtNYXRoLmZsb29yKG5vZGUucG9zaXRpb24ueCl9XG4gIDwvdGV4dD5cbnsvaWZ9XG4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBK0RFLEtBQUssZUFBQyxDQUFDLEFBQ0wsSUFBSSxDQUFFLElBQUksR0FBRyxDQUFDLENBQUMsR0FBRyxDQUFDLENBQUMsR0FBRyxDQUFDLENBQUMsSUFBSSxDQUFDLENBQzlCLE1BQU0sQ0FBRSxJQUFJLENBQ1osWUFBWSxDQUFFLEdBQUcsQ0FDakIsTUFBTSxDQUFFLElBQUksQUFDZCxDQUFDLEFBQ0QsV0FBVyxlQUFDLENBQUMsQUFDWCxNQUFNLENBQUUsSUFBSSxDQUNaLFlBQVksQ0FBRSxDQUFDLENBQ2YsSUFBSSxDQUFFLE9BQU8sQ0FDYixNQUFNLENBQUUsU0FBUyxBQUNuQixDQUFDLEFBQ0QsSUFBSSxlQUFDLENBQUMsQUFDSixJQUFJLENBQUUsS0FBSyxDQUNYLE1BQU0sQ0FBRSxJQUFJLEFBQ2QsQ0FBQyJ9 */";
+	style.id = "svelte-r6ii83-style";
+	style.textContent = ".node.svelte-r6ii83{fill:rgb(231, 231, 174, 0.75);stroke:#999;stroke-width:1px;cursor:move}.node.selected.svelte-r6ii83{stroke:orange;stroke-width:2px}.wireHandle.svelte-r6ii83{stroke:#999;stroke-width:1;fill:#d9d9d9;cursor:crosshair}text.svelte-r6ii83{fill:black;cursor:move}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRWxlbWVudC5zdmVsdGUiLCJzb3VyY2VzIjpbIkVsZW1lbnQuc3ZlbHRlIl0sInNvdXJjZXNDb250ZW50IjpbIjxzY3JpcHQ+XG4gIGltcG9ydCB7IG9uTW91bnQgfSBmcm9tIFwic3ZlbHRlXCI7XG4gIGV4cG9ydCBsZXQgZmxvdztcbiAgZXhwb3J0IGxldCBub2RlO1xuICBleHBvcnQgbGV0IHNTdG9yZTtcblxuICBsZXQgc2VsZWN0ZWQgPSBmYWxzZTtcbiAgc1N0b3JlLnN1YnNjcmliZShzID0+IHtcbiAgICBzZWxlY3RlZCA9IHNbbm9kZS5pZF07XG4gIH0pO1xuXG4gIGxldCB0b3RhbHMgPSBbXTtcblxuICBsZXQgc3R5bGVzID0ge1xuICAgIHJlY3Q6IHtcbiAgICAgIHdpZHRoOiAxNDAsXG4gICAgICBoZWlnaHQ6IDMwXG4gICAgfSxcbiAgICB3aXJlSGFuZGxlOiB7XG4gICAgICB3aWR0aDogMTAsXG4gICAgICBoZWlnaHQ6IDEwLFxuICAgICAgc3BhY2luZzogMC4yNVxuICAgIH1cbiAgfTtcblxuICBsZXQgcmVzaXplID0gKCkgPT4ge1xuICAgIGxldCBfdG90YWxzID0gW107XG4gICAgbm9kZS5wb3J0cy5tYXAocCA9PiB7XG4gICAgICBfdG90YWxzW3AudHlwZV0gPSBfdG90YWxzW3AudHlwZV0gfHwgMDtcbiAgICAgIF90b3RhbHNbcC50eXBlXSArPSAxO1xuICAgIH0pO1xuICAgIGxldCBtYXRjaCA9IHRydWU7XG4gICAgX3RvdGFscy5mb3JFYWNoKG4gPT4ge1xuICAgICAgaWYgKHRvdGFscy5pbmRleE9mKG4pID09PSAtMSkge1xuICAgICAgICBtYXRjaCA9IGZhbHNlO1xuICAgICAgfVxuICAgIH0pO1xuICAgIGlmIChtYXRjaCkgcmV0dXJuO1xuXG4gICAgdG90YWxzID0gX3RvdGFscy5zb3J0KChhLCBiKSA9PiAoYSA+IGIgPyAtMSA6IDEpKTtcblxuICAgIGxldCB7IHJlY3QsIHdpcmVIYW5kbGUgfSA9IHN0eWxlcztcbiAgICBsZXQgeyB3aWR0aCwgaGVpZ2h0IH0gPSBzdHlsZXMucmVjdDtcbiAgICBsZXQgc2ggPSB3aXJlSGFuZGxlLmhlaWdodDtcbiAgICBsZXQgc3AgPSBzaCAqICgxICsgd2lyZUhhbmRsZS5zcGFjaW5nKTtcbiAgICBzdHlsZXMucmVjdC5oZWlnaHQgPSBNYXRoLm1heChzdHlsZXMucmVjdC5oZWlnaHQsICh0b3RhbHNbMF0gKyAxKSAqIHNwKTtcblxuICAgIE9iamVjdC5hc3NpZ24obm9kZSwgc3R5bGVzLnJlY3QpO1xuICB9O1xuXG4gIGxldCBnZXRDWVBvcyA9IChpLCBuKSA9PiB7XG4gICAgbGV0IHsgcmVjdCwgd2lyZUhhbmRsZSB9ID0gc3R5bGVzO1xuICAgIGxldCBjcG9ydHMgPSBuLnBvcnRzLmZpbHRlcihucCA9PiBucC50eXBlID09PSBuLnBvcnRzW2ldLnR5cGUpO1xuICAgIGkgPSBjcG9ydHMuaW5kZXhPZihuLnBvcnRzW2ldKTtcbiAgICBsZXQgc2ggPSB3aXJlSGFuZGxlLmhlaWdodDtcbiAgICBsZXQgc3AgPSBzaCAqIHdpcmVIYW5kbGUuc3BhY2luZztcbiAgICBsZXQgdGhlaWdodCA9IGNwb3J0cy5sZW5ndGggKiBzaCArIChjcG9ydHMubGVuZ3RoIC0gMSkgKiBzcDtcbiAgICByZXR1cm4gKHJlY3QuaGVpZ2h0IC0gdGhlaWdodCkgLyAyICsgaSAqIChzaCArIHNwKSB8fCAwO1xuICB9O1xuXG4gIG9uTW91bnQoKCkgPT4ge1xuICAgIHJlc2l6ZSgpO1xuICAgIGZsb3cuc3Vic2NyaWJlKGYgPT4ge1xuICAgICAgcmVzaXplKCk7XG4gICAgfSk7XG4gIH0pO1xuPC9zY3JpcHQ+XG5cbjxzdHlsZT5cbiAgLm5vZGUge1xuICAgIGZpbGw6IHJnYigyMzEsIDIzMSwgMTc0LCAwLjc1KTtcbiAgICBzdHJva2U6ICM5OTk7XG4gICAgc3Ryb2tlLXdpZHRoOiAxcHg7XG4gICAgY3Vyc29yOiBtb3ZlO1xuICB9XG4gIC5ub2RlLnNlbGVjdGVkIHtcbiAgICBzdHJva2U6IG9yYW5nZTtcbiAgICBzdHJva2Utd2lkdGg6IDJweDtcbiAgfVxuICAud2lyZUhhbmRsZSB7XG4gICAgc3Ryb2tlOiAjOTk5O1xuICAgIHN0cm9rZS13aWR0aDogMTtcbiAgICBmaWxsOiAjZDlkOWQ5O1xuICAgIGN1cnNvcjogY3Jvc3NoYWlyO1xuICB9XG4gIHRleHQge1xuICAgIGZpbGw6IGJsYWNrO1xuICAgIGN1cnNvcjogbW92ZTtcbiAgfVxuPC9zdHlsZT5cblxueyNpZiBub2RlLmlkICE9PSAnd2lyZUhhbmRsZU5vZGUnfVxuICA8cmVjdFxuICAgIGNsYXNzPVwibm9kZSBkcmFnSGFuZGxlXCJcbiAgICBjbGFzczpzZWxlY3RlZFxuICAgIHJ4PVwiMTBcIlxuICAgIHJ5PVwiMTBcIlxuICAgIHN0eWxlPVwid2lkdGg6e3N0eWxlcy5yZWN0LndpZHRofXB4OyBoZWlnaHQ6e3N0eWxlcy5yZWN0LmhlaWdodH1weFwiIC8+XG4gIHsjaWYgbm9kZS5wb3J0c31cbiAgICB7I2VhY2ggbm9kZS5wb3J0cyBhcyBwb3J0LCBpfVxuICAgICAgPGdcbiAgICAgICAgaWQ9XCJ7bm9kZS5pZH06e2l9XCJcbiAgICAgICAgdHJhbnNmb3JtPVwidHJhbnNsYXRlKCB7KHBvcnQudHlwZSAmJiBub2RlLndpZHRoID8gbm9kZS53aWR0aCA6IDApIC0gc3R5bGVzLndpcmVIYW5kbGUud2lkdGggLyAyfSxcbiAgICAgICAge2dldENZUG9zKGksIG5vZGUpfSlcIj5cbiAgICAgICAgPHJlY3RcbiAgICAgICAgICBjbGFzcz1cIndpcmVIYW5kbGVcIlxuICAgICAgICAgIHJ4PVwiM1wiXG4gICAgICAgICAgcnk9XCIzXCJcbiAgICAgICAgICBzdHlsZT1cIndpZHRoOntzdHlsZXMud2lyZUhhbmRsZS53aWR0aH1weDsgaGVpZ2h0OntzdHlsZXMud2lyZUhhbmRsZS5oZWlnaHR9cHhcIiAvPlxuICAgICAgPC9nPlxuICAgIHsvZWFjaH1cbiAgey9pZn1cbiAgPHRleHRcbiAgICBjbGFzcz1cImRyYWdIYW5kbGVcIlxuICAgIHg9XCI1MCVcIlxuICAgIHk9XCI1MCVcIlxuICAgIHRleHQtYW5jaG9yPVwibWlkZGxlXCJcbiAgICBkb21pbmFudC1iYXNlbGluZT1cIm1pZGRsZVwiPlxuICAgIHtzZWxlY3RlZH1cbiAgPC90ZXh0Plxuey9pZn1cbiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFxRUUsS0FBSyxjQUFDLENBQUMsQUFDTCxJQUFJLENBQUUsSUFBSSxHQUFHLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FBQyxJQUFJLENBQUMsQ0FDOUIsTUFBTSxDQUFFLElBQUksQ0FDWixZQUFZLENBQUUsR0FBRyxDQUNqQixNQUFNLENBQUUsSUFBSSxBQUNkLENBQUMsQUFDRCxLQUFLLFNBQVMsY0FBQyxDQUFDLEFBQ2QsTUFBTSxDQUFFLE1BQU0sQ0FDZCxZQUFZLENBQUUsR0FBRyxBQUNuQixDQUFDLEFBQ0QsV0FBVyxjQUFDLENBQUMsQUFDWCxNQUFNLENBQUUsSUFBSSxDQUNaLFlBQVksQ0FBRSxDQUFDLENBQ2YsSUFBSSxDQUFFLE9BQU8sQ0FDYixNQUFNLENBQUUsU0FBUyxBQUNuQixDQUFDLEFBQ0QsSUFBSSxjQUFDLENBQUMsQUFDSixJQUFJLENBQUUsS0FBSyxDQUNYLE1BQU0sQ0FBRSxJQUFJLEFBQ2QsQ0FBQyJ9 */";
 	append_dev(document.head, style);
 }
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[6] = list[i];
-	child_ctx[8] = i;
+	child_ctx[8] = list[i];
+	child_ctx[10] = i;
 	return child_ctx;
 }
 
-// (82:0) {#if node.id !== 'wireHandleNode'}
+// (92:0) {#if node.id !== 'wireHandleNode'}
 function create_if_block(ctx) {
 	let rect;
 	let t0;
 	let t1;
 	let text_1;
-	let t2_value = Math.floor(/*node*/ ctx[0].position.x) + "";
 	let t2;
 	let if_block = /*node*/ ctx[0].ports && create_if_block_1(ctx);
 
@@ -368,19 +370,20 @@ function create_if_block(ctx) {
 			if (if_block) if_block.c();
 			t1 = space();
 			text_1 = svg_element("text");
-			t2 = text(t2_value);
-			attr_dev(rect, "class", "node dragHandle svelte-1l0djun");
+			t2 = text(/*selected*/ ctx[1]);
+			attr_dev(rect, "class", "node dragHandle svelte-r6ii83");
 			attr_dev(rect, "rx", "10");
 			attr_dev(rect, "ry", "10");
-			set_style(rect, "width", /*styles*/ ctx[1].rect.width + "px");
-			set_style(rect, "height", /*styles*/ ctx[1].rect.height + "px");
-			add_location(rect, file, 82, 2, 1683);
-			attr_dev(text_1, "class", "dragHandle svelte-1l0djun");
+			set_style(rect, "width", /*styles*/ ctx[2].rect.width + "px");
+			set_style(rect, "height", /*styles*/ ctx[2].rect.height + "px");
+			toggle_class(rect, "selected", /*selected*/ ctx[1]);
+			add_location(rect, file, 92, 2, 1854);
+			attr_dev(text_1, "class", "dragHandle svelte-r6ii83");
 			attr_dev(text_1, "x", "50%");
 			attr_dev(text_1, "y", "50%");
 			attr_dev(text_1, "text-anchor", "middle");
 			attr_dev(text_1, "dominant-baseline", "middle");
-			add_location(text_1, file, 101, 2, 2243);
+			add_location(text_1, file, 112, 2, 2433);
 		},
 		m: function mount(target, anchor) {
 			insert_dev(target, rect, anchor);
@@ -391,12 +394,16 @@ function create_if_block(ctx) {
 			append_dev(text_1, t2);
 		},
 		p: function update(ctx, dirty) {
-			if (dirty & /*styles*/ 2) {
-				set_style(rect, "width", /*styles*/ ctx[1].rect.width + "px");
+			if (dirty & /*styles*/ 4) {
+				set_style(rect, "width", /*styles*/ ctx[2].rect.width + "px");
 			}
 
-			if (dirty & /*styles*/ 2) {
-				set_style(rect, "height", /*styles*/ ctx[1].rect.height + "px");
+			if (dirty & /*styles*/ 4) {
+				set_style(rect, "height", /*styles*/ ctx[2].rect.height + "px");
+			}
+
+			if (dirty & /*selected*/ 2) {
+				toggle_class(rect, "selected", /*selected*/ ctx[1]);
 			}
 
 			if (/*node*/ ctx[0].ports) {
@@ -412,7 +419,7 @@ function create_if_block(ctx) {
 				if_block = null;
 			}
 
-			if (dirty & /*node*/ 1 && t2_value !== (t2_value = Math.floor(/*node*/ ctx[0].position.x) + "")) set_data_dev(t2, t2_value);
+			if (dirty & /*selected*/ 2) set_data_dev(t2, /*selected*/ ctx[1]);
 		},
 		d: function destroy(detaching) {
 			if (detaching) detach_dev(rect);
@@ -427,14 +434,14 @@ function create_if_block(ctx) {
 		block,
 		id: create_if_block.name,
 		type: "if",
-		source: "(82:0) {#if node.id !== 'wireHandleNode'}",
+		source: "(92:0) {#if node.id !== 'wireHandleNode'}",
 		ctx
 	});
 
 	return block;
 }
 
-// (88:2) {#if node.ports}
+// (99:2) {#if node.ports}
 function create_if_block_1(ctx) {
 	let each_1_anchor;
 	let each_value = /*node*/ ctx[0].ports;
@@ -461,7 +468,7 @@ function create_if_block_1(ctx) {
 			insert_dev(target, each_1_anchor, anchor);
 		},
 		p: function update(ctx, dirty) {
-			if (dirty & /*node, styles, getCYPos*/ 7) {
+			if (dirty & /*node, styles, getCYPos*/ 13) {
 				each_value = /*node*/ ctx[0].ports;
 				validate_each_argument(each_value);
 				let i;
@@ -495,14 +502,14 @@ function create_if_block_1(ctx) {
 		block,
 		id: create_if_block_1.name,
 		type: "if",
-		source: "(88:2) {#if node.ports}",
+		source: "(99:2) {#if node.ports}",
 		ctx
 	});
 
 	return block;
 }
 
-// (89:4) {#each node.ports as port, i}
+// (100:4) {#each node.ports as port, i}
 function create_each_block(ctx) {
 	let g;
 	let rect;
@@ -513,40 +520,40 @@ function create_each_block(ctx) {
 		c: function create() {
 			g = svg_element("g");
 			rect = svg_element("rect");
-			attr_dev(rect, "class", "wireHandle svelte-1l0djun");
+			attr_dev(rect, "class", "wireHandle svelte-r6ii83");
 			attr_dev(rect, "rx", "3");
 			attr_dev(rect, "ry", "3");
-			set_style(rect, "width", /*styles*/ ctx[1].wireHandle.width + "px");
-			set_style(rect, "height", /*styles*/ ctx[1].wireHandle.height + "px");
-			add_location(rect, file, 93, 8, 2049);
-			attr_dev(g, "id", g_id_value = "" + (/*node*/ ctx[0].id + ":" + /*i*/ ctx[8]));
+			set_style(rect, "width", /*styles*/ ctx[2].wireHandle.width + "px");
+			set_style(rect, "height", /*styles*/ ctx[2].wireHandle.height + "px");
+			add_location(rect, file, 104, 8, 2239);
+			attr_dev(g, "id", g_id_value = "" + (/*node*/ ctx[0].id + ":" + /*i*/ ctx[10]));
 
-			attr_dev(g, "transform", g_transform_value = "translate( " + ((/*port*/ ctx[6].type && /*node*/ ctx[0].width
+			attr_dev(g, "transform", g_transform_value = "translate( " + ((/*port*/ ctx[8].type && /*node*/ ctx[0].width
 			? /*node*/ ctx[0].width
-			: 0) - /*styles*/ ctx[1].wireHandle.width / 2) + ",\n        " + /*getCYPos*/ ctx[2](/*i*/ ctx[8], /*node*/ ctx[0]) + ")");
+			: 0) - /*styles*/ ctx[2].wireHandle.width / 2) + ",\n        " + /*getCYPos*/ ctx[3](/*i*/ ctx[10], /*node*/ ctx[0]) + ")");
 
-			add_location(g, file, 89, 6, 1874);
+			add_location(g, file, 100, 6, 2064);
 		},
 		m: function mount(target, anchor) {
 			insert_dev(target, g, anchor);
 			append_dev(g, rect);
 		},
 		p: function update(ctx, dirty) {
-			if (dirty & /*styles*/ 2) {
-				set_style(rect, "width", /*styles*/ ctx[1].wireHandle.width + "px");
+			if (dirty & /*styles*/ 4) {
+				set_style(rect, "width", /*styles*/ ctx[2].wireHandle.width + "px");
 			}
 
-			if (dirty & /*styles*/ 2) {
-				set_style(rect, "height", /*styles*/ ctx[1].wireHandle.height + "px");
+			if (dirty & /*styles*/ 4) {
+				set_style(rect, "height", /*styles*/ ctx[2].wireHandle.height + "px");
 			}
 
-			if (dirty & /*node*/ 1 && g_id_value !== (g_id_value = "" + (/*node*/ ctx[0].id + ":" + /*i*/ ctx[8]))) {
+			if (dirty & /*node*/ 1 && g_id_value !== (g_id_value = "" + (/*node*/ ctx[0].id + ":" + /*i*/ ctx[10]))) {
 				attr_dev(g, "id", g_id_value);
 			}
 
-			if (dirty & /*node, styles*/ 3 && g_transform_value !== (g_transform_value = "translate( " + ((/*port*/ ctx[6].type && /*node*/ ctx[0].width
+			if (dirty & /*node, styles*/ 5 && g_transform_value !== (g_transform_value = "translate( " + ((/*port*/ ctx[8].type && /*node*/ ctx[0].width
 			? /*node*/ ctx[0].width
-			: 0) - /*styles*/ ctx[1].wireHandle.width / 2) + ",\n        " + /*getCYPos*/ ctx[2](/*i*/ ctx[8], /*node*/ ctx[0]) + ")")) {
+			: 0) - /*styles*/ ctx[2].wireHandle.width / 2) + ",\n        " + /*getCYPos*/ ctx[3](/*i*/ ctx[10], /*node*/ ctx[0]) + ")")) {
 				attr_dev(g, "transform", g_transform_value);
 			}
 		},
@@ -559,7 +566,7 @@ function create_each_block(ctx) {
 		block,
 		id: create_each_block.name,
 		type: "each",
-		source: "(89:4) {#each node.ports as port, i}",
+		source: "(100:4) {#each node.ports as port, i}",
 		ctx
 	});
 
@@ -618,6 +625,13 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
 	let { flow } = $$props;
 	let { node } = $$props;
+	let { sStore } = $$props;
+	let selected = false;
+
+	sStore.subscribe(s => {
+		$$invalidate(1, selected = s[node.id]);
+	});
+
 	let totals = [];
 
 	let styles = {
@@ -647,7 +661,7 @@ function instance($$self, $$props, $$invalidate) {
 		let { width, height } = styles.rect;
 		let sh = wireHandle.height;
 		let sp = sh * (1 + wireHandle.spacing);
-		$$invalidate(1, styles.rect.height = Math.max(styles.rect.height, (totals[0] + 1) * sp), styles);
+		$$invalidate(2, styles.rect.height = Math.max(styles.rect.height, (totals[0] + 1) * sp), styles);
 		Object.assign(node, styles.rect);
 	};
 
@@ -669,7 +683,7 @@ function instance($$self, $$props, $$invalidate) {
 		});
 	});
 
-	const writable_props = ["flow", "node"];
+	const writable_props = ["flow", "node", "sStore"];
 
 	Object_1.keys($$props).forEach(key => {
 		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Element> was created with unknown prop '${key}'`);
@@ -679,14 +693,17 @@ function instance($$self, $$props, $$invalidate) {
 	validate_slots("Element", $$slots, []);
 
 	$$self.$set = $$props => {
-		if ("flow" in $$props) $$invalidate(3, flow = $$props.flow);
+		if ("flow" in $$props) $$invalidate(4, flow = $$props.flow);
 		if ("node" in $$props) $$invalidate(0, node = $$props.node);
+		if ("sStore" in $$props) $$invalidate(5, sStore = $$props.sStore);
 	};
 
 	$$self.$capture_state = () => ({
 		onMount,
 		flow,
 		node,
+		sStore,
+		selected,
 		totals,
 		styles,
 		resize,
@@ -694,26 +711,28 @@ function instance($$self, $$props, $$invalidate) {
 	});
 
 	$$self.$inject_state = $$props => {
-		if ("flow" in $$props) $$invalidate(3, flow = $$props.flow);
+		if ("flow" in $$props) $$invalidate(4, flow = $$props.flow);
 		if ("node" in $$props) $$invalidate(0, node = $$props.node);
+		if ("sStore" in $$props) $$invalidate(5, sStore = $$props.sStore);
+		if ("selected" in $$props) $$invalidate(1, selected = $$props.selected);
 		if ("totals" in $$props) totals = $$props.totals;
-		if ("styles" in $$props) $$invalidate(1, styles = $$props.styles);
+		if ("styles" in $$props) $$invalidate(2, styles = $$props.styles);
 		if ("resize" in $$props) resize = $$props.resize;
-		if ("getCYPos" in $$props) $$invalidate(2, getCYPos = $$props.getCYPos);
+		if ("getCYPos" in $$props) $$invalidate(3, getCYPos = $$props.getCYPos);
 	};
 
 	if ($$props && "$$inject" in $$props) {
 		$$self.$inject_state($$props.$$inject);
 	}
 
-	return [node, styles, getCYPos, flow];
+	return [node, selected, styles, getCYPos, flow, sStore];
 }
 
 class Element extends SvelteComponentDev {
 	constructor(options) {
 		super(options);
-		if (!document.getElementById("svelte-1l0djun-style")) add_css();
-		init(this, options, instance, create_fragment, safe_not_equal, { flow: 3, node: 0 });
+		if (!document.getElementById("svelte-r6ii83-style")) add_css();
+		init(this, options, instance, create_fragment, safe_not_equal, { flow: 4, node: 0, sStore: 5 });
 
 		dispatch_dev("SvelteRegisterComponent", {
 			component: this,
@@ -725,12 +744,16 @@ class Element extends SvelteComponentDev {
 		const { ctx } = this.$$;
 		const props = options.props || {};
 
-		if (/*flow*/ ctx[3] === undefined && !("flow" in props)) {
+		if (/*flow*/ ctx[4] === undefined && !("flow" in props)) {
 			console.warn("<Element> was created without expected prop 'flow'");
 		}
 
 		if (/*node*/ ctx[0] === undefined && !("node" in props)) {
 			console.warn("<Element> was created without expected prop 'node'");
+		}
+
+		if (/*sStore*/ ctx[5] === undefined && !("sStore" in props)) {
+			console.warn("<Element> was created without expected prop 'sStore'");
 		}
 	}
 
@@ -747,6 +770,14 @@ class Element extends SvelteComponentDev {
 	}
 
 	set node(value) {
+		throw new Error("<Element>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+	}
+
+	get sStore() {
+		throw new Error("<Element>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+	}
+
+	set sStore(value) {
 		throw new Error("<Element>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
 	}
 }

@@ -6,6 +6,5 @@ export const styles = new writable({
   },
 });
 
-export const selected = new writable([]);
-export const selectable = new writable([]);
+export const selected = new writable({});
 export const flow = new writable({ nodes: [] });

@@ -32,3 +32,4 @@ Scratch pad for US
 ## New Features
 
 - [ ] Hold down ctrl to grab multiple endpoints and connect
+- [ ] Change color on overlap
