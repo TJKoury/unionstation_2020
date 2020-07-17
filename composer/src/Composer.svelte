@@ -1,16 +1,15 @@
 <script>
   import { onMount } from "svelte";
-  import { styles, flow, selected } from "./stores/composer.store.mjs";
+  import { flow, selected } from "./stores/composer.store.mjs";
   import { loadFlow } from "./flow.mjs";
   import { registerInteractions } from "./interactions/manager.mjs";
-  import { m1, c1, m2, c2, init as winit } from "./utilities/wirePath.mjs";
+  import { m1, c1, m2, c2, styleStore as wireStyle } from "./components/wire.mjs";
 
   import xxhash from "xxhashjs";
 
   onMount(() => {
     loadFlow();
     let stage = document.getElementById("stage");
-    winit(styles);
     registerInteractions(stage);
     setTimeout(() => flow.update(f => f), 1);
     globalThis.flow = flow;
@@ -50,7 +49,7 @@
                 {c1(node, p)}
                 {c2(node, p, w)}
                 {m2(node, p, w)}"
-                style=" stroke-width: {$styles.path.strokeWidth}; stroke:
+                style=" stroke-width: {$wireStyle.path.strokeWidth}; stroke:
                 #1E1935; stroke-linecap: round; fill: none;" />
             {/if}
           {/each}

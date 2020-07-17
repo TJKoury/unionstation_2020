@@ -6,10 +6,10 @@ import { terser } from 'rollup-plugin-terser';
 
 const production = !process.env.ROLLUP_WATCH;
 
-export default {
+export default [{
 	input: 'src/main.js',
 	output: {
-		sourcemap: true,
+		sourcemap: 'inline',
 		format: 'iife',
 		name: 'app',
 		file: 'public/build/bundle.js'
@@ -42,7 +42,7 @@ export default {
 
 		// Watch the `public` directory and refresh the
 		// browser on changes when not in production
-		!production && livereload(['public', 'src']),
+		!production && livereload(['public', 'src', 'src/components/nods/basic/src']),
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
@@ -51,7 +51,48 @@ export default {
 	watch: {
 		clearScreen: false
 	}
-};
+},
+{
+	input: './src/components/nodes/basic/src/Element.svelte',
+	output: {
+		sourcemap: 'inline',
+		format: 'esm',
+		name: 'basic',
+		file: './src/components/nodes/basic/element.mjs'
+	},
+	plugins: [
+		svelte({
+			dev: !production,
+		}),
+		resolve({
+			browser: true,
+			dedupe: ['svelte']
+		}),
+		commonjs(),
+	],
+	watch: {
+		clearScreen: false
+	},
+},
+{
+	input: './src/components/nodes/basic/src/UserInterface.svelte',
+	output: {
+		sourcemap: 'inline',
+		format: 'esm',
+		name: 'basic',
+		file: './src/components/nodes/basic/ui.mjs'
+	},
+	plugins: [
+		svelte({
+			dev: !production,
+		}),
+		resolve({
+			browser: true,
+			dedupe: ['svelte']
+		}),
+		commonjs(),
+	],
+}];
 
 function serve() {
 	let started = false;

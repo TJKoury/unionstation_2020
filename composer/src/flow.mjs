@@ -1,6 +1,6 @@
 //THIS GETS GENERATED in a package.json
 
-import { BasicNode } from "./nodes/basic/index.mjs";
+import { BasicNode } from "./components/nodes/basic/index.mjs";
 import { flow } from "./stores/composer.store.mjs";
 //let tt = new BasicNode();
 //console.log(tt.constructor.name);
