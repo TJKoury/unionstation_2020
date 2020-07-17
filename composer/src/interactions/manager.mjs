@@ -4,5 +4,5 @@ import * as select from "./select.mjs";
 
 export const registerInteractions = (target) => {
   drag.init(target);
-  select.init();
+  select.init(target);
 };

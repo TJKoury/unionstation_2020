@@ -1,21 +1,27 @@
 import { flow, selected, selectable } from "../stores/composer.store.mjs";
-let target, selectedElement, node, nodes, offset, minX, maxX, minY, maxY, confined;
+let target;
 
-function select(evt) {}
-/*
+function startSelect(evt) {
+  console.log(evt.target);
+}
+
 export let mapping = {
-  mousedown: startDrag,
-  mousemove: drag,
-  mouseup: endDrag,
+  mousedown: startSelect,
+  //mousemove: drag,
+  //mouseup: endDrag,
   //["mouseleave": endDrag,
-  touchstart: startDrag,
+  /*touchstart: startDrag,
   touchmove: drag,
   touchend: endDrag,
   touchleave: endDrag,
-  touchcancel: endDrag,
+  touchcancel: endDrag,*/
 };
-*/
+
 export function init(el) {
+  target = el;
+  Object.entries(mapping).map((a) => {
+    target.addEventListener(a[0], a[1], { passive: false });
+  });
   selectable.subscribe((s) => {
     console.log(s);
   });
