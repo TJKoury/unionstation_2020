@@ -13,6 +13,7 @@
     winit(styles);
     registerInteractions(stage);
     setTimeout(() => flow.update(f => f), 1);
+    globalThis.flow = flow;
   });
 </script>
 
@@ -28,6 +29,7 @@
     height: 100%;
     position: fixed;
   }
+
   :global(body) {
     overflow: hidden;
     padding: none;
@@ -41,8 +43,9 @@
       {#each node.ports as port, p}
         {#if port.wires}
           {#each port.wires as wire, w}
-            {#if m1(node, p)}
+            {#if m1(node, p) && !!document.getElementById(wire)}
               <path
+                class="wire"
                 d="{m1(node, p)}
                 {c1(node, p)}
                 {c2(node, p, w)}
@@ -62,7 +65,11 @@
         y={node.position.y}
         width={node.width}
         height={node.height}>
-        <svelte:component this={node.element} bind:node {flow} sStore={selected} />
+        <svelte:component
+          this={node.element}
+          bind:node
+          {flow}
+          sStore={selected} />
       </svg>
     {/each}
   </svg>

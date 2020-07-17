@@ -14,8 +14,21 @@ function nodeSelect(evt) {
     } else {
       s[sID] = true;
     }
+    return s;
+  });
+}
 
-    console.log(s);
+function wireSelect(evt) {
+  const sID = evt.target.closest(".draggable").id;
+  selected.update((s) => {
+    if (!evt.ctrlKey) {
+      s = {};
+    }
+    if (s[sID]) {
+      delete s[sID];
+    } else {
+      s[sID] = true;
+    }
     return s;
   });
 }

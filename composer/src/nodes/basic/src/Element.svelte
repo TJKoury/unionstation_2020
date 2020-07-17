@@ -116,6 +116,6 @@
     y="50%"
     text-anchor="middle"
     dominant-baseline="middle">
-    {selected}
+    {!!selected}
   </text>
 {/if}
