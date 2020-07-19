@@ -5,7 +5,7 @@
   export let sStore;
 
   let selected = false;
-  sStore.subscribe(s => {
+  sStore.subscribe(function(s) {
     selected = s[node.id];
   });
 

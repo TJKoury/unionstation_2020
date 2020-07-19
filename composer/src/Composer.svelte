@@ -3,7 +3,13 @@
   import { flow, selected } from "./stores/composer.store.mjs";
   import { loadFlow } from "./flow.mjs";
   import { registerInteractions } from "./interactions/manager.mjs";
-  import { m1, c1, m2, c2, styleStore as wireStyle } from "./components/wire.mjs";
+  import {
+    m1,
+    c1,
+    m2,
+    c2,
+    styleStore as wireStyle
+  } from "./components/wire.mjs";
 
   import xxhash from "xxhashjs";
 
@@ -12,7 +18,9 @@
     let stage = document.getElementById("stage");
     registerInteractions(stage);
     setTimeout(() => flow.update(f => f), 1);
-    globalThis.flow = flow;
+    globalThis.exportFlow = () => {
+      console.log(JSON.stringify($flow));
+    };
   });
 </script>
 
@@ -64,11 +72,7 @@
         y={node.position.y}
         width={node.width}
         height={node.height}>
-        <svelte:component
-          this={node.element}
-          bind:node
-          {flow}
-          sStore={selected} />
+        <svelte:component this={node.element} {node} {flow} sStore={selected} />
       </svg>
     {/each}
   </svg>

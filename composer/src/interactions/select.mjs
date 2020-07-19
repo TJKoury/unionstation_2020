@@ -3,17 +3,29 @@ let target, nodes;
 flow.subscribe((f) => {
   nodes = f.nodes;
 });
+
+const stageCheck = (evt) => evt.target.id === "stage";
+
 function nodeSelect(evt) {
-  const sID = evt.target.closest(".draggable").id;
+  let sID = evt.target.closest(".draggable");
+
+  if (sID) {
+    sID = sID.id;
+  }
+
   selected.update((s) => {
-    if (!evt.ctrlKey) {
+    if (stageCheck(evt)) {
       s = {};
+      return s;
     }
-    if (s[sID]) {
+    const isSelected = Object.keys(s).indexOf(sID) > -1;
+    if (!evt.ctrlKey && !isSelected) {
+      s = {};
+    } else if (evt.ctrlKey && isSelected) {
       delete s[sID];
-    } else {
-      s[sID] = true;
     }
+    s[sID] = nodes.filter((n) => n.id === sID)[0];
+
     return s;
   });
 }
@@ -35,7 +47,7 @@ function wireSelect(evt) {
 
 function startSelect(evt) {
   const classList = Array.from(evt.target.classList);
-  if (classList.includes("dragHandle")) {
+  if (classList.includes("dragHandle") || stageCheck(evt)) {
     nodeSelect(evt);
   }
 }
