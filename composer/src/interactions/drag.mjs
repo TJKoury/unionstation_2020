@@ -1,7 +1,6 @@
 import { flow, selected } from "../stores/composer.store.mjs";
 let target,
   selectedElements,
-  nodes,
   offset,
   minX,
   maxX,
@@ -11,9 +10,6 @@ let target,
   dragging = false,
   originalPositions = {};
 
-flow.subscribe((f) => {
-  nodes = f.nodes;
-});
 selected.subscribe((s) => {
   selectedElements = s;
 });
@@ -29,10 +25,6 @@ function getMousePosition(evt) {
   };
 }
 
-export function match(el) {
-  return Array.from(el.classList).indexOf("dragHandle") > -1;
-}
-
 export function startDrag(evt) {
   offset = getMousePosition(evt);
   for (let sID in selectedElements) {
@@ -43,7 +35,8 @@ export function startDrag(evt) {
 }
 
 export function drag(evt) {
-  if (Object.keys(selectedElements).length && dragging) {
+  if (!dragging) return;
+  if (Object.keys(selectedElements).length) {
     evt.preventDefault();
     for (let sID in selectedElements) {
       let selNode = selectedElements[sID];
