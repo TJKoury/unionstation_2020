@@ -13,6 +13,11 @@ let target,
 selected.subscribe((s) => {
   selectedElements = s;
 });
+
+const pfG = (sA, v) => parseFloat(sA.getNamedItem(v).value);
+const sAttr = (id) => document.getElementById(id).attributes;
+const cC = (cl, cL) => cL.indexOf(cl) !== -1;
+
 function getMousePosition(evt) {
   if (!target.getScreenCTM) return;
   let CTM = target.getScreenCTM();
@@ -26,10 +31,18 @@ function getMousePosition(evt) {
 }
 
 export function startDrag(evt) {
+  const classList = Array.from(evt.target.classList);
+  if (cC("dragHandle", classList)) {
+    nodeDrag(evt);
+  } else if (cC("wireHandle", classList)) {
+    console.log(evt);
+  }
+}
+export function nodeDrag(evt) {
   offset = getMousePosition(evt);
   for (let sID in selectedElements) {
-    let sEA = document.getElementById(sID).attributes;
-    originalPositions[sID] = { x: parseFloat(sEA.getNamedItem("x").value), y: parseFloat(sEA.getNamedItem("y").value) };
+    let sA = sAttr(sID);
+    originalPositions[sID] = { x: pfG(sA, "x"), y: pfG(sA, "y") };
   }
   dragging = true;
 }

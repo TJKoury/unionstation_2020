@@ -31,10 +31,14 @@ function nodeSelect(evt) {
 }
 
 function wireCreate(evt) {
-  
+  console.log(evt.target);
+  //Add to selected elements
+  //Add to nodes with special ID
 }
 function wireSelect(evt) {}
-
+function overSelect(evt) {
+  //console.log(evt.target);
+}
 function startSelect(evt) {
   const classList = Array.from(evt.target.classList);
   if (classList.includes("dragHandle") || stageCheck(evt)) {
@@ -50,6 +54,7 @@ function startSelect(evt) {
 
 export let mapping = {
   mousedown: startSelect,
+  mouseover: overSelect,
   //mousemove: drag,
   //mouseup: endDrag,
   //["mouseleave": endDrag,
