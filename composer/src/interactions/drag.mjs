@@ -1,4 +1,6 @@
 import { flow, selected } from "../stores/composer.store.mjs";
+import { BasicNode } from "../components/nodes/basic/index.mjs";
+
 let target,
   selectedElements,
   offset,
@@ -7,8 +9,10 @@ let target,
   minY,
   maxY,
   confined,
-  dragging = false,
-  originalPositions = {};
+  dragging = { active: false, outNode: null, outPort: null },
+  originalPositions = {},
+  whP = "wireHandleNode:0",
+  wH = "wireHandleNode";
 
 selected.subscribe((s) => {
   selectedElements = s;
@@ -16,7 +20,7 @@ selected.subscribe((s) => {
 
 const pfG = (sA, v) => parseFloat(sA.getNamedItem(v).value);
 const sAttr = (id) => document.getElementById(id).attributes;
-const cC = (cl, cL) => cL.indexOf(cl) !== -1;
+const cC = (cL, cname) => Array.from(cL).indexOf(cname) !== -1;
 
 function getMousePosition(evt) {
   if (!target.getScreenCTM) return;
@@ -31,33 +35,41 @@ function getMousePosition(evt) {
 }
 
 export function startDrag(evt) {
-  const classList = Array.from(evt.target.classList);
-  if (cC("dragHandle", classList)) {
+  const { classList } = evt.target;
+  if (cC(classList, "dragHandle")) {
     startNodeDrag(evt);
-  } else if (cC("wireHandle", classList)) {
+  } else if (cC(classList, "wireHandle")) {
     startWireDrag(evt);
   }
 }
 
 export function startWireDrag(evt) {
+  const { classList } = evt.target;
+  if (cC(classList, "in")) return;
   let [nID, pID] = evt.target.closest("g").id.split(":");
+  pID = parseInt(pID);
   const initXY = getMousePosition(evt);
-  console.log(nID, parseInt(pID));
   flow.update((f) => {
-    let nWN = f.nodes["wireHandleNode"];
+    let nWN = f.nodes.find((n) => n.id === wH);
     if (!nWN) {
-      f.nodes["wireHandleNode"] = {
-        id: "wireHandleNode",
-        ports: [{ type: 0 }],
-        width: 1,
-        height: 1,
-        position: initXY,
-      };
+      f.nodes.push(
+        new BasicNode({
+          id: wH,
+          ports: [{ type: 0 }],
+          width: 1,
+          height: 1,
+          element: function () {},
+          position: initXY,
+        })
+      );
+      let pWN = f.nodes.find((n) => n.id === nID);
+      pWN.ports[pID].wires.push(whP);
+      dragging.outNode = pWN;
+      dragging.outPort = pID;
     }
-    console.log(f.nodes[nID]);
     return f;
   });
-  dragging = "wire";
+  dragging.active = "wire";
 }
 
 export function startNodeDrag(evt) {
@@ -66,14 +78,14 @@ export function startNodeDrag(evt) {
     let sA = sAttr(sID);
     originalPositions[sID] = { x: pfG(sA, "x"), y: pfG(sA, "y") };
   }
-  dragging = "node";
+  dragging.active = "node";
 }
 
 export function drag(evt) {
-  if (!dragging) return;
-  if (dragging === "node") {
+  if (!dragging.active) return;
+  if (dragging.active === "node") {
     nodeDrag(evt);
-  } else if (dragging === "wire") {
+  } else if (dragging.active === "wire") {
     wireDrag(evt);
   }
 }
@@ -117,16 +129,35 @@ export function nodeDrag(evt) {
 export function wireDrag(evt) {
   const mXY = getMousePosition(evt);
   flow.update((f) => {
-    let dNode = f.nodes.find((n) => n.id === "wireHandleNode");
+    let dNode = f.nodes.find((n) => n.id === wH);
     f.nodes[f.nodes.indexOf(dNode)].position = mXY;
     return f;
   });
 }
 export function endDrag(evt) {
-  dragging = false;
+  const { classList } = evt.target;
+  if (dragging.active === "wire") {
+    flow.update((f) => {
+      let dNode = f.nodes.indexOf(dragging.outNode);
+      let wires = () => f.nodes[dNode].ports[dragging.outPort].wires;
+      f.nodes[dNode].ports[dragging.outPort].wires = wires().filter((w) => w !== whP);
+      if (cC(classList, "wireHandle") && cC(classList, "in")) {
+        let portID = evt.target.closest("g").id;
+        let [nID, pID] = portID.split(":");
+        pID = parseInt(pID);
+        f.nodes[dNode].ports[dragging.outPort].wires.push(portID);
+        let toNode = document.getElementById(nID);
+        let pE = toNode.parentElement;
+        pE.removeChild(toNode);
+        pE.appendChild(toNode);
+      }
+      return f;
+    });
+  }
+  dragging.active = false;
   originalPositions = {};
   flow.update((f) => {
-    f.nodes = f.nodes.filter((n) => n.id !== "wireHandleNode");
+    f.nodes = f.nodes.filter((n) => n.id !== wH);
     return f;
   });
 }

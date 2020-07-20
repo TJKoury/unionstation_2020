@@ -1,13 +1,12 @@
 import { writable } from "svelte/store";
 
 let styles;
-let handleX = 70;
+let handleX = 100;
 
 const styleStore = new writable({
   path: {
     strokeWidth: 3,
   },
-  handle: 75,
 });
 
 styleStore.subscribe((s) => {

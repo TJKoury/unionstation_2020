@@ -2,8 +2,30 @@
 
 import { BasicNode } from "./components/nodes/basic/index.mjs";
 import { flow } from "./stores/composer.store.mjs";
-//let tt = new BasicNode();
-//console.log(tt.constructor.name);
+
+let nodesLength = 0;
+
+flow.subscribe((f) => {
+  if (f.nodes.length === nodesLength) return;
+  let nodes = f.nodes.map((n) => n.id);
+  f.nodes.forEach((n) => {
+    let _wires = [];
+    n.ports.forEach((p) => {
+      if (p.wires) {
+        p.wires.forEach((w, i) => {
+          if (nodes.indexOf(w.split(":")[0]) !== -1) {
+            _wires.push(w);
+          }
+        });
+      } else {
+        p.wires = [];
+      }
+    });
+    n.wires = _wires;
+  });
+  nodesLength = f.nodes.length;
+});
+
 export const loadFlow = () => {
   flow.set({
     nodes: [

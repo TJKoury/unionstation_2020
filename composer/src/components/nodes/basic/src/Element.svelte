@@ -103,7 +103,7 @@
         transform="translate( {(port.type && node.width ? node.width : 0) - styles.wireHandle.width / 2},
         {getCYPos(i, node)})">
         <rect
-          class="wireHandle"
+          class="wireHandle {port.type ? 'out' : 'in'}"
           rx="3"
           ry="3"
           style="width:{styles.wireHandle.width}px; height:{styles.wireHandle.height}px" />
