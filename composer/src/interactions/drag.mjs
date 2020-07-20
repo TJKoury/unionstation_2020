@@ -33,22 +33,52 @@ function getMousePosition(evt) {
 export function startDrag(evt) {
   const classList = Array.from(evt.target.classList);
   if (cC("dragHandle", classList)) {
-    nodeDrag(evt);
+    startNodeDrag(evt);
   } else if (cC("wireHandle", classList)) {
-    console.log(evt);
+    startWireDrag(evt);
   }
 }
-export function nodeDrag(evt) {
+
+export function startWireDrag(evt) {
+  let [nID, pID] = evt.target.closest("g").id.split(":");
+  const initXY = getMousePosition(evt);
+  console.log(nID, parseInt(pID));
+  flow.update((f) => {
+    let nWN = f.nodes["wireHandleNode"];
+    if (!nWN) {
+      f.nodes["wireHandleNode"] = {
+        id: "wireHandleNode",
+        ports: [{ type: 0 }],
+        width: 1,
+        height: 1,
+        position: initXY,
+      };
+    }
+    console.log(f.nodes[nID]);
+    return f;
+  });
+  dragging = "wire";
+}
+
+export function startNodeDrag(evt) {
   offset = getMousePosition(evt);
   for (let sID in selectedElements) {
     let sA = sAttr(sID);
     originalPositions[sID] = { x: pfG(sA, "x"), y: pfG(sA, "y") };
   }
-  dragging = true;
+  dragging = "node";
 }
 
 export function drag(evt) {
   if (!dragging) return;
+  if (dragging === "node") {
+    nodeDrag(evt);
+  } else if (dragging === "wire") {
+    wireDrag(evt);
+  }
+}
+
+export function nodeDrag(evt) {
   if (Object.keys(selectedElements).length) {
     evt.preventDefault();
     for (let sID in selectedElements) {
@@ -84,10 +114,21 @@ export function drag(evt) {
     }
   }
 }
-
+export function wireDrag(evt) {
+  const mXY = getMousePosition(evt);
+  flow.update((f) => {
+    let dNode = f.nodes.find((n) => n.id === "wireHandleNode");
+    f.nodes[f.nodes.indexOf(dNode)].position = mXY;
+    return f;
+  });
+}
 export function endDrag(evt) {
   dragging = false;
   originalPositions = {};
+  flow.update((f) => {
+    f.nodes = f.nodes.filter((n) => n.id !== "wireHandleNode");
+    return f;
+  });
 }
 
 export let mapping = {

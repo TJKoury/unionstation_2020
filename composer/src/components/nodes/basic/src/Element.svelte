@@ -118,4 +118,6 @@
     dominant-baseline="middle">
     {!!selected}
   </text>
+{:else}
+  <g id="{node.id}:0" />
 {/if}
