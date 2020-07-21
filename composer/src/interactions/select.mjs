@@ -6,37 +6,43 @@ flow.subscribe((f) => {
 
 const stageCheck = (evt) => evt.target.id === "stage";
 
-function nodeSelect(evt) {
-  let sID = evt.target.closest(".draggable");
-
-  if (sID) {
-    sID = sID.id;
-  }
-
+function doSelect(sID, evt, eL) {
   selectedItems.update((s) => {
-    if (stageCheck(evt)) {
-      s = {};
-      return s;
-    }
     const isSelected = Object.keys(s).indexOf(sID) > -1;
     if (!evt.ctrlKey && !isSelected) {
       s = {};
     } else if (evt.ctrlKey && isSelected) {
       delete s[sID];
     }
-    s[sID] = nodes.filter((n) => n.id === sID)[0];
+    s[sID] = eL;
 
     return s;
   });
 }
 
+function nodeSelect(evt) {
+  let sID = evt.target.closest(".draggable");
+
+  if (sID) {
+    sID = sID.id;
+    doSelect(sID, evt, nodes.filter((n) => n.id === sID)[0]);
+  }
+}
+
 function wireSelect(evt) {
-  console.log(evt.target);
+  doSelect(evt.target.id, evt, evt.target);
 }
 function overSelect(evt) {
   //console.log(evt.target);
 }
 function startSelect(evt) {
+  if (stageCheck(evt)) {
+    selectedItems.update((s) => {
+      s = {};
+      return s;
+    });
+    return;
+  }
   const classList = Array.from(evt.target.classList);
   if (classList.includes("dragHandle") || stageCheck(evt)) {
     nodeSelect(evt);
@@ -44,6 +50,7 @@ function startSelect(evt) {
   if (classList.includes("wire")) {
     wireSelect(evt);
   }
+  console.log(evt.target);
 }
 
 export let mapping = {

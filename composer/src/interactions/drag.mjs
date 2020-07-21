@@ -17,7 +17,7 @@ selectedItems.subscribe((s) => {
   selectedElements = s;
 });
 
-const pfG = (sA, v) => parseFloat(sA.getNamedItem(v).value);
+const pfG = (sA, v) => parseFloat(sA.getNamedItem(v)?.value || 0);
 const sAttr = (id) => document.getElementById(id).attributes;
 const cC = (cL, cname) => Array.from(cL).indexOf(cname) !== -1;
 
@@ -111,6 +111,7 @@ export function nodeDrag(evt) {
       let sE = document.getElementById(selNode.id).attributes;
       let nX = originalPositions[sID].x + dx;
       let nY = originalPositions[sID].y + dy;
+      if (!sE.x || !sE.y) return;
       sE.x.value = nX;
       sE.y.value = nY;
       flow.update((f) => {

@@ -4,17 +4,18 @@
   export let p;
   export let w;
 
-  let dStyle = document.documentElement.style;
-  dStyle.setProperty("--wire_strokeWidth", 3);
-
+  let handleX = 100;
   let selected = false;
+
+  let targetNode = (node, p, w) => node.ports[p].wires[w];
+  const wireID = (node, p, w) => `${node.id}:${p}-${targetNode(node, p, w)}`;
+
   selectedItems.subscribe(function(s) {
-    selected = s[node.id];
+    selected = s[wireID(node, p, w)];
   });
 
-  let styles = {
-    handleX: 100
-  };
+  let dStyle = document.documentElement.style;
+  dStyle.setProperty("--wire_strokeWidth", 3);
 
   let ef = port => {
     let { e, f } = port.getCTM();
@@ -26,8 +27,6 @@
       height / 2;
     return { e, f };
   };
-
-  let targetNode = (node, p, w) => node.ports[p].wires[w];
 
   function m1(node, p, n) {
     let port = document.getElementById(node.id + ":" + p);
@@ -41,7 +40,7 @@
 
   function c1(node, p) {
     let c1p = m1(node, p, true);
-    return `C${c1p[0] + styles.handleX} ${c1p[1]}`;
+    return `C${c1p[0] + handleX} ${c1p[1]}`;
   }
 
   function m2(node, p, w, n) {
@@ -56,7 +55,7 @@
 
   function c2(node, p, w) {
     let c1p = m2(node, p, w, true);
-    return `${c1p[0] - styles.handleX} ${c1p[1]}`;
+    return `${c1p[0] - handleX} ${c1p[1]}`;
   }
 </script>
 
@@ -70,11 +69,15 @@
     stroke-linecap: round;
     fill: #00000000;
   }
+  path.selected {
+    stroke: orange;
+  }
 </style>
 
 <path
   class="wire"
-  id="{node.id}:{p}-{targetNode(node, p, w)}"
+  class:selected
+  id={wireID(node, p, w)}
   d="{m1(node, p)}
   {c1(node, p)}
   {c2(node, p, w)}
