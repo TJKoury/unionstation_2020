@@ -26,7 +26,7 @@ Scratch pad for US
 
 - [X] Wire creation
 - [X] Element selection
-- [ ] CRUD elements
+- [ ] CRUD elements (keys)
 - [ ] Node elements
 
 ## New Features

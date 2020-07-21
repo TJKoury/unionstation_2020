@@ -1,7 +1,9 @@
 <script>
   import {
     flow,
+    ports as sports,
     selectedItems,
+    globalStyle,
     handleSemantics
   } from "../stores/composer.store.mjs";
   export let node;
@@ -11,7 +13,7 @@
   let handleX = 125;
   let selected = false;
   let dStyle = document.documentElement.style;
-
+  let ports;
   let targetNode = (node, p, w) => node.ports[p].wires[w];
   const wireID = (node, p, w) => `${node.id}:${p}-${targetNode(node, p, w)}`;
 
@@ -19,23 +21,16 @@
     selected = s.wires[wireID(node, p, w)];
   });
 
-  dStyle.setProperty("--wire_strokeWidth", 3);
+  sports.subscribe(p => {
+    ports = p;
+  });
 
-  let ef = port => {
-    let { e, f } = port.getCTM();
-    let { width, height } = port.getBoundingClientRect();
-    e = e + width / 2;
-    f =
-      f -
-      parseFloat(dStyle.getPropertyValue("--wire_strokeWidth")) / 2 +
-      height / 2;
-    return { e, f };
-  };
+  dStyle.setProperty("--wire_strokeWidth", globalStyle.path.strokeWidth);
 
   function m1(node, p, n) {
-    let port = document.getElementById(node.id + ":" + p);
+    let port = ports[node.id + ":" + p];
     if (!!port) {
-      const { e, f } = ef(port);
+      const { e, f } = port;
       return n ? [e, f] : `M${e} ${f}`;
     } else {
       return false;
@@ -48,9 +43,9 @@
   }
 
   function m2(node, p, w, n) {
-    let port = document.getElementById(targetNode(node, p, w));
+    let port = ports[targetNode(node, p, w)];
     if (!!port) {
-      const { e, f } = ef(port);
+      const { e, f } = port;
       return n ? [e, f] : `${e} ${f}`;
     } else {
       return false;
@@ -84,17 +79,19 @@
   }
 </style>
 
-<path
-  class="wireOutline"
-  d="{m1(node, p)}
-  {c1(node, p)}
-  {c2(node, p, w)}
-  {m2(node, p, w)}" />
-<path
-  class="wire"
-  class:selected={selected || targetNode(node, p, w) === handleSemantics.wireHandlePort}
-  id={wireID(node, p, w)}
-  d="{m1(node, p)}
-  {c1(node, p)}
-  {c2(node, p, w)}
-  {m2(node, p, w)}" />
+{#if m2(node, p, w) && Object.keys(ports).length}
+  <path
+    class="wireOutline"
+    d="{m1(node, p)}
+    {c1(node, p)}
+    {c2(node, p, w)}
+    {m2(node, p, w)}" />
+  <path
+    class="wire"
+    class:selected={selected || targetNode(node, p, w) === handleSemantics.wireHandlePort}
+    id={wireID(node, p, w)}
+    d="{m1(node, p)}
+    {c1(node, p)}
+    {c2(node, p, w) || '0 0'}
+    {m2(node, p, w) || '0 0'}" />
+{/if}

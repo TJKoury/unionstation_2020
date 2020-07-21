@@ -1,6 +1,6 @@
 import { flow, selectedItems, handleSemantics } from "../stores/composer.store.mjs";
 import { Interaction } from "./interaction.class.mjs";
-
+import { updateWires } from "../flow.mjs";
 export class drag extends Interaction {
   constructor(target) {
     let selectedElements,
@@ -144,6 +144,7 @@ export class drag extends Interaction {
         f.nodes = f.nodes.filter((n) => n.id !== wH);
         return f;
       });
+      updateWires();
     }
 
     super(target, {
