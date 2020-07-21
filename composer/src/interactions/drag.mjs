@@ -58,7 +58,7 @@ export function startWireDrag(evt) {
           ports: [{ type: 0 }],
           width: 1,
           height: 1,
-          element: function () {},
+          element: function () { },
           position: initXY,
         })
       );
@@ -145,7 +145,9 @@ export function endDrag(evt) {
         let portID = evt.target.closest("g").id;
         let [nID, pID] = portID.split(":");
         pID = parseInt(pID);
-        f.nodes[dNode].ports[dragging.outPort].wires.push(portID);
+        if (wires().indexOf(portID) === -1) {
+          f.nodes[dNode].ports[dragging.outPort].wires.push(portID);
+        }
         let toNode = document.getElementById(nID);
         let pE = toNode.parentElement;
         pE.removeChild(toNode);
