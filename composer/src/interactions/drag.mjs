@@ -17,7 +17,7 @@ selectedItems.subscribe((s) => {
   selectedElements = s;
 });
 
-const pfG = (sA, v) => parseFloat(sA.getNamedItem(v)?.value || 0);
+const pfG = (sA, v) => parseFloat(sA.getNamedItem(v) ? sA.getNamedItem(v).value : 0); //TODO after Terser update optional chaining (?.value)
 const sAttr = (id) => document.getElementById(id).attributes;
 const cC = (cL, cname) => Array.from(cL).indexOf(cname) !== -1;
 
