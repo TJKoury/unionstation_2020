@@ -9,7 +9,6 @@ export class drag extends Interaction {
       maxX,
       minY,
       maxY,
-      confined,
       dragging = { active: false, outNode: null, outPort: null },
       originalPositions = {},
       whP = "wireHandleNode:0",
@@ -76,32 +75,17 @@ export class drag extends Interaction {
         evt.preventDefault();
         for (let sID in selectedElements) {
           let selNode = selectedElements[sID];
-          let coord = getMousePosition(evt);
-          let dx = coord.x - offset.x;
-          let dy = coord.y - offset.y;
-
-          if (confined) {
-            if (dx < minX) {
-              dx = minX;
-            } else if (dx > maxX) {
-              dx = maxX;
-            }
-            if (dy < minY) {
-              dy = minY;
-            } else if (dy > maxY) {
-              dy = maxY;
-            }
-          }
           let sE = document.getElementById(selNode.id).attributes;
-          let nX = originalPositions[sID].x + dx;
-          let nY = originalPositions[sID].y + dy;
-          if (!sE.x || !sE.y) return;
-          sE.x.value = nX;
-          sE.y.value = nY;
+          let coord = getMousePosition(evt);
+
+          ["x", "y"].forEach((key) => {
+            sE[key].value = originalPositions[sID][key] + (coord[key] - offset[key]);
+          });
+
           flow.update((f) => {
             f.nodes[f.nodes.indexOf(selNode)].position = {
-              x: nX,
-              y: nY,
+              x: sE.x.value,
+              y: sE.y.value,
             };
             return f;
           });
