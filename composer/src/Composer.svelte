@@ -12,13 +12,18 @@
   };
 
   onMount(() => {
-    loadFlow();
+    fetch("./flows/test.flow.json")
+      .then(response => response.json())
+      .then(_json => {
+        loadFlow(_json);
+        setTimeout(() => flow.update(f => f), 1);
+      });
     let stage = document.getElementById("stage");
     registerInteractions(stage);
-    setTimeout(() => flow.update(f => f), 1);
     globalThis.exportFlow = () => {
       console.log(JSON.stringify($flow));
     };
+    globalThis.importFlow = loadFlow;
   });
 </script>
 

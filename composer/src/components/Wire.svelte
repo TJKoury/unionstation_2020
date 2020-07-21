@@ -10,7 +10,7 @@
   export let p;
   export let w;
 
-  let handleX = 125;
+  let { handleX } = globalStyle;
   let selected = false;
   let dStyle = document.documentElement.style;
   let ports;

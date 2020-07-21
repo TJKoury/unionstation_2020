@@ -130,10 +130,6 @@ export class drag extends Interaction {
             if (wires().indexOf(portID) === -1) {
               f.nodes[dNode].ports[dragging.outPort].wires.push(portID);
             }
-            let toNode = document.getElementById(nID);
-            let pE = toNode.parentElement;
-            pE.removeChild(toNode);
-            pE.appendChild(toNode);
           }
           return f;
         });

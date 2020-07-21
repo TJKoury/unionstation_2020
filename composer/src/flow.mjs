@@ -1,6 +1,6 @@
-//THIS GETS GENERATED in a package.json
+import { flow, ports, selectedItems, globalStyle } from "./stores/composer.store.mjs";
 
-import { flow, ports, globalStyle } from "./stores/composer.store.mjs";
+let sWires;
 
 let ef = (port) => {
   if (port) {
@@ -11,6 +11,10 @@ let ef = (port) => {
     return { e, f, width, height };
   }
 };
+
+selectedItems.subscribe((s) => {
+  sWires = s.wires;
+});
 
 flow.subscribe((f) => {
   let _ports = {};
@@ -24,17 +28,24 @@ flow.subscribe((f) => {
     });
   });
   ports.set(_ports);
+  let nodeGroups = document.querySelectorAll(".nodegroup");
+  nodeGroups.forEach((ng) => {
+    let pE = ng.parentElement;
+    ["removeChild", "appendChild"].forEach((x) => {
+      pE[x](ng);
+    });
+  }); //z-index HAAAACK
 });
 
-export const updateWires = (inflow) => {
+export const updateWires = (inflow, removeWires) => {
   let updateWireFunc = (f) => {
     let nodes = f.nodes.map((n) => n.id);
     f.nodes.forEach(async (n) => {
-      n.ports.forEach((p) => {
+      n.ports.forEach((p, pi) => {
         let _wires = [];
         if (p.wires) {
           p.wires.forEach((w, i) => {
-            if (nodes.indexOf(w.split(":")[0]) > -1) {
+            if (nodes.indexOf(w.split(":")[0]) > -1 && (!removeWires || sWires[`${n.id}:${pi}-${w}`] === undefined)) {
               _wires.push(w);
             }
           });
@@ -53,46 +64,7 @@ export const updateWires = (inflow) => {
   }
 };
 
-export const loadFlow = () => {
-  flow.set({
-    nodes: [
-      {
-        id: "d46ca6a8",
-        position: {
-          x: 100,
-          y: 100,
-        },
-        ports: [{ type: 0 }, { type: 1, wires: ["525fa64c:0"] }, { type: 1, wires: ["025fa64c:0"] }, { type: 1 }],
-      },
-      {
-        id: "525fa64c",
-        position: {
-          x: 200,
-          y: 200,
-        },
-        ports: [
-          { id: 1, type: 0 },
-          { id: 2, type: 1 },
-          { id: 3, type: 1 },
-          { id: 4, type: 1 },
-        ],
-        wires: [],
-      },
-      {
-        id: "025fa64c",
-        position: {
-          x: 200,
-          y: 340,
-        },
-        ports: [
-          { id: 1, type: 0 },
-          { id: 2, type: 1 },
-          { id: 3, type: 1 },
-          { id: 4, type: 1 },
-        ],
-        wires: [],
-      },
-    ],
-  });
+export const loadFlow = (importedFlow) => {
+  flow.set(importedFlow);
   updateWires();
 };

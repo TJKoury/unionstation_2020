@@ -1,0 +1,58 @@
+{
+  "nodes": [
+    {
+      "id": "d46ca6a8",
+      "name": "Node 1",
+      "position": {
+        "x": 100,
+        "y": 100
+      },
+      "ports": [{ "type": 0 }, { "type": 1, "wires": ["525fa64c:0"] }, { "type": 1, "wires": ["025fa64c:0"] }, { "type": 1 }]
+    },
+    {
+      "id": "525fa64c",
+      "name": "Node 2",
+      "position": {
+        "x": 200,
+        "y": 200
+      },
+      "ports": [
+        { "id": 1, "type": 0 },
+        { "id": 2, "type": 1 },
+        { "id": 3, "type": 1 },
+        { "id": 4, "type": 1 }
+      ],
+      "wires": []
+    },
+    {
+      "id": "025fa64c",
+      "name": "Node 3",
+      "position": {
+        "x": 200,
+        "y": 340
+      },
+      "ports": [
+        { "id": 1, "type": 0 },
+        { "id": 2, "type": 1 },
+        { "id": 3, "type": 1 },
+        { "id": 4, "type": 1, "wires": ["d46ca6a8:0"] }
+      ],
+      "wires": []
+    },
+    {
+      "id": "a25fa64c",
+      "name": "Node 4",
+      "position": {
+        "x": 280,
+        "y": 340
+      },
+      "ports": [
+        { "id": 1, "type": 0 },
+        { "id": 2, "type": 1 },
+        { "id": 3, "type": 1 },
+        { "id": 4, "type": 1 }
+      ],
+      "wires": []
+    }
+  ]
+}

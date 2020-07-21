@@ -27,7 +27,7 @@ export class keys extends Interaction {
           flow.nodes = _nodes;
         }
         selectedItems.set(sItems);
-        updateWires(flow);
+        updateWires(flow, true);
       }
     };
 
