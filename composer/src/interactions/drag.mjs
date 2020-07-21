@@ -1,18 +1,14 @@
-import { flow, selectedItems } from "../stores/composer.store.mjs";
+import { flow, selectedItems, handleSemantics } from "../stores/composer.store.mjs";
 import { Interaction } from "./interaction.class.mjs";
 
 export class drag extends Interaction {
   constructor(target) {
     let selectedElements,
       offset,
-      minX,
-      maxX,
-      minY,
-      maxY,
       dragging = { active: false, outNode: null, outPort: null },
       originalPositions = {},
-      whP = "wireHandleNode:0",
-      wH = "wireHandleNode";
+      whP = handleSemantics.wireHandlePort,
+      wH = handleSemantics.wireHandle;
 
     selectedItems.subscribe((s) => {
       selectedElements = s.elements;

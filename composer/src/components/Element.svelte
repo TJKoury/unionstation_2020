@@ -1,5 +1,9 @@
 <script>
-  import { flow, selectedItems } from "../stores/composer.store.mjs";
+  import {
+    flow,
+    selectedItems,
+    handleSemantics
+  } from "../stores/composer.store.mjs";
   import { onMount } from "svelte";
   export let node;
 
@@ -92,7 +96,7 @@
   }
 </style>
 
-{#if node.id !== 'wireHandleNode'}
+{#if node.id !== handleSemantics.wireHandle}
   <rect
     class="node dragHandle"
     class:selected

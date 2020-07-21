@@ -1,5 +1,9 @@
 <script>
-  import { flow, selectedItems } from "../stores/composer.store.mjs";
+  import {
+    flow,
+    selectedItems,
+    handleSemantics
+  } from "../stores/composer.store.mjs";
   export let node;
   export let p;
   export let w;
@@ -88,7 +92,7 @@
   {m2(node, p, w)}" />
 <path
   class="wire"
-  class:selected={selected || targetNode(node, p, w) === 'wireHandleNode:0'}
+  class:selected={selected || targetNode(node, p, w) === handleSemantics.wireHandlePort}
   id={wireID(node, p, w)}
   d="{m1(node, p)}
   {c1(node, p)}
