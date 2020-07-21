@@ -45,7 +45,10 @@ export const updateWires = (inflow, removeWires) => {
         let _wires = [];
         if (p.wires) {
           p.wires.forEach((w, i) => {
-            if (nodes.indexOf(w.split(":")[0]) > -1 && (!removeWires || sWires[`${n.id}:${pi}-${w}`] === undefined)) {
+            let hasParentNode = nodes.indexOf(w.split(":")[0]) > -1;
+            let deleteWire = sWires[`${n.id}:${pi}-${w}`] === undefined;
+
+            if (hasParentNode && (!removeWires || deleteWire)) {
               _wires.push(w);
             }
           });
