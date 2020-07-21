@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { flow, selectedItems } from "./stores/composer.store.mjs";
+  import { flow } from "./stores/composer.store.mjs";
   import { loadFlow } from "./flow.mjs";
   import { registerInteractions } from "./interactions/manager.mjs";
   import Wire from "./components/Wire.svelte";

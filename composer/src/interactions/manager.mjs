@@ -1,7 +1,9 @@
-import * as drag from "./drag.mjs";
-import * as select from "./select.mjs";
+import { drag } from "./drag.mjs";
+import { select } from "./select.mjs";
+
+let interactions = [];
 
 export const registerInteractions = (target) => {
-  select.init(target);
-  drag.init(target);
+  interactions.push(new select(target));
+  interactions.push(new drag(target));
 };

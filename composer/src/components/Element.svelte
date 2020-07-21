@@ -5,7 +5,7 @@
 
   let selected = false;
   selectedItems.subscribe(function(s) {
-    selected = s[node.id];
+    selected = s.elements[node.id];
   });
 
   let totals = [];

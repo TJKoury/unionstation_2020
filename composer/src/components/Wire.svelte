@@ -4,17 +4,17 @@
   export let p;
   export let w;
 
-  let handleX = 100;
+  let handleX = 125;
   let selected = false;
+  let dStyle = document.documentElement.style;
 
   let targetNode = (node, p, w) => node.ports[p].wires[w];
   const wireID = (node, p, w) => `${node.id}:${p}-${targetNode(node, p, w)}`;
 
   selectedItems.subscribe(function(s) {
-    selected = s[wireID(node, p, w)];
+    selected = s.wires[wireID(node, p, w)];
   });
 
-  let dStyle = document.documentElement.style;
   dStyle.setProperty("--wire_strokeWidth", 3);
 
   let ef = port => {
