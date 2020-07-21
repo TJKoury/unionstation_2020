@@ -30,7 +30,9 @@ function nodeSelect(evt) {
   });
 }
 
-function wireSelect(evt) {}
+function wireSelect(evt) {
+  console.log(evt);
+}
 function overSelect(evt) {
   //console.log(evt.target);
 }

@@ -1,5 +1,4 @@
 import { flow, selected } from "../stores/composer.store.mjs";
-import { BasicNode } from "../components/nodes/basic/index.mjs";
 
 let target,
   selectedElements,
@@ -52,16 +51,14 @@ export function startWireDrag(evt) {
   flow.update((f) => {
     let nWN = f.nodes.find((n) => n.id === wH);
     if (!nWN) {
-      f.nodes.push(
-        new BasicNode({
-          id: wH,
-          ports: [{ type: 0 }],
-          width: 1,
-          height: 1,
-          element: function () { },
-          position: initXY,
-        })
-      );
+      f.nodes.push({
+        id: wH,
+        ports: [{ type: 0 }],
+        width: 1,
+        height: 1,
+        element: function () {},
+        position: initXY,
+      });
       let pWN = f.nodes.find((n) => n.id === nID);
       pWN.ports[pID].wires.push(whP);
       dragging.outNode = pWN;

@@ -51,47 +51,6 @@ export default [{
 	watch: {
 		clearScreen: false
 	}
-},
-{
-	input: './src/components/nodes/basic/src/Element.svelte',
-	output: {
-		sourcemap: 'inline',
-		format: 'esm',
-		name: 'basic',
-		file: './src/components/nodes/basic/element.mjs'
-	},
-	plugins: [
-		svelte({
-			dev: !production,
-		}),
-		resolve({
-			browser: true,
-			dedupe: ['svelte']
-		}),
-		commonjs(),
-	],
-	watch: {
-		clearScreen: false
-	},
-},
-{
-	input: './src/components/nodes/basic/src/UserInterface.svelte',
-	output: {
-		sourcemap: 'inline',
-		format: 'esm',
-		name: 'basic',
-		file: './src/components/nodes/basic/ui.mjs'
-	},
-	plugins: [
-		svelte({
-			dev: !production,
-		}),
-		resolve({
-			browser: true,
-			dedupe: ['svelte']
-		}),
-		commonjs(),
-	],
 }];
 
 function serve() {

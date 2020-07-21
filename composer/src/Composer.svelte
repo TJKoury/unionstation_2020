@@ -10,7 +10,7 @@
     c2,
     styleStore as wireStyle
   } from "./components/wire.mjs";
-
+  import Element from "./components/Element.svelte";
   import xxhash from "xxhashjs";
 
   onMount(() => {
@@ -29,11 +29,13 @@
     color: white;
     user-select: none;
     outline: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
   }
 
   #stage {
-    width: 100%;
-    height: 100%;
   }
 
   :global(body) {
@@ -44,12 +46,10 @@
 </style>
 
 <!-- prettier-ignore -->
+<!--viewBox="0,0,500,500"
+    preserveAspectRatio="xMidYMid meet"-->
 <div id="node-explorer" tabindex="0">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0,0,500,500"
-    preserveAspectRatio="xMidYMid meet"
-    id="stage">
+  <svg width="5000" height="5000" xmlns="http://www.w3.org/2000/svg" id="stage">
     {#each $flow.nodes as node, i}
       {#each node.ports as port, p}
         {#if port.wires}
@@ -62,7 +62,7 @@
                 {c2(node, p, w)}
                 {m2(node, p, w)}"
                 style=" stroke-width: {$wireStyle.path.strokeWidth}; stroke:
-                #1E1935; stroke-linecap: round; fill: none;" />
+                #1E1935; stroke-linecap: round; fill: #00000000;" />
             {/if}
           {/each}
         {/if}
@@ -76,7 +76,7 @@
         y={node.position.y}
         width={node.width}
         height={node.height}>
-        <svelte:component this={node.element} {node} {flow} sStore={selected} />
+        <Element {node} {flow} sStore={selected} />
       </svg>
     {/each}
   </svg>
