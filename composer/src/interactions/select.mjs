@@ -50,7 +50,6 @@ function startSelect(evt) {
   if (classList.includes("wire")) {
     wireSelect(evt);
   }
-  console.log(evt.target);
 }
 
 export let mapping = {
