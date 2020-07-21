@@ -1,4 +1,4 @@
-import { flow, selected } from "../stores/composer.store.mjs";
+import { flow, selectedItems } from "../stores/composer.store.mjs";
 let target, nodes;
 flow.subscribe((f) => {
   nodes = f.nodes;
@@ -13,7 +13,7 @@ function nodeSelect(evt) {
     sID = sID.id;
   }
 
-  selected.update((s) => {
+  selectedItems.update((s) => {
     if (stageCheck(evt)) {
       s = {};
       return s;

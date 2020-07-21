@@ -1,11 +1,10 @@
 <script>
+  import { flow, selectedItems } from "../stores/composer.store.mjs";
   import { onMount } from "svelte";
-  export let flow;
   export let node;
-  export let sStore;
 
   let selected = false;
-  sStore.subscribe(function(s) {
+  selectedItems.subscribe(function(s) {
     selected = s[node.id];
   });
 

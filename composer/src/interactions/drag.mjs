@@ -1,4 +1,4 @@
-import { flow, selected } from "../stores/composer.store.mjs";
+import { flow, selectedItems } from "../stores/composer.store.mjs";
 
 let target,
   selectedElements,
@@ -13,7 +13,7 @@ let target,
   whP = "wireHandleNode:0",
   wH = "wireHandleNode";
 
-selected.subscribe((s) => {
+selectedItems.subscribe((s) => {
   selectedElements = s;
 });
 

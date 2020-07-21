@@ -1,17 +1,15 @@
 <script>
   import { onMount } from "svelte";
-  import { flow, selected } from "./stores/composer.store.mjs";
+  import { flow, selectedItems } from "./stores/composer.store.mjs";
   import { loadFlow } from "./flow.mjs";
   import { registerInteractions } from "./interactions/manager.mjs";
-  import {
-    m1,
-    c1,
-    m2,
-    c2,
-    styleStore as wireStyle
-  } from "./components/wire.mjs";
+  import Wire from "./components/Wire.svelte";
   import Element from "./components/Element.svelte";
   import xxhash from "xxhashjs";
+
+  const eExist = id => {
+    return !!document.getElementById(id);
+  };
 
   onMount(() => {
     loadFlow();
@@ -54,15 +52,8 @@
       {#each node.ports as port, p}
         {#if port.wires}
           {#each port.wires as wire, w}
-            {#if m1(node, p) && !!document.getElementById(wire)}
-              <path
-                class="wire"
-                d="{m1(node, p)}
-                {c1(node, p)}
-                {c2(node, p, w)}
-                {m2(node, p, w)}"
-                style=" stroke-width: {$wireStyle.path.strokeWidth}; stroke:
-                #1E1935; stroke-linecap: round; fill: #00000000;" />
+            {#if eExist(node.id + ':' + p) && eExist(wire)}
+              <Wire {node} {p} {w} />
             {/if}
           {/each}
         {/if}
@@ -76,7 +67,7 @@
         y={node.position.y}
         width={node.width}
         height={node.height}>
-        <Element {node} {flow} sStore={selected} />
+        <Element {node} {flow} />
       </svg>
     {/each}
   </svg>
