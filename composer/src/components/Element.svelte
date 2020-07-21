@@ -82,6 +82,9 @@
     fill: #d9d9d9;
     cursor: crosshair;
   }
+  .wireHandle:hover {
+    fill: orange;
+  }
   text {
     fill: black;
     cursor: move;

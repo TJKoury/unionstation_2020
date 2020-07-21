@@ -71,12 +71,24 @@
   }
   path.selected {
     stroke: orange;
+    pointer-events: none !important;
+  }
+  .wireOutline {
+    stroke-width: calc(var(--wire_strokeWidth) + 2);
+    stroke: white;
+    pointer-events: none !important;
   }
 </style>
 
 <path
+  class="wireOutline"
+  d="{m1(node, p)}
+  {c1(node, p)}
+  {c2(node, p, w)}
+  {m2(node, p, w)}" />
+<path
   class="wire"
-  class:selected
+  class:selected={selected || targetNode(node, p, w) === 'wireHandleNode:0'}
   id={wireID(node, p, w)}
   d="{m1(node, p)}
   {c1(node, p)}

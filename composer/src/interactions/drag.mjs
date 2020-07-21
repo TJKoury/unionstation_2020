@@ -139,6 +139,7 @@ export function endDrag(evt) {
       let dNode = f.nodes.indexOf(dragging.outNode);
       let wires = () => f.nodes[dNode].ports[dragging.outPort].wires;
       f.nodes[dNode].ports[dragging.outPort].wires = wires().filter((w) => w !== whP);
+      console.log(evt.target, classList);
       if (cC(classList, "wireHandle") && cC(classList, "in")) {
         let portID = evt.target.closest("g").id;
         let [nID, pID] = portID.split(":");
