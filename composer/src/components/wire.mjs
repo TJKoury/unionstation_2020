@@ -1,12 +1,12 @@
 import { writable } from "svelte/store";
 
 let styles;
-let handleX = 100;
 
 const styleStore = new writable({
   path: {
     strokeWidth: 3,
   },
+  handleX: 100,
 });
 
 styleStore.subscribe((s) => {
@@ -33,7 +33,7 @@ function m1(node, p, n) {
 
 function c1(node, p) {
   let c1p = m1(node, p, true);
-  return `C${c1p[0] + handleX} ${c1p[1]}`;
+  return `C${c1p[0] + styles.handleX} ${c1p[1]}`;
 }
 
 function m2(node, p, w, n) {
@@ -48,7 +48,7 @@ function m2(node, p, w, n) {
 
 function c2(node, p, w) {
   let c1p = m2(node, p, w, true);
-  return `${c1p[0] - handleX} ${c1p[1]}`;
+  return `${c1p[0] - styles.handleX} ${c1p[1]}`;
 }
 
 export { m1, c1, m2, c2, styleStore };

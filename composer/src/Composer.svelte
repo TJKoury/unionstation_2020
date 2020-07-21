@@ -34,18 +34,22 @@
   #stage {
     width: 100%;
     height: 100%;
-    position: fixed;
   }
 
   :global(body) {
     overflow: hidden;
-    padding: none;
+    padding: 0px;
+    margin: 0px;
   }
 </style>
 
 <!-- prettier-ignore -->
 <div id="node-explorer" tabindex="0">
-  <svg xmlns="http://www.w3.org/2000/svg" overflow="visible" id="stage">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0,0,500,500"
+    preserveAspectRatio="xMidYMid meet"
+    id="stage">
     {#each $flow.nodes as node, i}
       {#each node.ports as port, p}
         {#if port.wires}

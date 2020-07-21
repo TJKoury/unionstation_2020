@@ -54,7 +54,7 @@ export const loadFlow = () => {
       new BasicNode({
         id: "025fa64c",
         position: {
-          x: 400,
+          x: 200,
           y: 340,
         },
         ports: [

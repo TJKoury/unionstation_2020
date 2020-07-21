@@ -86,6 +86,7 @@
   text {
     fill: black;
     cursor: move;
+    user-select: none;
   }
 </style>
 

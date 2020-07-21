@@ -166,7 +166,7 @@ export let mapping = {
   mousedown: startDrag,
   mousemove: drag,
   mouseup: endDrag,
-  //["mouseleave": endDrag,
+  //mouseleave: endDrag,
   touchstart: startDrag,
   touchmove: drag,
   touchend: endDrag,

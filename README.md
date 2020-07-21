@@ -24,8 +24,8 @@ Scratch pad for US
 
 ## TODO
 
-- [ ] Wire creation
-- [ ] Element selection
+- [X] Wire creation
+- [X] Element selection
 - [ ] CRUD elements
 - [ ] Node elements
 
