@@ -28,7 +28,7 @@ Scratch pad for US
 - [X] Element selection
 - [ ] CRUD elements (keys)
 - [ ] Node elements
-
+- [ ] [Grid](https://stackoverflow.com/questions/14208673/how-to-draw-grid-using-html5-and-canvas-or-svg)
 ## New Features
 
 - [ ] Hold down ctrl to grab multiple endpoints and connect
