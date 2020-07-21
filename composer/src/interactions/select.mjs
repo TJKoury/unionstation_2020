@@ -31,7 +31,7 @@ function nodeSelect(evt) {
 }
 
 function wireSelect(evt) {
-  console.log(evt);
+  console.log(evt.target);
 }
 function overSelect(evt) {
   //console.log(evt.target);

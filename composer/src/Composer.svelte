@@ -67,7 +67,7 @@
         y={node.position.y}
         width={node.width}
         height={node.height}>
-        <Element {node} {flow} />
+        <Element {node} />
       </svg>
     {/each}
   </svg>
